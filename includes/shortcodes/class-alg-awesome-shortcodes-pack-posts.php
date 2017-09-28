@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Shortcode Packs - Posts
  *
- * @version 1.1.0
+ * @version 1.1.1
  * @since   1.1.0
  * @author  Algoritmika Ltd.
  */
@@ -18,7 +18,7 @@ class Alg_Awesome_Shortcodes_Pack_Posts extends Alg_Abstract_Awesome_Shortcodes_
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.1.0
+	 * @version 1.1.1
 	 * @since   1.1.0
 	 */
 	function __construct() {
@@ -106,10 +106,21 @@ class Alg_Awesome_Shortcodes_Pack_Posts extends Alg_Abstract_Awesome_Shortcodes_
 							'post_status'   => 'publish',
 							'orderby'       => 'date',
 							'order'         => 'desc',
-							'before'        => '<h3>' . __( 'Recent products', 'awesome-shortcodes' ) . '</h3><ul><li>',
+							'before'        => '<h3>' . __( 'Recent Products', 'awesome-shortcodes' ) . '</h3><ul><li>',
 							'sep'           => '</li><li>',
 							'after'         => '</li></ul>',
 							'output_format' => '<a href=\'%link%\'>%title%</a>',
+						),
+					),
+					array(
+						'desc'    => __( 'Display twenty recently published posts:', 'awesome-shortcodes' ),
+						'atts'    => array(
+							'max_posts'     => '20',
+							'post_type'     => 'post',
+							'post_status'   => 'publish',
+							'orderby'       => 'date',
+							'order'         => 'desc',
+							'before'        => '<h3>' . __( 'Recent Posts', 'awesome-shortcodes' ) . '</h3>',
 						),
 					),
 				),
