@@ -54,8 +54,24 @@ class Alg_Awesome_Shortcodes_Pack_Posts extends Alg_Abstract_Awesome_Shortcodes_
 					),
 				),
 			),
+			'posts' => array(
+				'desc'             => __( 'Displays posts.', 'awesome-shortcodes' ),
+				'type'             => 'self-closing',
+				'examples'         => array( array() ),
+			),
 		);
 		parent::__construct();
+	}
+
+	/**
+	 * posts.
+	 *
+	 * @version 1.0.0
+	 * @since   1.0.0
+	 * @todo    (maybe) more atts
+	 */
+	function posts( $atts, $content, $tag ) {
+		return implode( '<br>', alg_awesome_shortcodes_get_posts() );
 	}
 
 	/**
