@@ -226,7 +226,18 @@ class Alg_Awesome_Shortcodes_Admin_Settings {
 	 * @todo    (maybe) remove `plugins` class in table; `plugin-title` and `plugin-description` in td
 	 */
 	function get_shortcodes_options_table() {
+		$desc = '';
+		$type = $this->get_current_type();
+		foreach ( alg_awesome_shortcodes()->core->shortcode_packs as $shortcode_pack ) {
+			if ( $type === $shortcode_pack->id  ) {
+				if ( isset( $shortcode_pack->desc ) ) {
+					$desc = '<p>' . '<em>' . $shortcode_pack->desc . '</em>' . '</p>';
+				}
+				break;
+			}
+		}
 		$html = '';
+		$html .= $desc;
 		$html .= '<table class="wp-list-table widefat plugins">';
 		$html .= '<thead>';
 		$html .= '<tr>';

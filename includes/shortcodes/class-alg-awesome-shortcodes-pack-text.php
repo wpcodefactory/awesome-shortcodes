@@ -24,6 +24,7 @@ class Alg_Awesome_Shortcodes_Pack_Text extends Alg_Abstract_Awesome_Shortcodes_P
 	function __construct() {
 		$this->id         = 'text';
 		$this->title      = __( 'Text', 'awesome-shortcodes' );
+		$this->desc       = __( 'Text shortcodes.', 'awesome-shortcodes' );
 		$this->shortcodes = array(
 			'strikeout' => array(
 				'desc'             => __( 'Strikeouts content.', 'awesome-shortcodes' ),
