@@ -37,7 +37,7 @@ If you wish to contribute, join in on our [GitHub repository](https://github.com
 * Dev - `[post_id]` shortcode added.
 * Dev - `[post_meta]` shortcode added.
 * Dev - "Posts" shortcodes pack added (and `[posts]` shortcode moved from "General" pack).
-* Dev - Admin - Shortcodes settings restyling etc.
+* Dev - Admin - Shortcodes settings restyling, documentation link (https://awesomeshortcodes.com) added etc.
 
 = 1.0.0 - 26/09/2017 =
 * Initial Release.

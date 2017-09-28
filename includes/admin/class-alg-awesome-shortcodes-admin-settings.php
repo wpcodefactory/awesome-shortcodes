@@ -219,7 +219,6 @@ class Alg_Awesome_Shortcodes_Admin_Settings {
 	 *
 	 * @version 1.0.1
 	 * @since   1.0.0
-	 * @todo    (maybe) add "Documentation" links for each shortcode
 	 * @todo    (maybe) add "Activate" / "Disable" links for each shortcode (like in Plugins)
 	 * @todo    (maybe) add "Example > Output". Issue is: Scripts and styles are not loaded for a) admin(`admin_enqueue_scripts`); b) disabled shortcodes (this may be solved by "Enable the shortcode to see the example output")
 	 * @todo    (maybe) `screen-reader-text`
@@ -253,16 +252,23 @@ class Alg_Awesome_Shortcodes_Admin_Settings {
 		$html .= '<tbody id="the-list">';
 		$shortcodes_options = get_option( 'alg_awesome_shortcodes_options', array() );
 		foreach ( $this->get_options() as $option ) {
+			$actions = '';
+			$actions .= '<div class="row-actions visible">';
+			$actions .= '<span class="activate">';
+			$actions .= '<a target="_blank" href="https://awesomeshortcodes.com/' . $option['tag'] . '/" class="edit" aria-label="">' .
+				__( 'Documentation', 'awesome-shortcodes' ) . '</a>';
+			$actions .= '</span>';
+			$actions .= '</div>';
 			$value = ( isset( $shortcodes_options[ $option['tag'] ] ) ? ( true === $shortcodes_options[ $option['tag'] ] ? 'yes' : 'no' ) : $option['default'] );
 			$html .= '<tr class="' . ( 'yes' === $value ? 'active' : 'inactive' ) . '">';
 			$html .= '<th scope="row" class="check-column">' .
 				'<input type="hidden" value="no" name="' . $option['id'] . '">' .
 				'<input type="checkbox" name="' . $option['id'] . '" value="yes" id="awesome-shortcodes-' . $option['tag'] . '"' . checked( $value, 'yes', false ) . '></th>';
-			$html .= '<td class="plugin-title column-primary"><strong>'                        . $option['title'] . '</strong>'    . '</td>';
-			$html .= '<td class="column-description desc"><div class="plugin-description"><p>' . $option['desc'] . '</p></div>'    . '</td>';
-			$html .= '<td class="column-atts desc"><div class="plugin-description">'           . $option['atts'] . '</div>'        . '</td>';
-			$html .= '<td class="column-examples desc"><div class="plugin-description">'       . $option['examples'] . '</div>'    . '</td>';
-			$html .= '<td class="column-aliases desc"><div class="plugin-description"><p>'     . $option['aliases'] . '</p></div>' . '</td>';
+			$html .= '<td class="plugin-title column-primary"><strong>'                        . $option['title'] . '</strong>' . $actions . '</td>';
+			$html .= '<td class="column-description desc"><div class="plugin-description"><p>' . $option['desc'] . '</p></div>'            . '</td>';
+			$html .= '<td class="column-atts desc"><div class="plugin-description">'           . $option['atts'] . '</div>'                . '</td>';
+			$html .= '<td class="column-examples desc"><div class="plugin-description">'       . $option['examples'] . '</div>'            . '</td>';
+			$html .= '<td class="column-aliases desc"><div class="plugin-description"><p>'     . $option['aliases'] . '</p></div>'         . '</td>';
 			$html .= '</tr>';
 		}
 		$html .= '<tfoot>';
