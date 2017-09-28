@@ -11,39 +11,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-if ( ! function_exists( 'alg_awesome_shortcodes_get_posts' ) ) {
-	/**
-	 * alg_awesome_shortcodes_get_posts.
-	 *
-	 * @version 1.0.1
-	 * @since   1.0.0
-	 * @todo    (maybe) move to `posts` shortcodes
-	 */
-	function alg_awesome_shortcodes_get_posts( $posts = array(), $post_type = 'post', $post_status = 'any', $block_size = 256, $orderby = 'title', $order = 'ASC' ) {
-		$offset = 0;
-		while( true ) {
-			$args = array(
-				'post_type'      => $post_type,
-				'post_status'    => $post_status,
-				'posts_per_page' => $block_size,
-				'offset'         => $offset,
-				'orderby'        => $orderby,
-				'order'          => $order,
-				'fields'         => 'ids',
-			);
-			$loop = new WP_Query( $args );
-			if ( ! $loop->have_posts() ) {
-				break;
-			}
-			foreach ( $loop->posts as $post_id ) {
-				$posts[ $post_id ] = get_the_title( $post_id );
-			}
-			$offset += $block_size;
-		}
-		return $posts;
-	}
-}
-
 if ( ! function_exists( 'alg_awesome_shortcodes_get_table_html' ) ) {
 	/**
 	 * alg_awesome_shortcodes_get_table_html.

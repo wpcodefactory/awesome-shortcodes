@@ -64,6 +64,11 @@ class Alg_Awesome_Shortcodes_Pack_Posts extends Alg_Abstract_Awesome_Shortcodes_
 						'desc'     => __( 'Separator.', 'awesome-shortcodes' ),
 						'required' => false,
 					),
+					'max_posts' => array(
+						'default'  => '10',
+						'desc'     => __( 'Max posts to return number.', 'awesome-shortcodes' ),
+						'required' => false,
+					),
 					'post_type' => array(
 						'default'  => 'post',
 						'desc'     => sprintf( __( 'Post type. Can be custom type, e.g.: %s.', 'awesome-shortcodes' ), '<code>product</code>' ),
@@ -71,12 +76,12 @@ class Alg_Awesome_Shortcodes_Pack_Posts extends Alg_Abstract_Awesome_Shortcodes_
 					),
 					'post_status' => array(
 						'default'  => 'any',
-						'desc'     => __( 'Post status.', 'awesome-shortcodes' ),
+						'desc'     => sprintf( __( 'Post status, e.g.: %s.', 'awesome-shortcodes' ), '<code>publish</code>' ),
 						'required' => false,
 					),
 					'orderby' => array(
 						'default'  => 'title',
-						'desc'     => __( 'Order by.', 'awesome-shortcodes' ),
+						'desc'     => sprintf( __( 'Order by parameter, e.g.: %s.', 'awesome-shortcodes' ), '<code>date</code>' ),
 						'required' => false,
 					),
 					'order' => array(
@@ -87,12 +92,16 @@ class Alg_Awesome_Shortcodes_Pack_Posts extends Alg_Abstract_Awesome_Shortcodes_
 				),
 				'examples'         => array(
 					array(
+						'desc'    => __( 'Display five recently published products as list:', 'awesome-shortcodes' ),
 						'atts'    => array(
+							'max_posts'   => '5',
 							'post_type'   => 'product',
 							'post_status' => 'publish',
 							'orderby'     => 'date',
 							'order'       => 'desc',
-							'before'      => '<h3>' . __( 'Recent products', 'awesome-shortcodes' ) . '</h3>',
+							'before'      => '<h3>' . __( 'Recent products', 'awesome-shortcodes' ) . '</h3><ul><li>',
+							'sep'         => '</li><li>',
+							'after'       => '</li></ul>',
 						),
 					),
 				),
@@ -104,15 +113,29 @@ class Alg_Awesome_Shortcodes_Pack_Posts extends Alg_Abstract_Awesome_Shortcodes_
 	/**
 	 * posts.
 	 *
-	 * @version 1.0.0
+	 * @version 1.0.1
 	 * @since   1.0.0
-	 * @todo    max posts to return number
 	 * @todo    link
 	 * @todo    format (not only title)
 	 * @todo    more params (check WP_Query page)
 	 */
 	function posts( $atts, $content, $tag ) {
-		return implode( $atts['sep'], alg_awesome_shortcodes_get_posts( array(), $atts['post_type'], $atts['post_status'], 256, $atts['orderby'], $atts['order'] ) );
+		$args = array(
+			'post_type'      => $atts['post_type'],
+			'post_status'    => $atts['post_status'],
+			'posts_per_page' => $atts['max_posts'],
+			'orderby'        => $atts['orderby'],
+			'order'          => $atts['order'],
+			'fields'         => 'ids',
+		);
+		$loop = new WP_Query( $args );
+		$posts = array();
+		if ( $loop->have_posts() ) {
+			foreach ( $loop->posts as $post_id ) {
+				$posts[ $post_id ] = get_the_title( $post_id );
+			}
+		}
+		return implode( $atts['sep'], $posts );
 	}
 
 	/**

@@ -171,6 +171,9 @@ class Alg_Awesome_Shortcodes_Admin_Settings {
 								}
 								$code .= '[/' . $prefix . $shortcode_tag . ']';
 							}
+							if ( isset( $example['desc'] ) ) {
+								$examples .= '<p>' . '<em>' . $example['desc'] . '</em>' . '</p>';
+							}
 							$examples .= '<p>' . '<code>' . esc_html( $code ) . '</code>' . '</p>';
 						}
 					}
