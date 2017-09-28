@@ -3,7 +3,7 @@ Contributors: algoritmika, anbinder
 Donate link: https://www.paypal.me/anbinder
 Tags: shortcode, shortcodes, awesome, wpcodefactory, algoritmika
 Tested up to: 4.8
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
