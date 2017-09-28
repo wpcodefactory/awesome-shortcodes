@@ -1,6 +1,7 @@
 <?php
 /*
 Plugin Name: Awesome Shortcodes
+Plugin URI: https://awesomeshortcodes.com/
 Description: Awesome shortcodes.
 Version: 1.0.1-dev
 Author: Algoritmika Ltd
