@@ -33,6 +33,7 @@ If you wish to contribute, join in on our [GitHub repository](https://github.com
 == Changelog ==
 
 = 1.1.1 - 28/09/2017 =
+* Dev - `[user_firstname]` shortcode added.
 * Dev - `[posts]` - Example added.
 
 = 1.1.0 - 28/09/2017 =
