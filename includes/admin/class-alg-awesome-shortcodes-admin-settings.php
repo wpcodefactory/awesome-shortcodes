@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Admin Settings Class
  *
- * @version 1.0.1
+ * @version 1.1.0
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -103,7 +103,7 @@ class Alg_Awesome_Shortcodes_Admin_Settings {
 	/**
 	 * get_options.
 	 *
-	 * @version 1.0.1
+	 * @version 1.1.0
 	 * @since   1.0.0
 	 * @todo    (maybe) example output: `shortcode_pack->awesome_shortcode( ( ! empty( $example['atts'] ) ? $example['atts'] : array() ), ( ! empty( $example['content'] ) ? $example['content'] : '' ), $prefix . $shortcode_tag, ( isset( $shortcode['func'] ) ? $shortcode['func'] : $shortcode_tag ) )`
 	 * @todo    (maybe) remove `alg_awesome_shortcodes_enabled` completely
@@ -217,7 +217,7 @@ class Alg_Awesome_Shortcodes_Admin_Settings {
 	/**
 	 * get_shortcodes_options_table.
 	 *
-	 * @version 1.0.1
+	 * @version 1.1.0
 	 * @since   1.0.0
 	 * @todo    (maybe) add "Activate" / "Disable" links for each shortcode (like in Plugins)
 	 * @todo    (maybe) add "Example > Output". Issue is: Scripts and styles are not loaded for a) admin(`admin_enqueue_scripts`); b) disabled shortcodes (this may be solved by "Enable the shortcode to see the example output")
@@ -354,7 +354,7 @@ class Alg_Awesome_Shortcodes_Admin_Settings {
 	/**
 	 * get_menu.
 	 *
-	 * @version 1.0.1
+	 * @version 1.1.0
 	 * @since   1.0.0
 	 */
 	function get_menu() {
