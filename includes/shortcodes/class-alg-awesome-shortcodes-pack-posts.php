@@ -55,16 +55,47 @@ class Alg_Awesome_Shortcodes_Pack_Posts extends Alg_Abstract_Awesome_Shortcodes_
 				),
 			),
 			'posts' => array(
-				'desc'             => __( 'Displays posts.', 'awesome-shortcodes' ),
+				'desc'             => __( 'Displays posts. Check <a target="_blank" href="https://codex.wordpress.org/Class_Reference/WP_Query">WP_Query page</a> for more info on params.', 'awesome-shortcodes' ),
 				'type'             => 'self-closing',
+				'aliases'          => array( 'wp_query' ),
 				'atts'             => array(
 					'sep' => array(
 						'default'  => '<br>',
 						'desc'     => __( 'Separator.', 'awesome-shortcodes' ),
 						'required' => false,
 					),
+					'post_type' => array(
+						'default'  => 'post',
+						'desc'     => sprintf( __( 'Post type. Can be custom type, e.g.: %s.', 'awesome-shortcodes' ), '<code>product</code>' ),
+						'required' => false,
+					),
+					'post_status' => array(
+						'default'  => 'any',
+						'desc'     => __( 'Post status.', 'awesome-shortcodes' ),
+						'required' => false,
+					),
+					'orderby' => array(
+						'default'  => 'title',
+						'desc'     => __( 'Order by.', 'awesome-shortcodes' ),
+						'required' => false,
+					),
+					'order' => array(
+						'default'  => 'ASC',
+						'desc'     => __( 'Order (<code>ASC</code> or <code>DESC</code>).', 'awesome-shortcodes' ),
+						'required' => false,
+					),
 				),
-				'examples'         => array( array() ),
+				'examples'         => array(
+					array(
+						'atts'    => array(
+							'post_type'   => 'product',
+							'post_status' => 'publish',
+							'orderby'     => 'date',
+							'order'       => 'desc',
+							'before'      => '<h3>' . __( 'Recent products', 'awesome-shortcodes' ) . '</h3>',
+						),
+					),
+				),
 			),
 		);
 		parent::__construct();
@@ -75,10 +106,13 @@ class Alg_Awesome_Shortcodes_Pack_Posts extends Alg_Abstract_Awesome_Shortcodes_
 	 *
 	 * @version 1.0.0
 	 * @since   1.0.0
-	 * @todo    (maybe) more atts
+	 * @todo    max posts to return number
+	 * @todo    link
+	 * @todo    format (not only title)
+	 * @todo    more params (check WP_Query page)
 	 */
 	function posts( $atts, $content, $tag ) {
-		return implode( $atts['sep'], alg_awesome_shortcodes_get_posts() );
+		return implode( $atts['sep'], alg_awesome_shortcodes_get_posts( array(), $atts['post_type'], $atts['post_status'], 256, $atts['orderby'], $atts['order'] ) );
 	}
 
 	/**

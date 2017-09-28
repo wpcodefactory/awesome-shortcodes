@@ -171,7 +171,7 @@ class Alg_Awesome_Shortcodes_Admin_Settings {
 								}
 								$code .= '[/' . $prefix . $shortcode_tag . ']';
 							}
-							$examples .= '<p>' . '<code>' . $code . '</code>' . '</p>';
+							$examples .= '<p>' . '<code>' . esc_html( $code ) . '</code>' . '</p>';
 						}
 					}
 					$atts = '-';

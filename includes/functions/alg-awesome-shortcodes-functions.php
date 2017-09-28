@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Functions
  *
- * @version 1.0.0
+ * @version 1.0.1
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -15,11 +15,11 @@ if ( ! function_exists( 'alg_awesome_shortcodes_get_posts' ) ) {
 	/**
 	 * alg_awesome_shortcodes_get_posts.
 	 *
-	 * @version 1.0.0
+	 * @version 1.0.1
 	 * @since   1.0.0
-	 * @todo    (maybe) move to general shortcodes
+	 * @todo    (maybe) move to `posts` shortcodes
 	 */
-	function alg_awesome_shortcodes_get_posts( $posts = array(), $post_type = 'post', $post_status = 'any', $block_size = 256 ) {
+	function alg_awesome_shortcodes_get_posts( $posts = array(), $post_type = 'post', $post_status = 'any', $block_size = 256, $orderby = 'title', $order = 'ASC' ) {
 		$offset = 0;
 		while( true ) {
 			$args = array(
@@ -27,8 +27,8 @@ if ( ! function_exists( 'alg_awesome_shortcodes_get_posts' ) ) {
 				'post_status'    => $post_status,
 				'posts_per_page' => $block_size,
 				'offset'         => $offset,
-				'orderby'        => 'title',
-				'order'          => 'ASC',
+				'orderby'        => $orderby,
+				'order'          => $order,
 				'fields'         => 'ids',
 			);
 			$loop = new WP_Query( $args );
@@ -50,7 +50,7 @@ if ( ! function_exists( 'alg_awesome_shortcodes_get_table_html' ) ) {
 	 *
 	 * @version 1.0.0
 	 * @since   1.0.0
-	 * @todo    (maybe) move to general shortcodes
+	 * @todo    (maybe) move to `general` shortcodes
 	 */
 	function alg_awesome_shortcodes_get_table_html( $data, $args = array() ) {
 		$defaults = array(
