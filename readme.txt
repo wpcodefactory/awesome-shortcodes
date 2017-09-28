@@ -19,6 +19,8 @@ Currently included packs:
 * Text shortcodes.
 * Posts shortcodes.
 
+If you wish to contribute, join in on our [GitHub repository](https://github.com/algoritmika/awesome-shortcodes).
+
 = Feedback =
 * We are open to your suggestions and feedback. Thank you for using or trying out one of our plugins!
 
