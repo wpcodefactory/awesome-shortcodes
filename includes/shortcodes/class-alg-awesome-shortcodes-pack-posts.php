@@ -57,6 +57,13 @@ class Alg_Awesome_Shortcodes_Pack_Posts extends Alg_Abstract_Awesome_Shortcodes_
 			'posts' => array(
 				'desc'             => __( 'Displays posts.', 'awesome-shortcodes' ),
 				'type'             => 'self-closing',
+				'atts'             => array(
+					'sep' => array(
+						'default'  => '<br>',
+						'desc'     => __( 'Separator.', 'awesome-shortcodes' ),
+						'required' => false,
+					),
+				),
 				'examples'         => array( array() ),
 			),
 		);
@@ -71,7 +78,7 @@ class Alg_Awesome_Shortcodes_Pack_Posts extends Alg_Abstract_Awesome_Shortcodes_
 	 * @todo    (maybe) more atts
 	 */
 	function posts( $atts, $content, $tag ) {
-		return implode( '<br>', alg_awesome_shortcodes_get_posts() );
+		return implode( $atts['sep'], alg_awesome_shortcodes_get_posts() );
 	}
 
 	/**

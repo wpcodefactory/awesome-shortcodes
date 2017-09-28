@@ -103,7 +103,7 @@ class Alg_Awesome_Shortcodes_Admin_Settings {
 	/**
 	 * get_options.
 	 *
-	 * @version 1.0.0
+	 * @version 1.0.1
 	 * @since   1.0.0
 	 * @todo    (maybe) example output: `shortcode_pack->awesome_shortcode( ( ! empty( $example['atts'] ) ? $example['atts'] : array() ), ( ! empty( $example['content'] ) ? $example['content'] : '' ), $prefix . $shortcode_tag, ( isset( $shortcode['func'] ) ? $shortcode['func'] : $shortcode_tag ) )`
 	 * @todo    (maybe) remove `alg_awesome_shortcodes_enabled` completely
@@ -186,7 +186,7 @@ class Alg_Awesome_Shortcodes_Admin_Settings {
 									$att_data['desc'] .
 									'<dl style="margin-top:0;">' .'<dd>' .
 										sprintf( __( 'Default: %s', 'awesome-shortcodes' ), ( '' === $att_data['default'] ?
-											'<em>' . __( 'None', 'awesome-shortcodes' ) . '</em>' : '<code>' . $att_data['default'] . '</code>' ) ) .
+											'<em>' . __( 'None', 'awesome-shortcodes' ) . '</em>' : '<code>' . esc_html( $att_data['default'] ) . '</code>' ) ) .
 									'</dd>' . '</dl>' .
 								'</dd>';
 						}

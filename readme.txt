@@ -25,9 +25,10 @@ Awesome shortcodes.
 == Changelog ==
 
 = 1.0.1 - 28/09/2017 =
+* Dev - `[posts]` - `sep` attribute added.
 * Dev - `[post_id]` shortcode added.
 * Dev - `[post_meta]` shortcode added.
-* Dev - Admin - Minor settings restyling.
+* Dev - Admin - Minor settings restyling etc.
 
 = 1.0.0 - 26/09/2017 =
 * Initial Release.
