@@ -337,7 +337,7 @@ class Alg_Awesome_Shortcodes_Admin_Settings {
 	/**
 	 * get_menu.
 	 *
-	 * @version 1.0.0
+	 * @version 1.0.1
 	 * @since   1.0.0
 	 */
 	function get_menu() {
@@ -356,7 +356,7 @@ class Alg_Awesome_Shortcodes_Admin_Settings {
 			foreach ( alg_awesome_shortcodes()->core->shortcode_packs as $shortcode_pack ) {
 				$types[] = '<li class="' . $shortcode_pack->id . '">' .
 					'<a href="' . add_query_arg( 'type', $shortcode_pack->id ) . '" class="' . ( $shortcode_pack->id === $type ? 'current' : '' ) . '">' .
-						$shortcode_pack->desc .
+						$shortcode_pack->title .
 					'</a>' .
 				'</li>';
 			}

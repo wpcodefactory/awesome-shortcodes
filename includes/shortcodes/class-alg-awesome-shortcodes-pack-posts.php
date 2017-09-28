@@ -23,7 +23,7 @@ class Alg_Awesome_Shortcodes_Pack_Posts extends Alg_Abstract_Awesome_Shortcodes_
 	 */
 	function __construct() {
 		$this->id         = 'posts';
-		$this->desc       = __( 'Posts', 'awesome-shortcodes' );
+		$this->title      = __( 'Posts', 'awesome-shortcodes' );
 		$this->shortcodes = array(
 			'post_id' => array(
 				'desc'             => __( 'Displays current post ID.', 'awesome-shortcodes' ),

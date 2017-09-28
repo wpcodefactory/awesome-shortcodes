@@ -23,7 +23,7 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	 */
 	function __construct() {
 		$this->id         = 'general';
-		$this->desc       = __( 'General', 'awesome-shortcodes' );
+		$this->title      = __( 'General', 'awesome-shortcodes' );
 		$this->shortcodes = array(
 			'timenow' => array(
 				'desc'             => __( 'Shows current time in <code>HH:MM:SS</code> format. Updated every second.', 'awesome-shortcodes' ),
