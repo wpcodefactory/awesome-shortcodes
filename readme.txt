@@ -25,7 +25,7 @@ Awesome shortcodes.
 == Changelog ==
 
 = 1.0.1 - 28/09/2017 =
-* Dev - `[posts]` - `sep`, `max_posts`, `post_type`, `post_status`, `orderby`, `order` attributes added.
+* Dev - `[posts]` - `sep`, `max_posts`, `output_format`, `post_type`, `post_status`, `orderby`, `order` attributes added.
 * Dev - `[post_id]` shortcode added.
 * Dev - `[post_meta]` shortcode added.
 * Dev - "Posts" shortcodes pack added (and `[posts]` shortcode moved from "General" pack).

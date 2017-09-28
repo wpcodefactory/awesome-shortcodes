@@ -69,6 +69,12 @@ class Alg_Awesome_Shortcodes_Pack_Posts extends Alg_Abstract_Awesome_Shortcodes_
 						'desc'     => __( 'Max posts to return number.', 'awesome-shortcodes' ),
 						'required' => false,
 					),
+					'output_format' => array(
+						'default'  => '%title%',
+						'desc'     => __( 'Output format.', 'awesome-shortcodes' ) . ' ' . sprintf( __( 'Replaced values: %s.', 'awesome-shortcodes' ),
+							'<code>' . implode( '</code>, <code>', array( '%title%', '%link%' ) ) . '</code>' ),
+						'required' => false,
+					),
 					'post_type' => array(
 						'default'  => 'post',
 						'desc'     => sprintf( __( 'Post type. Can be custom type, e.g.: %s.', 'awesome-shortcodes' ), '<code>product</code>' ),
@@ -94,14 +100,15 @@ class Alg_Awesome_Shortcodes_Pack_Posts extends Alg_Abstract_Awesome_Shortcodes_
 					array(
 						'desc'    => __( 'Display five recently published products as list:', 'awesome-shortcodes' ),
 						'atts'    => array(
-							'max_posts'   => '5',
-							'post_type'   => 'product',
-							'post_status' => 'publish',
-							'orderby'     => 'date',
-							'order'       => 'desc',
-							'before'      => '<h3>' . __( 'Recent products', 'awesome-shortcodes' ) . '</h3><ul><li>',
-							'sep'         => '</li><li>',
-							'after'       => '</li></ul>',
+							'max_posts'     => '5',
+							'post_type'     => 'product',
+							'post_status'   => 'publish',
+							'orderby'       => 'date',
+							'order'         => 'desc',
+							'before'        => '<h3>' . __( 'Recent products', 'awesome-shortcodes' ) . '</h3><ul><li>',
+							'sep'           => '</li><li>',
+							'after'         => '</li></ul>',
+							'output_format' => '<a href=\'%link%\'>%title%</a>',
 						),
 					),
 				),
@@ -115,9 +122,8 @@ class Alg_Awesome_Shortcodes_Pack_Posts extends Alg_Abstract_Awesome_Shortcodes_
 	 *
 	 * @version 1.0.1
 	 * @since   1.0.0
-	 * @todo    link
-	 * @todo    format (not only title)
-	 * @todo    more params (check WP_Query page)
+	 * @todo    more params (check WP_Query page), e.g. `meta_key`
+	 * @todo    more `output_format` replace values
 	 */
 	function posts( $atts, $content, $tag ) {
 		$args = array(
@@ -132,7 +138,11 @@ class Alg_Awesome_Shortcodes_Pack_Posts extends Alg_Abstract_Awesome_Shortcodes_
 		$posts = array();
 		if ( $loop->have_posts() ) {
 			foreach ( $loop->posts as $post_id ) {
-				$posts[ $post_id ] = get_the_title( $post_id );
+				$replace = array(
+					'%title%' => get_the_title( $post_id ),
+					'%link%'  => get_permalink( $post_id ),
+				);
+				$posts[ $post_id ] = str_replace( array_keys( $replace ), array_values( $replace ), $atts['output_format'] );
 			}
 		}
 		return implode( $atts['sep'], $posts );
