@@ -13,6 +13,12 @@ Awesome shortcodes.
 
 Awesome shortcodes.
 
+Currently included packs:
+
+* General shortcodes.
+* Text shortcodes.
+* Posts shortcodes.
+
 = Feedback =
 * We are open to your suggestions and feedback. Thank you for using or trying out one of our plugins!
 
