@@ -16,6 +16,14 @@ if ( ! class_exists( 'Alg_Awesome_Shortcodes_Pack_Users' ) ) :
 class Alg_Awesome_Shortcodes_Pack_Users extends Alg_Abstract_Awesome_Shortcodes_Pack {
 
 	/**
+	 * current_user.
+	 *
+	 * @version 1.1.1
+	 * @since   1.1.1
+	 */
+	private $current_user;
+
+	/**
 	 * Constructor.
 	 *
 	 * @version 1.1.1
@@ -50,8 +58,21 @@ class Alg_Awesome_Shortcodes_Pack_Users extends Alg_Abstract_Awesome_Shortcodes_
 	 * @since   1.1.1
 	 */
 	function user_firstname( $atts, $content, $tag ) {
-		$current_user = wp_get_current_user();
+		$current_user = $this->get_current_user();
 		return ( 0 != $current_user->ID ? $current_user->user_firstname : '' );
+	}
+
+	/**
+	 * get_current_user.
+	 *
+	 * @version 1.1.1
+	 * @since   1.1.1
+	 */
+	private function get_current_user() {
+		if ( ! isset( $this->current_user ) ) {
+			$this->current_user = wp_get_current_user();
+		}
+		return $this->current_user;
 	}
 
 }
