@@ -43,7 +43,7 @@ class Alg_Awesome_Shortcodes_Pack_Posts extends Alg_Abstract_Awesome_Shortcodes_
 				),
 				'examples'         => array(
 					array(
-						'desc'    => sprintf( __( 'Display number of published posts in your WordPress blog: %s', 'awesome-shortcodes' ), '' ),
+						'desc'    => sprintf( __( 'Display total number of published posts in your WordPress blog: %s', 'awesome-shortcodes' ), '' ),
 						'atts'    => array(
 							'before'      => sprintf( __( 'This blog has %s', 'awesome-shortcodes' ), '' ),
 							'after'       => sprintf( __( '%s published posts.', 'awesome-shortcodes' ), '' ),
@@ -51,7 +51,7 @@ class Alg_Awesome_Shortcodes_Pack_Posts extends Alg_Abstract_Awesome_Shortcodes_
 						),
 					),
 					array(
-						'desc'    => sprintf( __( 'Display number of published products in your WooCommerce based shop: %s', 'awesome-shortcodes' ), '' ),
+						'desc'    => sprintf( __( 'Display total number of published products in your WooCommerce based shop: %s', 'awesome-shortcodes' ), '' ),
 						'atts'    => array(
 							'before'      => sprintf( __( 'This shop has %s', 'awesome-shortcodes' ), '' ),
 							'after'       => sprintf( __( '%s products.', 'awesome-shortcodes' ), '' ),
@@ -60,7 +60,7 @@ class Alg_Awesome_Shortcodes_Pack_Posts extends Alg_Abstract_Awesome_Shortcodes_
 						),
 					),
 					array(
-						'desc'    => sprintf( __( 'Display number of completed orders in your WooCommerce based shop: %s', 'awesome-shortcodes' ), '' ),
+						'desc'    => sprintf( __( 'Display total number of completed orders in your WooCommerce based shop: %s', 'awesome-shortcodes' ), '' ),
 						'atts'    => array(
 							'before'      => sprintf( __( 'So far we\'ve completed %s', 'awesome-shortcodes' ), '<strong>' ),
 							'after'       => sprintf( __( '%s orders.', 'awesome-shortcodes' ), '</strong>' ),
