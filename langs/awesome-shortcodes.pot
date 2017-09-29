@@ -1,0 +1,465 @@
+#: awesome-shortcodes.php:97
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:365
+msgid "Settings"
+msgstr ""
+
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:40
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:41
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:397
+msgid "Awesome Shortcodes"
+msgstr ""
+
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:101
+msgid "Your settings have been saved."
+msgstr ""
+
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:120
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:130
+msgid "Enable"
+msgstr ""
+
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:121
+msgid "Enable plugin"
+msgstr ""
+
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:129
+msgid "Enable shortcodes in text widgets"
+msgstr ""
+
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:131
+msgid "Enable all shortcodes (including awesome) in text widgets."
+msgstr ""
+
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:138
+msgid "Awesome shortcodes prefix"
+msgstr ""
+
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:139
+msgid ""
+"Prefix all awesome shortcodes. Setting this is useful if you have "
+"compatibility issues with other shortcodes with matching names."
+msgstr ""
+
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:189
+msgid "required"
+msgstr ""
+
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:189
+msgid "optional"
+msgstr ""
+
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:192
+#, php-format
+msgid "Default: %s"
+msgstr ""
+
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:193
+msgid "None"
+msgstr ""
+
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:245
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:277
+msgid "Select All"
+msgstr ""
+
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:246
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:279
+msgid "Shortcode"
+msgstr ""
+
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:247
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:280
+msgid "Description"
+msgstr ""
+
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:248
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:281
+msgid "Attributes"
+msgstr ""
+
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:249
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:282
+msgid "Examples"
+msgstr ""
+
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:250
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:283
+msgid "Aliases"
+msgstr ""
+
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:260
+msgid "Documentation"
+msgstr ""
+
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:351
+msgid "Save changes"
+msgstr ""
+
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:367
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:399
+msgid "Shortcodes"
+msgstr ""
+
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:399
+msgid "Options"
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-general.php:27
+msgid "General"
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-general.php:28
+msgid "General shortcodes."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-general.php:31
+msgid ""
+"Shows current time in <code>HH:MM:SS</code> format. Updated every second."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-general.php:38
+msgid "Creates a countdown timer. Updated every second."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-general.php:45
+msgid "Date we're counting down to. E.g.: <code>2021/01/01 12:00</code>."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-general.php:56
+msgid "Hides content. Useful for commenting."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-general.php:61
+msgid "This text will be hidden."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-general.php:66
+msgid "Displays HTML table."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-general.php:76
+msgid "Table CSS class."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-general.php:80
+#, php-format
+msgid "Table heading type. Possible values: %s."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-general.php:86
+msgid "Displays current date."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-general.php:91
+msgid ""
+"Date format. As in PHP <code>date</code> function (<a target=\"_blank\" href="
+"\"http://php.net/manual/en/function.date.php\">http://php.net/manual/en/"
+"function.date.php</a>)."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-posts.php:26
+msgid "Posts"
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-posts.php:27
+msgid "Posts shortcodes."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-posts.php:30
+msgid "Displays total number of posts in your site."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-posts.php:35
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-posts.php:133
+#, php-format
+msgid "Post type. Can be custom type, e.g.: %s."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-posts.php:40
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-posts.php:138
+#, php-format
+msgid "Post status, e.g.: %s."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-posts.php:46
+#, php-format
+msgid "Display total number of published posts in your WordPress blog: %s"
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-posts.php:48
+#, php-format
+msgid "This blog has %s"
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-posts.php:49
+#, php-format
+msgid "%s published posts."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-posts.php:54
+#, php-format
+msgid ""
+"Display total number of published products in your WooCommerce based shop: %s"
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-posts.php:56
+#, php-format
+msgid "This shop has %s"
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-posts.php:57
+#, php-format
+msgid "%s products."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-posts.php:63
+#, php-format
+msgid ""
+"Display total number of completed orders in your WooCommerce based shop: %s"
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-posts.php:65
+#, php-format
+msgid "So far we've completed %s"
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-posts.php:66
+#, php-format
+msgid "%s orders."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-posts.php:69
+msgid "No orders yet."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-posts.php:75
+msgid "Displays current post ID."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-posts.php:80
+#, php-format
+msgid "Current post ID: %s"
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-posts.php:86
+msgid "Displays post meta field value."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-posts.php:91
+msgid "Post meta key to retrieve."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-posts.php:96
+msgid "Post ID. If not set - current post ID is used."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-posts.php:102
+#, php-format
+msgid "Display total sales for product in WooCommerce based shop:%s"
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-posts.php:105
+#, php-format
+msgid "Total sales: %s"
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-posts.php:111
+msgid ""
+"Displays posts. Check <a target=\"_blank\" href=\"https://codex.wordpress."
+"org/Class_Reference/WP_Query\">WP_Query page</a> for more info on params."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-posts.php:117
+msgid "Separator."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-posts.php:122
+msgid "Max posts to return number."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-posts.php:127
+msgid "Output format."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-posts.php:127
+#, php-format
+msgid "Replaced values: %s."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-posts.php:143
+#, php-format
+msgid "Order by parameter, e.g.: %s."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-posts.php:148
+msgid "Order (<code>ASC</code> or <code>DESC</code>)."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-posts.php:154
+msgid "Display five recently published products as list:"
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-posts.php:161
+msgid "Recent Products"
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-posts.php:168
+msgid "Display twenty recently published posts:"
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-posts.php:175
+msgid "Recent Posts"
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:26
+msgid "Text"
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:27
+msgid "Text shortcodes."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:30
+msgid "Strikeouts content."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:35
+msgid "This text will be striked out."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:40
+#, php-format
+msgid ""
+"Wrap contents in %s tag. Useful for displaying a piece of computer code."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:49
+msgid "Creates 3D text with CSS."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:55
+msgid "Font size."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:63
+msgid "Text in 3D"
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:68
+msgid "Creates flashing text effect with CSS."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:73
+msgid "Attention"
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-users.php:35
+msgid "Users"
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-users.php:36
+msgid "Users shortcodes."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-users.php:39
+msgid ""
+"Displays current user login (i.e. username). If user is not logged, nothing "
+"is displayed."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-users.php:44
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-users.php:57
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-users.php:109
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-users.php:136
+#, php-format
+msgid "You are not logged, please <a href='%s'>login</a>."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-users.php:45
+#, php-format
+msgid "Logged as %s"
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-users.php:52
+msgid ""
+"Displays current user email. If user is not logged, nothing is displayed."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-users.php:58
+#, php-format
+msgid "Your email is %s"
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-users.php:59
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-users.php:111
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-users.php:138
+msgid "."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-users.php:65
+msgid ""
+"Displays current user first name. If user is not logged, nothing is "
+"displayed."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-users.php:70
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-users.php:96
+msgid "Howdy, Stranger!"
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-users.php:71
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-users.php:97
+#, php-format
+msgid "Howdy, %s"
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-users.php:78
+msgid ""
+"Displays current user last name. If user is not logged, nothing is displayed."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-users.php:83
+msgid "Howdy, Mr. Stranger!"
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-users.php:84
+#, php-format
+msgid "Howdy, Mr. %s"
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-users.php:91
+msgid ""
+"Displays current user display name. If user is not logged, nothing is "
+"displayed."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-users.php:104
+msgid "Displays current user ID. If user is not logged, nothing is displayed."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-users.php:110
+#, php-format
+msgid "Your ID: %s"
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-users.php:117
+msgid ""
+"Displays current user selected property. If user is not logged, nothing is "
+"displayed."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-users.php:122
+msgid "Property to display."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-users.php:127
+#, php-format
+msgid ""
+"If resulting property is an array, it's \"glued\" with PHP <code>implode()</"
+"code> function (%s). You can set function's <code>glue</code> argument here."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-users.php:137
+#, php-format
+msgid "Your role(s): %s"
+msgstr ""
