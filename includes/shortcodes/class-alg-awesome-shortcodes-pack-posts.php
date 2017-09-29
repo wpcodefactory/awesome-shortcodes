@@ -75,7 +75,9 @@ class Alg_Awesome_Shortcodes_Pack_Posts extends Alg_Abstract_Awesome_Shortcodes_
 				'type'             => 'self-closing',
 				'examples'         => array(
 					array(
-						'before' => sprintf( __( 'Current post ID: %s', 'awesome-shortcodes' ), '' ),
+						'atts'    => array(
+							'before' => sprintf( __( 'Current post ID: %s', 'awesome-shortcodes' ), '' ),
+						),
 					),
 				),
 			),
