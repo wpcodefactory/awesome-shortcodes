@@ -13,11 +13,12 @@ Awesome shortcodes.
 
 Awesome shortcodes.
 
-Currently included packs:
+Currently included shortcode packs:
 
 * General shortcodes.
 * Text shortcodes.
 * Posts shortcodes.
+* Users shortcodes.
 
 If you wish to contribute, join in on our [GitHub repository](https://github.com/algoritmika/awesome-shortcodes).
 

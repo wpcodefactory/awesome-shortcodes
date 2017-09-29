@@ -99,6 +99,7 @@ class Alg_Awesome_Shortcodes_Pack_Posts extends Alg_Abstract_Awesome_Shortcodes_
 				),
 				'examples'         => array(
 					array(
+						'desc'    => sprintf( __( 'Display total sales for product in WooCommerce based shop:%s', 'awesome-shortcodes' ), '' ),
 						'atts'    => array(
 							'key'    => 'total_sales',
 							'before' => sprintf( __( 'Total sales: %s', 'awesome-shortcodes' ), '' ),
@@ -185,6 +186,7 @@ class Alg_Awesome_Shortcodes_Pack_Posts extends Alg_Abstract_Awesome_Shortcodes_
 	 *
 	 * @version 1.2.0
 	 * @since   1.2.0
+	 * @todo    more params (check WP_Query page), e.g. `meta_key`
 	 */
 	function total_posts( $atts, $content, $tag ) {
 		$args = array(
