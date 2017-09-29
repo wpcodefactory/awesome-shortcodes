@@ -20,6 +20,7 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	 *
 	 * @version 1.1.1
 	 * @since   1.0.0
+	 * @todo    add shortcodes: `total_categories`, `total_tags`, `total_taxonomy`
 	 */
 	function __construct() {
 		$this->id         = 'general';

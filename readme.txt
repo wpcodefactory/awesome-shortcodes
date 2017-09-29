@@ -43,6 +43,7 @@ If you wish to contribute, join in on our [GitHub repository](https://github.com
 * Dev - `[user_property]` shortcode added.
 * Dev - `[total_posts]` shortcode added.
 * Dev - `[posts]` - Example added.
+* Dev - `on_zero` common attribute added.
 * Dev - "Users" shortcodes pack added.
 
 = 1.1.0 - 28/09/2017 =

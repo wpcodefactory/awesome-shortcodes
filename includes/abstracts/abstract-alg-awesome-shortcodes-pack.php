@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Shortcode Packs - Abstract
  *
- * @version 1.0.0
+ * @version 1.1.1
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -48,7 +48,7 @@ class Alg_Abstract_Awesome_Shortcodes_Pack {
 	/**
 	 * awesome_shortcode.
 	 *
-	 * @version 1.0.0
+	 * @version 1.1.1
 	 * @since   1.0.0
 	 * @todo    (maybe) language, location, site_visibility, user_visibility etc.
 	 */
@@ -57,6 +57,7 @@ class Alg_Abstract_Awesome_Shortcodes_Pack {
 			'before'    => '',
 			'after'     => '',
 			'on_empty'  => '',
+			'on_zero'   => 0,
 		);
 		$prefix_len   = strlen( alg_awesome_shortcodes()->core->prefix );
 		$original_tag = ( 0 != $prefix_len ? substr( $tag, $prefix_len ) : $tag );
@@ -68,7 +69,14 @@ class Alg_Abstract_Awesome_Shortcodes_Pack {
 		$atts   = shortcode_atts( $default_atts, $atts, $original_tag );
 		$func   = ( '' == $func ? $this->func[ $original_tag ] : $func );
 		$output = $this->$func( $atts, $content, $original_tag );
-		return ( '' === $output ? $atts['on_empty'] : $atts['before'] . $output . $atts['after'] );
+		switch ( true ) {
+			case '' === $output:
+				return $atts['on_empty'];
+			case 0 === $output:
+				return $atts['on_zero'];
+			default:
+				return $atts['before'] . $output . $atts['after'];
+		}
 	}
 
 }

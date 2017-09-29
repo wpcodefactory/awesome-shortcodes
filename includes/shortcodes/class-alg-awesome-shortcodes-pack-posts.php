@@ -66,6 +66,7 @@ class Alg_Awesome_Shortcodes_Pack_Posts extends Alg_Abstract_Awesome_Shortcodes_
 							'after'       => sprintf( __( '%s orders.', 'awesome-shortcodes' ), '</strong>' ),
 							'post_type'   => 'shop_order',
 							'post_status' => 'wc-completed',
+							'on_zero'     => __( 'No orders yet.', 'awesome-shortcodes' ),
 						),
 					),
 				),
@@ -184,7 +185,6 @@ class Alg_Awesome_Shortcodes_Pack_Posts extends Alg_Abstract_Awesome_Shortcodes_
 	 *
 	 * @version 1.1.1
 	 * @since   1.1.1
-	 * @todo    add `on zero` common attribute
 	 */
 	function total_posts( $atts, $content, $tag ) {
 		$args = array(
