@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Shortcode Packs - Users
  *
- * @version 1.2.0
+ * @version 1.2.1
  * @since   1.2.0
  * @author  Algoritmika Ltd.
  */
@@ -27,7 +27,7 @@ class Alg_Awesome_Shortcodes_Pack_Users extends Alg_Abstract_Awesome_Shortcodes_
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.2.0
+	 * @version 1.2.1
 	 * @since   1.2.0
 	 */
 	function __construct() {
@@ -35,6 +35,17 @@ class Alg_Awesome_Shortcodes_Pack_Users extends Alg_Abstract_Awesome_Shortcodes_
 		$this->title      = __( 'Users', 'awesome-shortcodes' );
 		$this->desc       = __( 'Users shortcodes.', 'awesome-shortcodes' );
 		$this->shortcodes = array(
+			'user_ip' => array(
+				'desc'             => __( 'Displays current user IP.', 'awesome-shortcodes' ),
+				'type'             => 'self-closing',
+				'examples'         => array(
+					array(
+						'atts'    => array(
+							'before'   => sprintf( __( 'Your IP: %s', 'awesome-shortcodes' ), '' ),
+						),
+					),
+				),
+			),
 			'user_login' => array(
 				'desc'             => __( 'Displays current user login (i.e. username). If user is not logged, nothing is displayed.', 'awesome-shortcodes' ),
 				'type'             => 'self-closing',
@@ -143,6 +154,16 @@ class Alg_Awesome_Shortcodes_Pack_Users extends Alg_Abstract_Awesome_Shortcodes_
 			),
 		);
 		parent::__construct();
+	}
+
+	/**
+	 * user_ip.
+	 *
+	 * @version 1.2.1
+	 * @since   1.2.1
+	 */
+	function user_ip( $atts, $content, $tag ) {
+		return $_SERVER['REMOTE_ADDR'];
 	}
 
 	/**
