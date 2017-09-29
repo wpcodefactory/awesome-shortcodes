@@ -2,8 +2,8 @@
 /**
  * Awesome Shortcodes - Shortcode Packs - Users
  *
- * @version 1.1.1
- * @since   1.1.1
+ * @version 1.2.0
+ * @since   1.2.0
  * @author  Algoritmika Ltd.
  */
 
@@ -18,8 +18,8 @@ class Alg_Awesome_Shortcodes_Pack_Users extends Alg_Abstract_Awesome_Shortcodes_
 	/**
 	 * current_user.
 	 *
-	 * @version 1.1.1
-	 * @since   1.1.1
+	 * @version 1.2.0
+	 * @since   1.2.0
 	 * @todo    (maybe) add `is_user_logged_in` property (`is_user_logged_in()`)
 	 */
 	private $current_user;
@@ -27,8 +27,8 @@ class Alg_Awesome_Shortcodes_Pack_Users extends Alg_Abstract_Awesome_Shortcodes_
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.1.1
-	 * @since   1.1.1
+	 * @version 1.2.0
+	 * @since   1.2.0
 	 */
 	function __construct() {
 		$this->id         = 'users';
@@ -148,8 +148,8 @@ class Alg_Awesome_Shortcodes_Pack_Users extends Alg_Abstract_Awesome_Shortcodes_
 	/**
 	 * user_login.
 	 *
-	 * @version 1.1.1
-	 * @since   1.1.1
+	 * @version 1.2.0
+	 * @since   1.2.0
 	 * @todo    (maybe) add `username` alias
 	 */
 	function user_login( $atts, $content, $tag ) {
@@ -160,8 +160,8 @@ class Alg_Awesome_Shortcodes_Pack_Users extends Alg_Abstract_Awesome_Shortcodes_
 	/**
 	 * user_email.
 	 *
-	 * @version 1.1.1
-	 * @since   1.1.1
+	 * @version 1.2.0
+	 * @since   1.2.0
 	 */
 	function user_email( $atts, $content, $tag ) {
 		$current_user = $this->get_current_user();
@@ -171,8 +171,8 @@ class Alg_Awesome_Shortcodes_Pack_Users extends Alg_Abstract_Awesome_Shortcodes_
 	/**
 	 * user_first_name.
 	 *
-	 * @version 1.1.1
-	 * @since   1.1.1
+	 * @version 1.2.0
+	 * @since   1.2.0
 	 */
 	function user_first_name( $atts, $content, $tag ) {
 		$current_user = $this->get_current_user();
@@ -182,8 +182,8 @@ class Alg_Awesome_Shortcodes_Pack_Users extends Alg_Abstract_Awesome_Shortcodes_
 	/**
 	 * user_last_name.
 	 *
-	 * @version 1.1.1
-	 * @since   1.1.1
+	 * @version 1.2.0
+	 * @since   1.2.0
 	 */
 	function user_last_name( $atts, $content, $tag ) {
 		$current_user = $this->get_current_user();
@@ -193,8 +193,8 @@ class Alg_Awesome_Shortcodes_Pack_Users extends Alg_Abstract_Awesome_Shortcodes_
 	/**
 	 * user_display_name.
 	 *
-	 * @version 1.1.1
-	 * @since   1.1.1
+	 * @version 1.2.0
+	 * @since   1.2.0
 	 */
 	function user_display_name( $atts, $content, $tag ) {
 		$current_user = $this->get_current_user();
@@ -204,8 +204,8 @@ class Alg_Awesome_Shortcodes_Pack_Users extends Alg_Abstract_Awesome_Shortcodes_
 	/**
 	 * user_id.
 	 *
-	 * @version 1.1.1
-	 * @since   1.1.1
+	 * @version 1.2.0
+	 * @since   1.2.0
 	 */
 	function user_id( $atts, $content, $tag ) {
 		$current_user = $this->get_current_user();
@@ -215,8 +215,8 @@ class Alg_Awesome_Shortcodes_Pack_Users extends Alg_Abstract_Awesome_Shortcodes_
 	/**
 	 * user_property.
 	 *
-	 * @version 1.1.1
-	 * @since   1.1.1
+	 * @version 1.2.0
+	 * @since   1.2.0
 	 */
 	function user_property( $atts, $content, $tag ) {
 		if ( '' === $atts['property'] ) {
@@ -233,8 +233,8 @@ class Alg_Awesome_Shortcodes_Pack_Users extends Alg_Abstract_Awesome_Shortcodes_
 	/**
 	 * get_current_user.
 	 *
-	 * @version 1.1.1
-	 * @since   1.1.1
+	 * @version 1.2.0
+	 * @since   1.2.0
 	 */
 	private function get_current_user() {
 		if ( ! isset( $this->current_user ) ) {

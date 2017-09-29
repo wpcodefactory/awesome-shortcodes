@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Shortcode Packs - Abstract
  *
- * @version 1.1.1
+ * @version 1.2.0
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -48,7 +48,7 @@ class Alg_Abstract_Awesome_Shortcodes_Pack {
 	/**
 	 * awesome_shortcode.
 	 *
-	 * @version 1.1.1
+	 * @version 1.2.0
 	 * @since   1.0.0
 	 * @todo    (maybe) language, location, site_visibility, user_visibility etc.
 	 */
