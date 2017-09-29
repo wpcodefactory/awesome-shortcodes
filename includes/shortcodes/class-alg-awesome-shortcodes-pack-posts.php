@@ -26,11 +26,56 @@ class Alg_Awesome_Shortcodes_Pack_Posts extends Alg_Abstract_Awesome_Shortcodes_
 		$this->title      = __( 'Posts', 'awesome-shortcodes' );
 		$this->desc       = __( 'Posts shortcodes.', 'awesome-shortcodes' );
 		$this->shortcodes = array(
+			'total_posts' => array(
+				'desc'             => __( 'Displays total number of posts in your site.', 'awesome-shortcodes' ),
+				'type'             => 'self-closing',
+				'atts'             => array(
+					'post_type' => array(
+						'default'  => 'post',
+						'desc'     => sprintf( __( 'Post type. Can be custom type, e.g.: %s.', 'awesome-shortcodes' ), '<code>product</code>' ),
+						'required' => false,
+					),
+					'post_status' => array(
+						'default'  => 'any',
+						'desc'     => sprintf( __( 'Post status, e.g.: %s.', 'awesome-shortcodes' ), '<code>publish</code>' ),
+						'required' => false,
+					),
+				),
+				'examples'         => array(
+					array(
+						'desc'    => sprintf( __( 'Display number of published posts in your WordPress blog: %s', 'awesome-shortcodes' ), '' ),
+						'atts'    => array(
+							'before'      => sprintf( __( 'This blog has %s', 'awesome-shortcodes' ), '' ),
+							'after'       => sprintf( __( '%s published posts.', 'awesome-shortcodes' ), '' ),
+							'post_status' => 'publish',
+						),
+					),
+					array(
+						'desc'    => sprintf( __( 'Display number of published products in your WooCommerce based shop: %s', 'awesome-shortcodes' ), '' ),
+						'atts'    => array(
+							'before'      => sprintf( __( 'This shop has %s', 'awesome-shortcodes' ), '' ),
+							'after'       => sprintf( __( '%s products.', 'awesome-shortcodes' ), '' ),
+							'post_type'   => 'product',
+							'post_status' => 'publish',
+						),
+					),
+					array(
+						'desc'    => sprintf( __( 'Display number of completed orders in your WooCommerce based shop: %s', 'awesome-shortcodes' ), '' ),
+						'atts'    => array(
+							'before'      => sprintf( __( 'So far we\'ve completed %s', 'awesome-shortcodes' ), '<strong>' ),
+							'after'       => sprintf( __( '%s orders.', 'awesome-shortcodes' ), '</strong>' ),
+							'post_type'   => 'shop_order',
+							'post_status' => 'wc-completed',
+						),
+					),
+				),
+			),
 			'post_id' => array(
 				'desc'             => __( 'Displays current post ID.', 'awesome-shortcodes' ),
 				'type'             => 'self-closing',
-				'examples'         => array( array(
-						'before' => __( 'Current post ID: ', 'awesome-shortcodes' ),
+				'examples'         => array(
+					array(
+						'before' => sprintf( __( 'Current post ID: %s', 'awesome-shortcodes' ), '' ),
 					),
 				),
 			),
@@ -51,7 +96,10 @@ class Alg_Awesome_Shortcodes_Pack_Posts extends Alg_Abstract_Awesome_Shortcodes_
 				),
 				'examples'         => array(
 					array(
-						'atts'    => array( 'key' => 'total_sales', 'before' => __( 'Total sales: ', 'awesome-shortcodes' ) ),
+						'atts'    => array(
+							'key'    => 'total_sales',
+							'before' => sprintf( __( 'Total sales: %s', 'awesome-shortcodes' ), '' ),
+						),
 					),
 				),
 			),
@@ -127,6 +175,24 @@ class Alg_Awesome_Shortcodes_Pack_Posts extends Alg_Abstract_Awesome_Shortcodes_
 			),
 		);
 		parent::__construct();
+	}
+
+	/**
+	 * total_posts.
+	 *
+	 * @version 1.1.1
+	 * @since   1.1.1
+	 * @todo    add `on zero` common attribute
+	 */
+	function total_posts( $atts, $content, $tag ) {
+		$args = array(
+			'post_type'      => $atts['post_type'],
+			'post_status'    => $atts['post_status'],
+			'posts_per_page' => -1,
+			'fields'         => 'ids',
+		);
+		$loop = new WP_Query( $args );
+		return $loop->post_count;
 	}
 
 	/**
