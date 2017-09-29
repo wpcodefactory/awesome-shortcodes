@@ -26,19 +26,6 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 		$this->title      = __( 'General', 'awesome-shortcodes' );
 		$this->desc       = __( 'General shortcodes.', 'awesome-shortcodes' );
 		$this->shortcodes = array(
-			'user_firstname' => array(
-				'desc'             => __( 'Displays logged user name. If user is not logged, nothing is displayed.', 'awesome-shortcodes' ),
-				'type'             => 'self-closing',
-				'examples'         => array(
-					array(
-						'atts'    => array(
-							'on_empty' => __( 'Howdy, Stranger!', 'awesome-shortcodes' ),
-							'before'   => __( 'Howdy, ', 'awesome-shortcodes' ),
-							'after'    => __( '!', 'awesome-shortcodes' ),
-						),
-					),
-				),
-			),
 			'timenow' => array(
 				'desc'             => __( 'Shows current time in <code>HH:MM:SS</code> format. Updated every second.', 'awesome-shortcodes' ),
 				'type'             => 'self-closing',
@@ -115,18 +102,6 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 			),
 		);
 		parent::__construct();
-	}
-
-	/**
-	 * user_firstname.
-	 *
-	 * @version 1.1.1
-	 * @since   1.1.1
-	 * @todo    move to "Users" pack
-	 */
-	function user_firstname( $atts, $content, $tag ) {
-		$current_user = wp_get_current_user();
-		return ( 0 != $current_user->ID ? $current_user->user_firstname : '' );
 	}
 
 	/**
