@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Shortcode Packs - General
  *
- * @version 1.2.0
+ * @version 1.2.1
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -18,9 +18,10 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.2.0
+	 * @version 1.2.1
 	 * @since   1.0.0
 	 * @todo    add shortcodes: `total_categories`, `total_tags`, `total_taxonomy` (maybe in "Taxonomies" pack)
+	 * @todo    add shortcodes: `progress_bar`
 	 */
 	function __construct() {
 		$this->id         = 'general';
@@ -49,6 +50,64 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 				'examples'         => array(
 					array(
 						'atts'    => array( 'date_to' => '2021/01/01 12:00' )
+					),
+				),
+			),
+			'number_counter' => array(
+				'desc'             => __( 'Creates an animated number counter.', 'awesome-shortcodes' ),
+				'type'             => 'self-closing',
+				'aliases'          => array( 'count' ),
+				'enqueue_scripts'  => array( array( 'src' => 'js/number-counter.js' ) ),
+				'atts'             => array(
+					'number_to' => array(
+						'default'  => '',
+						'desc'     => __( 'Number we\'re counting to.', 'awesome-shortcodes' ),
+						'required' => true,
+					),
+					'number_from' => array(
+						'default'  => 0,
+						'desc'     => __( 'Number we\'re counting from.', 'awesome-shortcodes' ),
+						'required' => false,
+					),
+					'duration' => array(
+						'default'  => 4000,
+						'desc'     => __( 'Duration determining how long the animation will run (in milliseconds).', 'awesome-shortcodes' ),
+						'required' => false,
+					),
+					'easing' => array(
+						'default'  => 'swing',
+						'desc'     => sprintf( __( 'Easing function to use for the transition. Possible values: %s.', 'awesome-shortcodes' ),
+							'<code>swing</code>, <code>linear</code>' ),
+						'required' => false,
+					),
+				),
+				'examples'         => array(
+					array(
+						'desc'    => __( 'Count from 1900 to 2000 with <code>linear</code> easing:', 'awesome-shortcodes' ),
+						'atts'    => array(
+							'number_from' => 1900,
+							'number_to'   => 2000,
+							'duration'    => 10000,
+							'easing'      => 'linear',
+						)
+					),
+					array(
+						'desc'    => __( 'Count from 1900 to 2000 with <code>swing</code> easing:', 'awesome-shortcodes' ),
+						'atts'    => array(
+							'number_from' => 1900,
+							'number_to'   => 2000,
+							'duration'    => 10000,
+							'easing'      => 'swing',
+						)
+					),
+					array(
+						'desc'    => __( 'Count from 100 to 0:', 'awesome-shortcodes' ),
+						'atts'    => array(
+							'number_from' => 100,
+							'number_to'   => 0,
+							'before'      => '<strong>',
+							'after'       => '</strong>',
+						)
 					),
 				),
 			),
@@ -103,6 +162,22 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 			),
 		);
 		parent::__construct();
+	}
+
+	/**
+	 * number_counter.
+	 *
+	 * @version 1.0.0
+	 * @since   1.0.0
+	 */
+	function number_counter( $atts, $content, $tag ) {
+		return ( '' !== $atts['number_to'] ?
+			'<span class="awesome-shortcode-count"' .
+				' number-from="' . $atts['number_from'] . '"' .
+				' number-to="'   . $atts['number_to']   . '"' .
+				' duration="'    . $atts['duration']    . '"' .
+				' easing="'      . $atts['easing']      . '"' .
+			'>'. '</span>' : '' );
 	}
 
 	/**
