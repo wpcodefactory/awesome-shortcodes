@@ -60,7 +60,7 @@ class Alg_Awesome_Shortcodes_Pack_Users extends Alg_Abstract_Awesome_Shortcodes_
 					),
 				),
 			),
-			'user_firstname' => array(
+			'user_first_name' => array(
 				'desc'             => __( 'Displays logged user name. If user is not logged, nothing is displayed.', 'awesome-shortcodes' ),
 				'type'             => 'self-closing',
 				'examples'         => array(
@@ -101,12 +101,12 @@ class Alg_Awesome_Shortcodes_Pack_Users extends Alg_Abstract_Awesome_Shortcodes_
 	}
 
 	/**
-	 * user_firstname.
+	 * user_first_name.
 	 *
 	 * @version 1.1.1
 	 * @since   1.1.1
 	 */
-	function user_firstname( $atts, $content, $tag ) {
+	function user_first_name( $atts, $content, $tag ) {
 		$current_user = $this->get_current_user();
 		return ( 0 != $current_user->ID ? $current_user->user_firstname : '' );
 	}
