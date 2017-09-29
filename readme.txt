@@ -36,6 +36,9 @@ If you wish to contribute, join in on our [GitHub repository](https://github.com
 * Dev - `[user_login]` shortcode added.
 * Dev - `[user_email]` shortcode added.
 * Dev - `[user_first_name]` shortcode added.
+* Dev - `[user_last_name]` shortcode added.
+* Dev - `[user_display_name]` shortcode added.
+* Dev - `[user_id]` shortcode added.
 * Dev - `[posts]` - Example added.
 * Dev - "Users" shortcodes pack added.
 

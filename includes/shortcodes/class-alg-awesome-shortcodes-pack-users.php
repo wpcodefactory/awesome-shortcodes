@@ -61,7 +61,7 @@ class Alg_Awesome_Shortcodes_Pack_Users extends Alg_Abstract_Awesome_Shortcodes_
 				),
 			),
 			'user_first_name' => array(
-				'desc'             => __( 'Displays logged user name. If user is not logged, nothing is displayed.', 'awesome-shortcodes' ),
+				'desc'             => __( 'Displays logged user first name. If user is not logged, nothing is displayed.', 'awesome-shortcodes' ),
 				'type'             => 'self-closing',
 				'examples'         => array(
 					array(
@@ -69,6 +69,45 @@ class Alg_Awesome_Shortcodes_Pack_Users extends Alg_Abstract_Awesome_Shortcodes_
 							'on_empty' => __( 'Howdy, Stranger!', 'awesome-shortcodes' ),
 							'before'   => sprintf( __( 'Howdy, %s', 'awesome-shortcodes' ), '' ),
 							'after'    => '!',
+						),
+					),
+				),
+			),
+			'user_last_name' => array(
+				'desc'             => __( 'Displays logged user last name. If user is not logged, nothing is displayed.', 'awesome-shortcodes' ),
+				'type'             => 'self-closing',
+				'examples'         => array(
+					array(
+						'atts'    => array(
+							'on_empty' => __( 'Howdy, Mr. Stranger!', 'awesome-shortcodes' ),
+							'before'   => sprintf( __( 'Howdy, Mr. %s', 'awesome-shortcodes' ), '' ),
+							'after'    => '!',
+						),
+					),
+				),
+			),
+			'user_display_name' => array(
+				'desc'             => __( 'Displays logged user display name. If user is not logged, nothing is displayed.', 'awesome-shortcodes' ),
+				'type'             => 'self-closing',
+				'examples'         => array(
+					array(
+						'atts'    => array(
+							'on_empty' => __( 'Howdy, Stranger!', 'awesome-shortcodes' ),
+							'before'   => sprintf( __( 'Howdy, %s', 'awesome-shortcodes' ), '' ),
+							'after'    => '!',
+						),
+					),
+				),
+			),
+			'user_id' => array(
+				'desc'             => __( 'Displays logged user ID. If user is not logged, nothing is displayed.', 'awesome-shortcodes' ),
+				'type'             => 'self-closing',
+				'examples'         => array(
+					array(
+						'atts'    => array(
+							'on_empty' => sprintf( __( 'You are not logged, please <a href=\'%s\'>login</a>.', 'awesome-shortcodes' ), '/wp-login.php' ),
+							'before'   => sprintf( __( 'Your ID: %s', 'awesome-shortcodes' ), '' ),
+							'after'    => __( '.', 'awesome-shortcodes' ),
 						),
 					),
 				),
@@ -109,6 +148,39 @@ class Alg_Awesome_Shortcodes_Pack_Users extends Alg_Abstract_Awesome_Shortcodes_
 	function user_first_name( $atts, $content, $tag ) {
 		$current_user = $this->get_current_user();
 		return ( 0 != $current_user->ID ? $current_user->user_firstname : '' );
+	}
+
+	/**
+	 * user_last_name.
+	 *
+	 * @version 1.1.1
+	 * @since   1.1.1
+	 */
+	function user_last_name( $atts, $content, $tag ) {
+		$current_user = $this->get_current_user();
+		return ( 0 != $current_user->ID ? $current_user->user_lastname : '' );
+	}
+
+	/**
+	 * user_display_name.
+	 *
+	 * @version 1.1.1
+	 * @since   1.1.1
+	 */
+	function user_display_name( $atts, $content, $tag ) {
+		$current_user = $this->get_current_user();
+		return ( 0 != $current_user->ID ? $current_user->display_name : '' );
+	}
+
+	/**
+	 * user_id.
+	 *
+	 * @version 1.1.1
+	 * @since   1.1.1
+	 */
+	function user_id( $atts, $content, $tag ) {
+		$current_user = $this->get_current_user();
+		return ( 0 != $current_user->ID ? $current_user->ID : '' );
 	}
 
 	/**
