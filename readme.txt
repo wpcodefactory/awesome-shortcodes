@@ -33,6 +33,8 @@ If you wish to contribute, join in on our [GitHub repository](https://github.com
 == Changelog ==
 
 = 1.1.1 - 29/09/2017 =
+* Dev - `[user_login]` shortcode added.
+* Dev - `[user_email]` shortcode added.
 * Dev - `[user_firstname]` shortcode added.
 * Dev - `[posts]` - Example added.
 * Dev - "Users" shortcodes pack added.
