@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Shortcodes - Core
  *
- * @version 1.1.0
+ * @version 1.1.1
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -49,13 +49,14 @@ class Alg_Awesome_Shortcodes_Core {
 	/**
 	 * load_shortcode_packs.
 	 *
-	 * @version 1.1.0
+	 * @version 1.1.1
 	 * @since   1.0.0
 	 */
 	function load_shortcode_packs() {
 		$this->shortcode_packs[] = require_once( 'shortcodes/class-alg-awesome-shortcodes-pack-general.php' );
 		$this->shortcode_packs[] = require_once( 'shortcodes/class-alg-awesome-shortcodes-pack-text.php' );
 		$this->shortcode_packs[] = require_once( 'shortcodes/class-alg-awesome-shortcodes-pack-posts.php' );
+		$this->shortcode_packs[] = require_once( 'shortcodes/class-alg-awesome-shortcodes-pack-users.php' );
 	}
 
 	/**

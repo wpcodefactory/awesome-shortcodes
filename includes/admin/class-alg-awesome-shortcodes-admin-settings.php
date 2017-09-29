@@ -20,6 +20,7 @@ class Alg_Awesome_Shortcodes_Admin_Settings {
 	 *
 	 * @version 1.0.0
 	 * @since   1.0.0
+	 * @todo    add "All" shortcodes section
 	 * @todo    (maybe) replace `get_option( 'alg_awesome_shortcodes_options', array() )` with `alg_awesome_shortcodes()->core->shortcodes_options`
 	 * @todo    (maybe) replace `get_option( 'alg_awesome_shortcodes_prefix', '' )` with `alg_awesome_shortcodes()->core->prefix`
 	 */

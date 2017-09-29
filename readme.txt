@@ -32,9 +32,10 @@ If you wish to contribute, join in on our [GitHub repository](https://github.com
 
 == Changelog ==
 
-= 1.1.1 - 28/09/2017 =
+= 1.1.1 - 29/09/2017 =
 * Dev - `[user_firstname]` shortcode added.
 * Dev - `[posts]` - Example added.
+* Dev - "Users" shortcodes pack added.
 
 = 1.1.0 - 28/09/2017 =
 * Dev - `[posts]` - `sep`, `max_posts`, `output_format`, `post_type`, `post_status`, `orderby`, `order` attributes added.
