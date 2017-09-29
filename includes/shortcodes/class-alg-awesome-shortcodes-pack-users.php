@@ -46,6 +46,17 @@ class Alg_Awesome_Shortcodes_Pack_Users extends Alg_Abstract_Awesome_Shortcodes_
 					),
 				),
 			),
+			'user_location' => array(
+				'desc'             => __( 'Displays current user location (i.e. country).', 'awesome-shortcodes' ),
+				'type'             => 'self-closing',
+				'examples'         => array(
+					array(
+						'atts'    => array(
+							'before'   => sprintf( __( 'Your country: %s', 'awesome-shortcodes' ), '' ),
+						),
+					),
+				),
+			),
 			'user_login' => array(
 				'desc'             => __( 'Displays current user login (i.e. username). If user is not logged, nothing is displayed.', 'awesome-shortcodes' ),
 				'type'             => 'self-closing',
@@ -157,10 +168,25 @@ class Alg_Awesome_Shortcodes_Pack_Users extends Alg_Abstract_Awesome_Shortcodes_
 	}
 
 	/**
+	 * user_location.
+	 *
+	 * @version 1.2.1
+	 * @since   1.2.1
+	 * @todo    add external method alternatives to `geoplugin.net` (e.g.: `hostip.info`)
+	 * @todo    add internal method, e.g.: MaxMind
+	 * @todo    add "return selection" attribute, e.g.: country name, country flag etc.
+	 */
+	function user_location( $atts, $content, $tag ) {
+		$xml = simplexml_load_file( 'http://www.geoplugin.net/xml.gp?ip=' . $_SERVER['REMOTE_ADDR'] );
+		return ( '' != $xml->geoplugin_countryName ? $xml->geoplugin_countryName : '' );
+	}
+
+	/**
 	 * user_ip.
 	 *
 	 * @version 1.2.1
 	 * @since   1.2.1
+	 * @todo    get "real" ip (and save it as private property to be used in other functions, e.g.: `user_location()`)
 	 */
 	function user_ip( $atts, $content, $tag ) {
 		return $_SERVER['REMOTE_ADDR'];
