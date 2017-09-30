@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Shortcode Packs - Posts
  *
- * @version 1.2.0
+ * @version 1.2.1
  * @since   1.1.0
  * @author  Algoritmika Ltd.
  */
@@ -18,7 +18,7 @@ class Alg_Awesome_Shortcodes_Pack_Posts extends Alg_Abstract_Awesome_Shortcodes_
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.2.0
+	 * @version 1.2.1
 	 * @since   1.1.0
 	 */
 	function __construct() {
@@ -94,6 +94,12 @@ class Alg_Awesome_Shortcodes_Pack_Posts extends Alg_Abstract_Awesome_Shortcodes_
 					'post_id' => array(
 						'default'  => '',
 						'desc'     => __( 'Post ID. If not set - current post ID is used.', 'awesome-shortcodes' ),
+						'required' => false,
+					),
+					'array_glue' => array(
+						'default'  => ', ',
+						'desc'     => sprintf( __( 'If resulting value is an array, it\'s "glued" with PHP <code>implode()</code> function (%s). You can set function\'s <code>glue</code> argument here.', 'awesome-shortcodes' ),
+							'<a target="_blank" href="http://php.net/manual/en/function.implode.php">http://php.net/manual/en/function.implode.php</a>' ),
 						'required' => false,
 					),
 				),
@@ -233,18 +239,16 @@ class Alg_Awesome_Shortcodes_Pack_Posts extends Alg_Abstract_Awesome_Shortcodes_
 	/**
 	 * post_meta.
 	 *
-	 * @version 1.1.0
+	 * @version 1.2.1
 	 * @since   1.1.0
-	 * @todo    different example?
-	 * @todo    handle case if `array` is returned
-	 * @todo    (maybe) move to `posts` pack
 	 */
 	function post_meta( $atts, $content, $tag ) {
 		if ( '' === $atts['key'] ) {
 			return '';
 		}
 		$post_id = ( '' != $atts['post_id'] ? $atts['post_id'] : get_the_ID() );
-		return get_post_meta( $post_id, $atts['key'], true );
+		$return  = get_post_meta( $post_id, $atts['key'], true );
+		return ( is_array( $return ) ? implode( $atts['array_glue'], $return ) : '' );
 	}
 
 	/**

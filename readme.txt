@@ -33,11 +33,12 @@ If you wish to contribute, join in on our [GitHub repository](https://github.com
 
 == Changelog ==
 
-= 1.2.1 - 29/09/2017 =
+= 1.2.1 - 30/09/2017 =
 * Dev - `[user_location]` shortcode added.
 * Dev - `[user_ip]` shortcode added.
 * Dev - `[details]` shortcode added.
 * Dev - `[number_counter]` shortcode added.
+* Dev - `[post_meta]` - `array_glue` attribute added.
 
 = 1.2.0 - 29/09/2017 =
 * Fix - `[post_id]` - Example fixed.
