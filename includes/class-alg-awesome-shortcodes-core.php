@@ -58,6 +58,7 @@ class Alg_Awesome_Shortcodes_Core {
 		$this->shortcode_packs[] = require_once( 'shortcodes/class-alg-awesome-shortcodes-pack-posts.php' );
 		$this->shortcode_packs[] = require_once( 'shortcodes/class-alg-awesome-shortcodes-pack-users.php' );
 		$this->shortcode_packs[] = require_once( 'shortcodes/class-alg-awesome-shortcodes-pack-woocommerce.php' );
+		$this->shortcode_packs = apply_filters( 'awesome_shortcodes_packs', $this->shortcode_packs );
 	}
 
 	/**

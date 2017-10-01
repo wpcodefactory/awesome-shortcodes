@@ -46,6 +46,7 @@ If you wish to contribute, join in on our [GitHub repository](https://github.com
 * Dev - `lang` and `not_lang` common attributes added.
 * Dev - "WooCommerce" shortcodes pack added.
 * Dev - Admin - Shortcodes count added in sub-menu.
+* Dev - Developers - `awesome_shortcodes_packs` and `'awesome_shortcodes_pack_' . $pack->id` filters added.
 
 = 1.2.0 - 29/09/2017 =
 * Fix - `[post_id]` - Example fixed.

@@ -18,7 +18,7 @@ class Alg_Abstract_Awesome_Shortcodes_Pack {
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.0.0
+	 * @version 1.2.1
 	 * @since   1.0.0
 	 * @todo    (maybe) check `wpautop` issue
 	 */
@@ -26,6 +26,7 @@ class Alg_Abstract_Awesome_Shortcodes_Pack {
 		if ( ! alg_awesome_shortcodes()->core->plugin_enabled  ) {
 			return;
 		}
+		$this->shortcodes = apply_filters( 'awesome_shortcodes_pack_' . $this->id, $this->shortcodes );
 		foreach ( $this->shortcodes as $shortcode_tag => $shortcode ) {
 			if (
 				! isset( alg_awesome_shortcodes()->core->shortcodes_options[ $shortcode_tag ] ) ||
@@ -92,7 +93,7 @@ class Alg_Abstract_Awesome_Shortcodes_Pack {
 		}
 		$atts   = shortcode_atts( $default_atts, $atts, $original_tag );
 		$func   = ( '' == $func ? $this->func[ $original_tag ] : $func );
-		$output = $this->$func( $atts, $content, $original_tag );
+		$output = ( is_array( $func ) ? $func[0]->$func[1]( $atts, $content, $original_tag ) : $this->$func( $atts, $content, $original_tag ) );
 		switch ( true ) {
 			case '' === $output:
 				return $atts['on_empty'];
