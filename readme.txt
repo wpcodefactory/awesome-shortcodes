@@ -42,6 +42,7 @@ If you wish to contribute, join in on our [GitHub repository](https://github.com
 * Dev - `[post_meta]` - `array_glue` attribute added.
 * Dev - `do_shortcode_atts` and `do_shortcode_content` common attributes added.
 * Dev - `lang` and `not_lang` common attributes added.
+* Dev - "WooCommerce" shortcodes pack added.
 
 = 1.2.0 - 29/09/2017 =
 * Fix - `[post_id]` - Example fixed.
