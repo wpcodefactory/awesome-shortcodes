@@ -41,7 +41,7 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 				),
 			),
 			'timenow' => array(
-				'desc'             => __( 'Shows current time in <code>HH:MM:SS</code> format. Updated every second.', 'awesome-shortcodes' ),
+				'desc'             => sprintf( __( 'Shows current time in %s format. Updated every second.', 'awesome-shortcodes' ), '<code>HH:MM:SS</code>' ),
 				'type'             => 'self-closing',
 				'aliases'          => array( 'clock' ),
 				'enqueue_scripts'  => array( array( 'src' => 'js/timenow.js', 'deps' => array( 'jquery' ) ) ),
@@ -55,7 +55,7 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 				'atts'             => array(
 					'date_to' => array(
 						'default'  => '',
-						'desc'     => __( 'Date we\'re counting down to. E.g.: <code>2021/01/01 12:00</code>.', 'awesome-shortcodes' ),
+						'desc'     => sprintf( __( 'Date we\'re counting down to. E.g.: %s.', 'awesome-shortcodes' ), '<code>2021/01/01 12:00</code>' ),
 						'required' => true,
 					),
 				),
