@@ -46,12 +46,15 @@ class Alg_Awesome_Shortcodes_Pack_WooCommerce extends Alg_Abstract_Awesome_Short
 	 *
 	 * @version 1.2.1
 	 * @since   1.2.1
-	 * @todo    move to WooCommerce pack
 	 */
 	function wc_login_form( $atts, $content, $tag ) {
-		ob_start();
-		woocommerce_login_form();
-		return ob_get_clean();
+		if ( function_exists( 'woocommerce_login_form' ) ) {
+			ob_start();
+			woocommerce_login_form();
+			return ob_get_clean();
+		} else {
+			return '';
+		}
 	}
 
 }
