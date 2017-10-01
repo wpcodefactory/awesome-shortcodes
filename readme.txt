@@ -45,6 +45,7 @@ If you wish to contribute, join in on our [GitHub repository](https://github.com
 * Dev - `do_shortcode_atts` and `do_shortcode_content` common attributes added.
 * Dev - `lang` and `not_lang` common attributes added.
 * Dev - "WooCommerce" shortcodes pack added.
+* Dev - Admin - Shortcodes count added in sub-menu.
 
 = 1.2.0 - 29/09/2017 =
 * Fix - `[post_id]` - Example fixed.

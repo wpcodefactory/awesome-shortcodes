@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Admin Settings Class
  *
- * @version 1.1.0
+ * @version 1.2.1
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -355,7 +355,7 @@ class Alg_Awesome_Shortcodes_Admin_Settings {
 	/**
 	 * get_menu.
 	 *
-	 * @version 1.1.0
+	 * @version 1.2.1
 	 * @since   1.0.0
 	 */
 	function get_menu() {
@@ -374,7 +374,7 @@ class Alg_Awesome_Shortcodes_Admin_Settings {
 			foreach ( alg_awesome_shortcodes()->core->shortcode_packs as $shortcode_pack ) {
 				$types[] = '<li class="' . $shortcode_pack->id . '">' .
 					'<a href="' . add_query_arg( 'type', $shortcode_pack->id ) . '" class="' . ( $shortcode_pack->id === $type ? 'current' : '' ) . '">' .
-						$shortcode_pack->title .
+						$shortcode_pack->title . ' <span class="count">(' . count( $shortcode_pack->shortcodes ) . ')</span>' .
 					'</a>' .
 				'</li>';
 			}
