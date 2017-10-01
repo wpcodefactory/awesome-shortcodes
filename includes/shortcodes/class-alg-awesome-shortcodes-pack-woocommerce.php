@@ -33,10 +33,18 @@ class Alg_Awesome_Shortcodes_Pack_WooCommerce extends Alg_Abstract_Awesome_Short
 		$this->id         = 'woocommerce';
 		$this->title      = __( 'WooCommerce', 'awesome-shortcodes' );
 		$this->desc       = __( 'WooCommerce shortcodes.', 'awesome-shortcodes' );
+		$product_atts    = array(
+			'product_id' => array(
+				'default'  => '',
+				'desc'     => __( 'Product ID. If not set - current product ID is used.', 'awesome-shortcodes' ),
+				'required' => false,
+			),
+		);
 		$this->shortcodes = array(
 			'wc_product_dimensions' => array(
 				'desc'             => __( 'Displays WooCommerce product dimensions.', 'awesome-shortcodes' ),
 				'type'             => 'self-closing',
+				'atts'             => $product_atts,
 				'examples'         => array(
 					array(
 						'atts' => array(
@@ -69,7 +77,7 @@ class Alg_Awesome_Shortcodes_Pack_WooCommerce extends Alg_Abstract_Awesome_Short
 	 * @todo    (maybe) check if WC version below 3.0.0
 	 */
 	function wc_product_dimensions( $atts, $content, $tag ) {
-		if ( false != ( $product = $this->get_product() ) ) {
+		if ( false != ( $product = $this->get_product( $atts['product_id'] ) ) ) {
 			return ( $product->has_dimensions() ? wc_format_dimensions( $product->get_dimensions( false ) ) : '' );
 		} else {
 			return '';
@@ -97,13 +105,15 @@ class Alg_Awesome_Shortcodes_Pack_WooCommerce extends Alg_Abstract_Awesome_Short
 	 *
 	 * @version 1.2.1
 	 * @since   1.2.1
-	 * @todo    add optional `product_id` attribute
 	 */
-	private function get_product() {
-		if ( ! isset( $this->product ) ) {
-			$this->product = ( function_exists( 'wc_get_product' ) ? wc_get_product() : false );
+	private function get_product( $product_id ) {
+		if ( '' === $product_id ) {
+			$product_id = false;
 		}
-		return $this->product;
+		if ( ! isset( $this->product[ $product_id ] ) ) {
+			$this->product[ $product_id ] = ( function_exists( 'wc_get_product' ) ? wc_get_product( $product_id ) : false );
+		}
+		return $this->product[ $product_id ];
 	}
 
 }
