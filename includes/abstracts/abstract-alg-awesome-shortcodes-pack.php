@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Shortcode Packs - Abstract
  *
- * @version 1.2.0
+ * @version 1.2.1
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -48,11 +48,25 @@ class Alg_Abstract_Awesome_Shortcodes_Pack {
 	/**
 	 * awesome_shortcode.
 	 *
-	 * @version 1.2.0
+	 * @version 1.2.1
 	 * @since   1.0.0
-	 * @todo    (maybe) language, location, site_visibility, user_visibility etc.
+	 * @todo    (maybe) location, site_visibility, user_visibility etc.
 	 */
 	function awesome_shortcode( $atts, $content, $tag, $func = '' ) {
+		if ( defined( 'ICL_LANGUAGE_CODE' ) ) {
+			if ( isset( $atts['lang'] ) && ! empty( $atts['lang'] ) ) {
+				$lang = array_map( 'trim', explode( ',', $atts['lang'] ) );
+				if ( ! in_array( ICL_LANGUAGE_CODE, $lang ) ) {
+					return '';
+				}
+			}
+			if ( isset( $atts['not_lang'] ) && ! empty( $atts['not_lang'] ) ) {
+				$lang = array_map( 'trim', explode( ',', $atts['not_lang'] ) );
+				if ( in_array( ICL_LANGUAGE_CODE, $lang ) ) {
+					return '';
+				}
+			}
+		}
 		$default_atts = array(
 			'before'    => '',
 			'after'     => '',
