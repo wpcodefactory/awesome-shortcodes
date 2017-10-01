@@ -34,6 +34,7 @@ If you wish to contribute, join in on our [GitHub repository](https://github.com
 == Changelog ==
 
 = 1.2.1 - 01/10/2017 =
+* Dev - `[wc_product_dimensions]` shortcode added.
 * Dev - `[wc_login_form]` shortcode added.
 * Dev - `[user_location]` shortcode added.
 * Dev - `[user_ip]` shortcode added.
