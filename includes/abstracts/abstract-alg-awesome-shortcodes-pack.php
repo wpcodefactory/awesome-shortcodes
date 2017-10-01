@@ -20,7 +20,6 @@ class Alg_Abstract_Awesome_Shortcodes_Pack {
 	 *
 	 * @version 1.0.0
 	 * @since   1.0.0
-	 * @todo    (maybe) shortcode inside shortcode (content and atts)
 	 * @todo    (maybe) check `wpautop` issue
 	 */
 	function __construct() {
@@ -66,6 +65,17 @@ class Alg_Abstract_Awesome_Shortcodes_Pack {
 					return '';
 				}
 			}
+		}
+		if ( isset( $atts['do_shortcode_atts'] ) && ! empty( $atts['do_shortcode_atts'] ) ) {
+			$do_shortcode_atts = array_map( 'trim', explode( ',', $atts['do_shortcode_atts'] ) );
+			foreach ( $atts as $att_key => $att_value ) {
+				if ( in_array( $att_key, $do_shortcode_atts ) ) {
+					$atts[ $att_key ] = do_shortcode( str_replace( array( '{', '}' ), array( '[', ']' ), $att_value ) );
+				}
+			}
+		}
+		if ( isset( $atts['do_shortcode_content'] ) && 'yes' === $atts['do_shortcode_content'] ) {
+			$content = do_shortcode( $content );
 		}
 		$default_atts = array(
 			'before'    => '',

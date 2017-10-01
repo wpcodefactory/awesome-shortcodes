@@ -40,6 +40,7 @@ If you wish to contribute, join in on our [GitHub repository](https://github.com
 * Dev - `[details]` shortcode added.
 * Dev - `[number_counter]` shortcode added.
 * Dev - `[post_meta]` - `array_glue` attribute added.
+* Dev - `do_shortcode_atts` and `do_shortcode_content` common attributes added.
 * Dev - `lang` and `not_lang` common attributes added.
 
 = 1.2.0 - 29/09/2017 =
