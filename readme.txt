@@ -19,6 +19,7 @@ Currently included shortcode packs:
 * Text shortcodes.
 * Posts shortcodes.
 * Users shortcodes.
+* WooCommerce shortcodes.
 
 If you wish to contribute, join in on our [GitHub repository](https://github.com/algoritmika/awesome-shortcodes).
 
