@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Shortcode Packs - Posts
  *
- * @version 1.2.1
+ * @version 1.3.0
  * @since   1.1.0
  * @author  Algoritmika Ltd.
  */
@@ -18,7 +18,7 @@ class Alg_Awesome_Shortcodes_Pack_Posts extends Alg_Abstract_Awesome_Shortcodes_
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.2.1
+	 * @version 1.3.0
 	 * @since   1.1.0
 	 */
 	function __construct() {
@@ -239,7 +239,7 @@ class Alg_Awesome_Shortcodes_Pack_Posts extends Alg_Abstract_Awesome_Shortcodes_
 	/**
 	 * post_meta.
 	 *
-	 * @version 1.2.1
+	 * @version 1.3.0
 	 * @since   1.1.0
 	 */
 	function post_meta( $atts, $content, $tag ) {

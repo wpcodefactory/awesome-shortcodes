@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Shortcode Packs - Abstract
  *
- * @version 1.2.1
+ * @version 1.3.0
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -18,7 +18,7 @@ class Alg_Abstract_Awesome_Shortcodes_Pack {
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.2.1
+	 * @version 1.3.0
 	 * @since   1.0.0
 	 * @todo    (maybe) check `wpautop` issue
 	 */
@@ -48,7 +48,7 @@ class Alg_Abstract_Awesome_Shortcodes_Pack {
 	/**
 	 * awesome_shortcode.
 	 *
-	 * @version 1.2.1
+	 * @version 1.3.0
 	 * @since   1.0.0
 	 * @todo    (maybe) location, site_visibility, user_visibility etc.
 	 */

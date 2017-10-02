@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Shortcode Packs - Users
  *
- * @version 1.2.1
+ * @version 1.3.0
  * @since   1.2.0
  * @author  Algoritmika Ltd.
  */
@@ -27,7 +27,7 @@ class Alg_Awesome_Shortcodes_Pack_Users extends Alg_Abstract_Awesome_Shortcodes_
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.2.1
+	 * @version 1.3.0
 	 * @since   1.2.0
 	 */
 	function __construct() {
@@ -170,8 +170,8 @@ class Alg_Awesome_Shortcodes_Pack_Users extends Alg_Abstract_Awesome_Shortcodes_
 	/**
 	 * user_location.
 	 *
-	 * @version 1.2.1
-	 * @since   1.2.1
+	 * @version 1.3.0
+	 * @since   1.3.0
 	 * @todo    add external method alternatives to `geoplugin.net` (e.g.: `hostip.info`)
 	 * @todo    add internal method, e.g.: MaxMind
 	 * @todo    add "return selection" attribute, e.g.: country name, country flag etc.
@@ -184,8 +184,8 @@ class Alg_Awesome_Shortcodes_Pack_Users extends Alg_Abstract_Awesome_Shortcodes_
 	/**
 	 * user_ip.
 	 *
-	 * @version 1.2.1
-	 * @since   1.2.1
+	 * @version 1.3.0
+	 * @since   1.3.0
 	 * @todo    get "real" ip (and save it as private property to be used in other functions, e.g.: `user_location()`)
 	 */
 	function user_ip( $atts, $content, $tag ) {

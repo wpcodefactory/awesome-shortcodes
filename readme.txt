@@ -3,7 +3,7 @@ Contributors: algoritmika, anbinder
 Donate link: https://www.paypal.me/anbinder
 Tags: shortcode, shortcodes, awesome, wpcodefactory, algoritmika
 Tested up to: 4.8
-Stable tag: 1.2.0
+Stable tag: 1.3.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -34,7 +34,7 @@ If you wish to contribute, join in on our [GitHub repository](https://github.com
 
 == Changelog ==
 
-= 1.2.1 - 01/10/2017 =
+= 1.3.0 - 02/10/2017 =
 * Dev - `[wc_product_dimensions]` shortcode added.
 * Dev - `[wc_login_form]` shortcode added.
 * Dev - `[user_location]` shortcode added.
@@ -46,7 +46,7 @@ If you wish to contribute, join in on our [GitHub repository](https://github.com
 * Dev - `lang` and `not_lang` common attributes added.
 * Dev - "WooCommerce" shortcodes pack added.
 * Dev - Admin - Shortcodes count added in sub-menu.
-* Dev - Developers - `awesome_shortcodes_packs` and `'awesome_shortcodes_pack_' . $pack->id` filters added.
+* Dev - Developers - `awesome_shortcodes_packs` and `awesome_shortcodes_pack_{$pack->id}` filters added.
 
 = 1.2.0 - 29/09/2017 =
 * Fix - `[post_id]` - Example fixed.

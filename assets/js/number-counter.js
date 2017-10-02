@@ -1,8 +1,8 @@
 /**
  * [number_counter].
  *
- * @version 1.2.1
- * @since   1.2.1
+ * @version 1.3.0
+ * @since   1.3.0
  * @see     https://codepen.io/shivasurya/pen/FatiB
  */
 

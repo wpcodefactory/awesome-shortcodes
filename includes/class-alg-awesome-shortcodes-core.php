@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Shortcodes - Core
  *
- * @version 1.2.1
+ * @version 1.3.0
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -49,7 +49,7 @@ class Alg_Awesome_Shortcodes_Core {
 	/**
 	 * load_shortcode_packs.
 	 *
-	 * @version 1.2.1
+	 * @version 1.3.0
 	 * @since   1.0.0
 	 */
 	function load_shortcode_packs() {

@@ -2,8 +2,8 @@
 /**
  * Awesome Shortcodes - Shortcode Packs - WooCommerce
  *
- * @version 1.2.1
- * @since   1.2.1
+ * @version 1.3.0
+ * @since   1.3.0
  * @author  Algoritmika Ltd.
  */
 
@@ -18,16 +18,16 @@ class Alg_Awesome_Shortcodes_Pack_WooCommerce extends Alg_Abstract_Awesome_Short
 	/**
 	 * product.
 	 *
-	 * @version 1.2.1
-	 * @since   1.2.1
+	 * @version 1.3.0
+	 * @since   1.3.0
 	 */
 	private $product;
 
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.2.1
-	 * @since   1.2.1
+	 * @version 1.3.0
+	 * @since   1.3.0
 	 */
 	function __construct() {
 		$this->id         = 'woocommerce';
@@ -71,8 +71,8 @@ class Alg_Awesome_Shortcodes_Pack_WooCommerce extends Alg_Abstract_Awesome_Short
 	/**
 	 * wc_product_dimensions.
 	 *
-	 * @version 1.2.1
-	 * @since   1.2.1
+	 * @version 1.3.0
+	 * @since   1.3.0
 	 * @todo    variable
 	 * @todo    (maybe) check if WC version below 3.0.0
 	 */
@@ -87,8 +87,8 @@ class Alg_Awesome_Shortcodes_Pack_WooCommerce extends Alg_Abstract_Awesome_Short
 	/**
 	 * wc_login_form.
 	 *
-	 * @version 1.2.1
-	 * @since   1.2.1
+	 * @version 1.3.0
+	 * @since   1.3.0
 	 */
 	function wc_login_form( $atts, $content, $tag ) {
 		if ( function_exists( 'woocommerce_login_form' ) ) {
@@ -103,8 +103,8 @@ class Alg_Awesome_Shortcodes_Pack_WooCommerce extends Alg_Abstract_Awesome_Short
 	/**
 	 * get_product.
 	 *
-	 * @version 1.2.1
-	 * @since   1.2.1
+	 * @version 1.3.0
+	 * @since   1.3.0
 	 */
 	private function get_product( $product_id ) {
 		if ( '' === $product_id ) {

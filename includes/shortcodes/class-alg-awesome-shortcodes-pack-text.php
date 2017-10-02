@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Shortcode Packs - Text
  *
- * @version 1.2.1
+ * @version 1.3.0
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -18,7 +18,7 @@ class Alg_Awesome_Shortcodes_Pack_Text extends Alg_Abstract_Awesome_Shortcodes_P
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.2.1
+	 * @version 1.3.0
 	 * @since   1.0.0
 	 */
 	function __construct() {
@@ -99,8 +99,8 @@ class Alg_Awesome_Shortcodes_Pack_Text extends Alg_Abstract_Awesome_Shortcodes_P
 	/**
 	 * details.
 	 *
-	 * @version 1.2.1
-	 * @since   1.2.1
+	 * @version 1.3.0
+	 * @since   1.3.0
 	 */
 	function details( $atts, $content, $tag ) {
 		return ( '' === $atts['summary'] ? '' : '<details>' . '<summary>' . $atts['summary'] . '</summary>' . $content . '</details>' );
