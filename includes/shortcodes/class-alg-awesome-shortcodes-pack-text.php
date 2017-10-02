@@ -101,6 +101,7 @@ class Alg_Awesome_Shortcodes_Pack_Text extends Alg_Abstract_Awesome_Shortcodes_P
 	 *
 	 * @version 1.3.0
 	 * @since   1.3.0
+	 * @todo    move to "Text Formatting" pack
 	 */
 	function details( $atts, $content, $tag ) {
 		return ( '' === $atts['summary'] ? '' : '<details>' . '<summary>' . $atts['summary'] . '</summary>' . $content . '</details>' );
