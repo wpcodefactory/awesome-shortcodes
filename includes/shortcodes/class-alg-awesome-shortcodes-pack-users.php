@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Shortcode Packs - Users
  *
- * @version 1.3.0
+ * @version 1.3.1
  * @since   1.2.0
  * @author  Algoritmika Ltd.
  */
@@ -27,7 +27,7 @@ class Alg_Awesome_Shortcodes_Pack_Users extends Alg_Abstract_Awesome_Shortcodes_
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.3.0
+	 * @version 1.3.1
 	 * @since   1.2.0
 	 */
 	function __construct() {
@@ -35,6 +35,30 @@ class Alg_Awesome_Shortcodes_Pack_Users extends Alg_Abstract_Awesome_Shortcodes_
 		$this->title      = __( 'Users', 'awesome-shortcodes' );
 		$this->desc       = __( 'Users shortcodes.', 'awesome-shortcodes' );
 		$this->shortcodes = array(
+			'total_users' => array(
+				'desc'             => __( 'Shortcode displays the count of users having each role, or the count of all users.', 'awesome-shortcodes' ),
+				'type'             => 'self-closing',
+				'atts'             => array(
+					'role' => array(
+						'default'  => '',
+						'desc'     => __( 'User role to count users for. If empty - total count of all users is displayed.', 'awesome-shortcodes' ),
+						'required' => false,
+					),
+				),
+				'examples'         => array(
+					array(
+						'atts'    => array(
+							'before'   => sprintf( __( 'Total users: %s', 'awesome-shortcodes' ), '' ),
+						),
+					),
+					array(
+						'atts'    => array(
+							'role'     => 'customer',
+							'before'   => sprintf( __( 'Total customers: %s', 'awesome-shortcodes' ), '' ),
+						),
+					),
+				),
+			),
 			'user_ip' => array(
 				'desc'             => __( 'Displays current user IP.', 'awesome-shortcodes' ),
 				'type'             => 'self-closing',
@@ -165,6 +189,18 @@ class Alg_Awesome_Shortcodes_Pack_Users extends Alg_Abstract_Awesome_Shortcodes_
 			),
 		);
 		parent::__construct();
+	}
+
+	/**
+	 * total_users.
+	 *
+	 * @version 1.3.1
+	 * @since   1.3.1
+	 * @todo    (maybe) check `get_user_count()` (https://codex.wordpress.org/Function_Reference/get_user_count)
+	 */
+	function total_users( $atts, $content, $tag ) {
+		$result = count_users();
+		return ( '' === $atts['role'] ? $result['total_users'] : $result['avail_roles'][ $atts['role'] ] );
 	}
 
 	/**
