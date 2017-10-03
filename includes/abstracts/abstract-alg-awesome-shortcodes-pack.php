@@ -50,6 +50,7 @@ class Alg_Abstract_Awesome_Shortcodes_Pack {
 	 *
 	 * @version 1.3.1
 	 * @since   1.0.0
+	 * @todo    rewrite `func` part - should be possible to call global functions (i.e. use `$this`)
 	 * @todo    (maybe) location, site_visibility, user_visibility etc.
 	 */
 	function awesome_shortcode( $atts, $content, $tag, $func = '' ) {
