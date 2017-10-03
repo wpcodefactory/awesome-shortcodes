@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Shortcode Packs - Abstract
  *
- * @version 1.3.0
+ * @version 1.3.1
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -48,7 +48,7 @@ class Alg_Abstract_Awesome_Shortcodes_Pack {
 	/**
 	 * awesome_shortcode.
 	 *
-	 * @version 1.3.0
+	 * @version 1.3.1
 	 * @since   1.0.0
 	 * @todo    (maybe) location, site_visibility, user_visibility etc.
 	 */
@@ -79,10 +79,11 @@ class Alg_Abstract_Awesome_Shortcodes_Pack {
 			$content = do_shortcode( $content );
 		}
 		$default_atts = array(
-			'before'    => '',
-			'after'     => '',
-			'on_empty'  => '',
-			'on_zero'   => 0,
+			'before'       => '',
+			'after'        => '',
+			'on_empty'     => '',
+			'on_zero'      => 0,
+			'strip_tags'   => 'no',
 		);
 		$prefix_len   = strlen( alg_awesome_shortcodes()->core->prefix );
 		$original_tag = ( 0 != $prefix_len ? substr( $tag, $prefix_len ) : $tag );
@@ -94,6 +95,9 @@ class Alg_Abstract_Awesome_Shortcodes_Pack {
 		$atts   = shortcode_atts( $default_atts, $atts, $original_tag );
 		$func   = ( '' == $func ? $this->func[ $original_tag ] : $func );
 		$output = ( is_array( $func ) ? $func[0]->$func[1]( $atts, $content, $original_tag ) : $this->$func( $atts, $content, $original_tag ) );
+		if ( 'yes' === $atts['strip_tags'] ) {
+			$output = strip_tags( $output );
+		}
 		switch ( true ) {
 			case '' === $output:
 				return $atts['on_empty'];
