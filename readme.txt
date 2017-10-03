@@ -38,6 +38,7 @@ If you wish to contribute, join in on our [GitHub repository](https://github.com
 * Dev - `[total_users]` shortcode added.
 * Dev - `[option]` shortcode added.
 * Dev - `strip_tags` common attribute added.
+* Dev - `Alg_Abstract_Awesome_Shortcodes_Pack` - `func` rewritten, so now it's possible to call global functions.
 
 = 1.3.0 - 02/10/2017 =
 * Dev - `[wc_product_dimensions]` shortcode added.

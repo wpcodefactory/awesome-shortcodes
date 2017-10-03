@@ -32,7 +32,7 @@ final class Alg_Awesome_Shortcodes {
 	 * @var   string
 	 * @since 1.0.0
 	 */
-	public $version = '1.3.1-dev-201710031352';
+	public $version = '1.3.1-dev-201710031611';
 
 	/**
 	 * @var   Alg_Awesome_Shortcodes The single instance of the class

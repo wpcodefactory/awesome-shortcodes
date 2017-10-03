@@ -18,7 +18,7 @@ class Alg_Abstract_Awesome_Shortcodes_Pack {
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.3.0
+	 * @version 1.3.1
 	 * @since   1.0.0
 	 * @todo    (maybe) check `wpautop` issue
 	 */
@@ -35,7 +35,7 @@ class Alg_Abstract_Awesome_Shortcodes_Pack {
 				continue;
 			}
 			add_shortcode( alg_awesome_shortcodes()->core->prefix . $shortcode_tag, array( $this, 'awesome_shortcode' ) );
-			$this->func[ $shortcode_tag ] = ( isset( $shortcode['func'] ) ? $shortcode['func'] : $shortcode_tag );
+			$this->func[ $shortcode_tag ] = ( isset( $shortcode['func'] ) ? $shortcode['func'] : array( $this, $shortcode_tag ) );
 			if ( isset( $shortcode['aliases'] ) ) {
 				foreach ( $shortcode['aliases'] as $alias ) {
 					add_shortcode( alg_awesome_shortcodes()->core->prefix . $alias, array( $this, 'awesome_shortcode' ) );
@@ -50,7 +50,6 @@ class Alg_Abstract_Awesome_Shortcodes_Pack {
 	 *
 	 * @version 1.3.1
 	 * @since   1.0.0
-	 * @todo    rewrite `func` part - should be possible to call global functions (i.e. use `$this`)
 	 * @todo    (maybe) location, site_visibility, user_visibility etc.
 	 */
 	function awesome_shortcode( $atts, $content, $tag, $func = '' ) {
@@ -95,7 +94,7 @@ class Alg_Abstract_Awesome_Shortcodes_Pack {
 		}
 		$atts   = shortcode_atts( $default_atts, $atts, $original_tag );
 		$func   = ( '' == $func ? $this->func[ $original_tag ] : $func );
-		$output = ( is_array( $func ) ? $func[0]->$func[1]( $atts, $content, $original_tag ) : $this->$func( $atts, $content, $original_tag ) );
+		$output = ( is_array( $func ) ? $func[0]->$func[1]( $atts, $content, $original_tag ) : $func( $atts, $content, $original_tag ) );
 		if ( 'yes' === $atts['strip_tags'] ) {
 			$output = strip_tags( $output );
 		}
