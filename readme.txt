@@ -34,6 +34,9 @@ If you wish to contribute, join in on our [GitHub repository](https://github.com
 
 == Changelog ==
 
+= 1.3.1 - 03/10/2017 =
+* Dev - `[option]` shortcode added.
+
 = 1.3.0 - 02/10/2017 =
 * Dev - `[wc_product_dimensions]` shortcode added.
 * Dev - `[wc_login_form]` shortcode added.

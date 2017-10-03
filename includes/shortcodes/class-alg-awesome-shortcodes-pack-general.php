@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Shortcode Packs - General
  *
- * @version 1.3.0
+ * @version 1.3.1
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -18,7 +18,7 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.3.0
+	 * @version 1.3.1
 	 * @since   1.0.0
 	 * @todo    add shortcodes: `total_categories`, `total_tags`, `total_taxonomy` (maybe in "Taxonomies" pack)
 	 * @todo    add shortcodes: `progress_bar`
@@ -29,6 +29,34 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 		$this->title      = __( 'General', 'awesome-shortcodes' );
 		$this->desc       = __( 'General shortcodes.', 'awesome-shortcodes' );
 		$this->shortcodes = array(
+			'option' => array(
+				'desc'             => sprintf( __( 'Shortcode displays WordPress option value. Uses WordPress %s function.', 'awesome-shortcodes' ),
+					'<a target="_blank" href="https://developer.wordpress.org/reference/functions/get_option/"><code>get_option()</code></a>' ),
+				'type'             => 'self-closing',
+				'atts'             => array(
+					'name' => array(
+						'default'  => '',
+						'desc'     => sprintf( __( 'Name of option to retrieve. E.g.: %s.', 'awesome-shortcodes' ), '<code>blogname</code>' ),
+						'required' => true,
+					),
+					'default' => array(
+						'default'  => '',
+						'desc'     => __( 'Default value to return if the option does not exist.', 'awesome-shortcodes' ),
+						'required' => false,
+					),
+					'array_glue' => array(
+						'default'  => ', ',
+						'desc'     => sprintf( __( 'If resulting value is an array, it\'s "glued" with PHP %s function. You can set function\'s %s argument here.', 'awesome-shortcodes' ),
+							'<a target="_blank" href="http://php.net/manual/en/function.implode.php"><code>implode()</code></a>', '<code>glue</code>' ),
+						'required' => false,
+					),
+				),
+				'examples'         => array(
+					array(
+						'atts'    => array( 'name' => 'blogdescription' )
+					),
+				),
+			),
 			'timenow' => array(
 				'desc'             => sprintf( __( 'Shows current time in %s format. Updated every second.', 'awesome-shortcodes' ), '<code>HH:MM:SS</code>' ),
 				'type'             => 'self-closing',
@@ -163,6 +191,21 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 			),
 		);
 		parent::__construct();
+	}
+
+	/**
+	 * option.
+	 *
+	 * @version 1.3.1
+	 * @since   1.3.1
+	 * @todo    if resulting value is neither array or simple type (e.g. object) - maybe just `print_r()`?
+	 */
+	function option( $atts, $content, $tag ) {
+		if ( '' === $atts['name'] ) {
+			return '';
+		}
+		$output = get_option( $atts['name'], $atts['default'] );
+		return ( is_array( $output ) ? implode( $atts['array_glue'], $output ) : $output );
 	}
 
 	/**
