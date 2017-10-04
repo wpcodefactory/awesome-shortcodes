@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Admin Settings Class
  *
- * @version 1.3.0
+ * @version 1.3.2
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -56,13 +56,13 @@ class Alg_Awesome_Shortcodes_Admin_Settings {
 	}
 
 	/**
-	 * get_current_type.
+	 * get_current_pack.
 	 *
-	 * @version 1.0.0
+	 * @version 1.3.2
 	 * @since   1.0.0
 	 */
-	function get_current_type() {
-		return ( isset( $_GET['type'] ) ? sanitize_key( $_GET['type'] ) : 'general' );
+	function get_current_pack() {
+		return ( isset( $_GET['pack'] ) ? sanitize_key( $_GET['pack'] ) : 'general' );
 	}
 
 	/**
@@ -104,7 +104,7 @@ class Alg_Awesome_Shortcodes_Admin_Settings {
 	/**
 	 * get_options.
 	 *
-	 * @version 1.1.0
+	 * @version 1.3.2
 	 * @since   1.0.0
 	 * @todo    (maybe) example output: `shortcode_pack->awesome_shortcode( ( ! empty( $example['atts'] ) ? $example['atts'] : array() ), ( ! empty( $example['content'] ) ? $example['content'] : '' ), $prefix . $shortcode_tag, ( isset( $shortcode['func'] ) ? $shortcode['func'] : $shortcode_tag ) )`
 	 * @todo    (maybe) remove `alg_awesome_shortcodes_enabled` completely
@@ -145,10 +145,10 @@ class Alg_Awesome_Shortcodes_Admin_Settings {
 			);
 		} elseif ( 'shortcodes' === $this->get_current_section() ) {
 			$prefix  = get_option( 'alg_awesome_shortcodes_prefix', '' );
-			$type    = $this->get_current_type();
+			$pack    = $this->get_current_pack();
 			$options = array();
 			foreach ( alg_awesome_shortcodes()->core->shortcode_packs as $shortcode_pack ) {
-				if ( $type != $shortcode_pack->id  ) {
+				if ( $pack != $shortcode_pack->id  ) {
 					continue;
 				}
 				$shortcodes = $shortcode_pack->shortcodes;
@@ -218,7 +218,7 @@ class Alg_Awesome_Shortcodes_Admin_Settings {
 	/**
 	 * get_shortcodes_options_table.
 	 *
-	 * @version 1.1.0
+	 * @version 1.3.2
 	 * @since   1.0.0
 	 * @todo    (maybe) add "Activate" / "Disable" links for each shortcode (like in Plugins)
 	 * @todo    (maybe) add "Example > Output". Issue is: Scripts and styles are not loaded for a) admin(`admin_enqueue_scripts`); b) disabled shortcodes (this may be solved by "Enable the shortcode to see the example output")
@@ -227,9 +227,9 @@ class Alg_Awesome_Shortcodes_Admin_Settings {
 	 */
 	function get_shortcodes_options_table() {
 		$desc = '';
-		$type = $this->get_current_type();
+		$pack = $this->get_current_pack();
 		foreach ( alg_awesome_shortcodes()->core->shortcode_packs as $shortcode_pack ) {
-			if ( $type === $shortcode_pack->id  ) {
+			if ( $pack === $shortcode_pack->id  ) {
 				if ( isset( $shortcode_pack->desc ) ) {
 					$desc = '<p>' . '<em>' . $shortcode_pack->desc . '</em>' . '</p>';
 				}
@@ -355,30 +355,30 @@ class Alg_Awesome_Shortcodes_Admin_Settings {
 	/**
 	 * get_menu.
 	 *
-	 * @version 1.3.0
+	 * @version 1.3.2
 	 * @since   1.0.0
 	 */
 	function get_menu() {
 		$html = '';
 		$html .= '<ul class="subsubsub">';
-		$html .= '<li class="settings"><a href="' . add_query_arg( 'section', 'settings', remove_query_arg( 'type' ) ) . '" class="' .
+		$html .= '<li class="settings"><a href="' . add_query_arg( 'section', 'settings', remove_query_arg( 'pack' ) ) . '" class="' .
 			( 'settings' === $this->get_current_section() ? 'current' : '' ) . '">' . __( 'Settings', 'awesome-shortcodes' ) . '</a> |</li>';
-		$html .= '<li class="shortcodes"><a href="' . add_query_arg( 'section', 'shortcodes', remove_query_arg( 'type' ) ) . '" class="' .
+		$html .= '<li class="shortcodes"><a href="' . add_query_arg( 'section', 'shortcodes', remove_query_arg( 'pack' ) ) . '" class="' .
 			( 'shortcodes' === $this->get_current_section() ? 'current' : '' ) . '">' . __( 'Shortcodes', 'awesome-shortcodes' ) . '</a></li>';
 		$html .= '</ul>';
 		$html .= '<div class="clear"></div>';
 		if ( 'shortcodes' === $this->get_current_section() ) {
-			$type = $this->get_current_type();
+			$pack = $this->get_current_pack();
 			$html .= '<ul class="subsubsub">';
-			$types = array();
+			$packs = array();
 			foreach ( alg_awesome_shortcodes()->core->shortcode_packs as $shortcode_pack ) {
-				$types[] = '<li class="' . $shortcode_pack->id . '">' .
-					'<a href="' . add_query_arg( 'type', $shortcode_pack->id ) . '" class="' . ( $shortcode_pack->id === $type ? 'current' : '' ) . '">' .
+				$packs[] = '<li class="' . $shortcode_pack->id . '">' .
+					'<a href="' . add_query_arg( 'pack', $shortcode_pack->id ) . '" class="' . ( $shortcode_pack->id === $pack ? 'current' : '' ) . '">' .
 						$shortcode_pack->title . ' <span class="count">(' . count( $shortcode_pack->shortcodes ) . ')</span>' .
 					'</a>' .
 				'</li>';
 			}
-			$html .= implode( ' | ', $types );
+			$html .= implode( ' | ', $packs );
 			$html .= '</ul>';
 			$html .= '<div class="clear"></div>';
 		}
