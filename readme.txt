@@ -34,6 +34,9 @@ If you wish to contribute, join in on our [GitHub repository](https://github.com
 
 == Changelog ==
 
+= 1.3.2 - 04/10/2017 =
+* Dev - `[wc_product_id]` shortcode added.
+
 = 1.3.1 - 03/10/2017 =
 * Dev - `[total_users]` shortcode added.
 * Dev - `[option]` shortcode added.
