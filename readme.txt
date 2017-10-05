@@ -34,7 +34,8 @@ If you wish to contribute, join in on our [GitHub repository](https://github.com
 
 == Changelog ==
 
-= 1.3.2 - 04/10/2017 =
+= 1.3.2 - 05/10/2017 =
+* Dev - `[wc_product_price_html]` shortcode added.
 * Dev - `[wc_product_id]` shortcode added.
 * Dev - Admin - `type` address argument replaced with `pack`.
 

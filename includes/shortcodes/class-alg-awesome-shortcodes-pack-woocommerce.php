@@ -41,6 +41,18 @@ class Alg_Awesome_Shortcodes_Pack_WooCommerce extends Alg_Abstract_Awesome_Short
 			),
 		);
 		$this->shortcodes = array(
+			'wc_product_price_html' => array(
+				'desc'             => __( 'Shortcode displays WooCommerce product full price with currency symbol.', 'awesome-shortcodes' ),
+				'type'             => 'self-closing',
+				'atts'             => $product_atts,
+				'examples'         => array(
+					array(
+						'atts' => array(
+							'before' => sprintf( __( 'Product price: %s', 'awesome-shortcodes' ), '' ),
+						),
+					),
+				),
+			),
 			'wc_product_id' => array(
 				'desc'             => __( 'Shortcode displays current WooCommerce product ID.', 'awesome-shortcodes' ),
 				'type'             => 'self-closing',
@@ -77,6 +89,16 @@ class Alg_Awesome_Shortcodes_Pack_WooCommerce extends Alg_Abstract_Awesome_Short
 			),
 		);
 		parent::__construct();
+	}
+
+	/**
+	 * wc_product_price_html.
+	 *
+	 * @version 1.3.2
+	 * @since   1.3.2
+	 */
+	function wc_product_price_html( $atts, $content, $tag ) {
+		return ( false != ( $product = $this->get_product( $atts['product_id'] ) ) ? $product->get_price_html() : '' );
 	}
 
 	/**
