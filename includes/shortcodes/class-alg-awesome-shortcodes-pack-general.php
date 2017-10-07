@@ -20,6 +20,7 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	 *
 	 * @version 1.3.2
 	 * @since   1.0.0
+	 * @todo    add shortcodes: `google_map` (https://www.w3schools.com/howto/howto_google_maps.asp)
 	 * @todo    add shortcodes: `total_categories`, `total_tags`, `total_taxonomy` (maybe in "Taxonomies" pack)
 	 * @todo    add shortcodes: `progress_bar`
 	 * @todo    add shortcodes: `login_url` (`wp_login_url()`)
