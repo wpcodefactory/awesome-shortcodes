@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Shortcode Packs - General
  *
- * @version 1.3.1
+ * @version 1.3.2
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -18,7 +18,7 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.3.1
+	 * @version 1.3.2
 	 * @since   1.0.0
 	 * @todo    add shortcodes: `total_categories`, `total_tags`, `total_taxonomy` (maybe in "Taxonomies" pack)
 	 * @todo    add shortcodes: `progress_bar`
@@ -29,6 +29,28 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 		$this->title      = __( 'General', 'awesome-shortcodes' );
 		$this->desc       = __( 'General shortcodes.', 'awesome-shortcodes' );
 		$this->shortcodes = array(
+			'progress' => array(
+				'desc'             => sprintf( __( 'Shortcode displays the progress of a task. Uses HTML %s tag.', 'awesome-shortcodes' ),
+					'<a target="_blank" href="https://www.w3schools.com/TAGs/tag_progress.asp"><code>&lt;progress&gt;</code></a>' ),
+				'type'             => 'self-closing',
+				'atts'             => array(
+					'value' => array(
+						'default'  => 0,
+						'desc'     => __( 'Specifies how much of the task has been completed.', 'awesome-shortcodes' ),
+						'required' => true,
+					),
+					'max' => array(
+						'default'  => 100,
+						'desc'     => __( 'Specifies how much work the task requires in total.', 'awesome-shortcodes' ),
+						'required' => false,
+					),
+				),
+				'examples'         => array(
+					array(
+						'atts'    => array( 'value' => 33 )
+					),
+				),
+			),
 			'option' => array(
 				'desc'             => sprintf( __( 'Shortcode displays WordPress option value. Uses WordPress %s function.', 'awesome-shortcodes' ),
 					'<a target="_blank" href="https://developer.wordpress.org/reference/functions/get_option/"><code>get_option()</code></a>' ),
@@ -191,6 +213,16 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 			),
 		);
 		parent::__construct();
+	}
+
+	/**
+	 * progress.
+	 *
+	 * @version 1.3.2
+	 * @since   1.3.2
+	 */
+	function progress( $atts, $content, $tag ) {
+		return '<progress value="' . $atts['value'] . '" max="' . $atts['max'] . '"></progress>';
 	}
 
 	/**
