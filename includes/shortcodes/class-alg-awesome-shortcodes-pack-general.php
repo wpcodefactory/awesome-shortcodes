@@ -29,6 +29,33 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 		$this->title      = __( 'General', 'awesome-shortcodes' );
 		$this->desc       = __( 'General shortcodes.', 'awesome-shortcodes' );
 		$this->shortcodes = array(
+			'meter' => array(
+				'desc'             => sprintf( __( 'Shortcode is used to measure data within a given range (a gauge). Uses HTML %s tag.', 'awesome-shortcodes' ),
+					'<a target="_blank" href="https://www.w3schools.com/TAGs/tag_meter.asp"><code>&lt;meter&gt;</code></a>' ),
+				'type'             => 'self-closing',
+				'atts'             => array(
+					'value' => array(
+						'default'  => 0,
+						'desc'     => __( 'Specifies the current value of the gauge.', 'awesome-shortcodes' ),
+						'required' => true,
+					),
+					'min' => array(
+						'default'  => 0,
+						'desc'     => __( 'Specifies the minimum value of the range.', 'awesome-shortcodes' ),
+						'required' => false,
+					),
+					'max' => array(
+						'default'  => 100,
+						'desc'     => __( 'Specifies the maximum value of the range.', 'awesome-shortcodes' ),
+						'required' => false,
+					),
+				),
+				'examples'         => array(
+					array(
+						'atts'    => array( 'value' => 33 )
+					),
+				),
+			),
 			'progress' => array(
 				'desc'             => sprintf( __( 'Shortcode displays the progress of a task. Uses HTML %s tag.', 'awesome-shortcodes' ),
 					'<a target="_blank" href="https://www.w3schools.com/TAGs/tag_progress.asp"><code>&lt;progress&gt;</code></a>' ),
@@ -213,6 +240,17 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 			),
 		);
 		parent::__construct();
+	}
+
+	/**
+	 * meter.
+	 *
+	 * @version 1.3.2
+	 * @since   1.3.2
+	 * @todo    add more atts, e.g.: `high`, `low`, `optimum` etc.
+	 */
+	function meter( $atts, $content, $tag ) {
+		return '<meter value="' . $atts['value'] . '" min="' . $atts['min'] . '" max="' . $atts['max'] . '"></meter>';
 	}
 
 	/**
