@@ -20,7 +20,6 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	 *
 	 * @version 1.3.2
 	 * @since   1.0.0
-	 * @todo    add shortcodes: `google_map` (https://www.w3schools.com/howto/howto_google_maps.asp)
 	 * @todo    add shortcodes: `total_categories`, `total_tags`, `total_taxonomy` (maybe in "Taxonomies" pack)
 	 * @todo    add shortcodes: `progress_bar`
 	 * @todo    add shortcodes: `login_url` (`wp_login_url()`)
@@ -30,6 +29,45 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 		$this->title      = __( 'General', 'awesome-shortcodes' );
 		$this->desc       = __( 'General shortcodes.', 'awesome-shortcodes' );
 		$this->shortcodes = array(
+			'google_map' => array(
+				'desc'             => __( 'Shortcode displays Google Map for selected coordinates.', 'awesome-shortcodes' ),
+				'type'             => 'self-closing',
+				'enqueue_scripts'  => array( array( 'src' => 'js/google-map.js', 'deps' => array( 'jquery' ) ) ),
+				'atts'             => array(
+					'api_key' => array(
+						'default'  => '',
+						'desc'     => sprintf( __( 'Enter you Google Maps API key here. You can get you free key at %s.', 'awesome-shortcodes' ),
+							'<a target="_blank" href="https://developers.google.com/maps/documentation/javascript/get-api-key">' .
+								'https://developers.google.com/maps/documentation/javascript/get-api-key</a>' ),
+						'required' => true,
+					),
+					'zoom' => array(
+						'default'  => 10,
+						'desc'     => __( 'Specifies the zoom level for the map.', 'awesome-shortcodes' ),
+						'required' => true,
+					),
+					'center_latitude' => array(
+						'default'  => 51.5,
+						'desc'     => __( 'Specifies where to center the map (latitude).', 'awesome-shortcodes' ),
+						'required' => true,
+					),
+					'center_longitude' => array(
+						'default'  => -0.2,
+						'desc'     => __( 'Specifies where to center the map (longitude).', 'awesome-shortcodes' ),
+						'required' => true,
+					),
+				),
+				'examples'         => array(
+					array(
+						'atts'    => array(
+							'api_key'          => 'AIzaSyAoyv_BzdQq24MS_4rxIr8USnSlMtg-j14',
+							'zoom'             => 20,
+							'center_latitude'  => 48.8584,
+							'center_longitude' => 2.2945,
+						)
+					),
+				),
+			),
 			'meter' => array(
 				'desc'             => sprintf( __( 'Shortcode is used to measure data within a given range (a gauge). Uses HTML %s tag.', 'awesome-shortcodes' ),
 					'<a target="_blank" href="https://www.w3schools.com/TAGs/tag_meter.asp"><code>&lt;meter&gt;</code></a>' ),
@@ -241,6 +279,23 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 			),
 		);
 		parent::__construct();
+	}
+
+	/**
+	 * google_map.
+	 *
+	 * @version 1.3.2
+	 * @since   1.3.2
+	 * @todo    `width`, `height`
+	 * @see     https://www.w3schools.com/howto/howto_google_maps.asp
+	 */
+	function google_map( $atts, $content, $tag ) {
+		return ( '' === $atts['api_key'] ? '' : '<div id="awesome-shortcode-google-map" style="width:400px;height:400px;" ' .
+			'api-key="' . $atts['api_key'] . '" ' .
+			'zoom="' . $atts['zoom'] . '" ' .
+			'center-latitude="' . $atts['center_latitude'] . '" ' .
+			'center-longitude="' . $atts['center_longitude'] . '">' .
+		'</div>' );
 	}
 
 	/**

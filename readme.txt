@@ -34,7 +34,8 @@ If you wish to contribute, join in on our [GitHub repository](https://github.com
 
 == Changelog ==
 
-= 1.3.2 - 07/10/2017 =
+= 1.3.2 - 08/10/2017 =
+* Dev - `[google_map]` shortcode added.
 * Dev - `[meter]` shortcode added.
 * Dev - `[progress]` shortcode added.
 * Dev - `[wc_product_price_html]` shortcode added.
