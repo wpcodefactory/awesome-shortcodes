@@ -11,7 +11,8 @@ function awesome_shortcode_google_map() {
 	var mapCanvas = jQuery("#awesome-shortcode-google-map")[0];
 	var mapOptions = {
 		center: new google.maps.LatLng(jQuery("#awesome-shortcode-google-map").attr("center-latitude"), jQuery("#awesome-shortcode-google-map").attr("center-longitude")),
-		zoom: parseInt(jQuery("#awesome-shortcode-google-map").attr("zoom"))
+		zoom: parseInt(jQuery("#awesome-shortcode-google-map").attr("zoom")),
+		mapTypeId: jQuery("#awesome-shortcode-google-map").attr("map-type-id"),
 	};
 	var map = new google.maps.Map(mapCanvas, mapOptions);
 }

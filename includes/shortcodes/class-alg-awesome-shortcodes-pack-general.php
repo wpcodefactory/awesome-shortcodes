@@ -66,16 +66,24 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 						'desc'     => __( 'Specifies where to center the map (longitude).', 'awesome-shortcodes' ),
 						'required' => true,
 					),
+					'map_type_id' => array(
+						'default'  => 'roadmap',
+						'desc'     => sprintf( __( 'Specifies the type of the map. Possible options are: %s.', 'awesome-shortcodes' ),
+							'<code>' . implode( '</code>, <code>', array( 'roadmap', 'satellite', 'hybrid', 'terrain' ) ) . '</code>' ),
+						'required' => true,
+					),
 				),
 				'examples'         => array(
 					array(
+						'desc'    => sprintf( __( 'Satellite map centered on Eiffel Tower:%s', 'awesome-shortcodes' ), '' ),
 						'atts'    => array(
 							'api_key'          => 'AIzaSyAoyv_BzdQq24MS_4rxIr8USnSlMtg-j14',
 							'width'            => '100%',
 							'height'           => '500px',
-							'zoom'             => 20,
+							'zoom'             => 15,
 							'center_latitude'  => 48.8584,
 							'center_longitude' => 2.2945,
+							'map_type_id'      => 'satellite',
 						)
 					),
 				),
@@ -298,7 +306,8 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	 *
 	 * @version 1.3.2
 	 * @since   1.3.2
-	 * @see     https://www.w3schools.com/howto/howto_google_maps.asp
+	 * @todo    (maybe) add more atts
+	 * @see     https://developers.google.com/maps/documentation/javascript/
 	 */
 	function google_map( $atts, $content, $tag ) {
 		return ( '' === $atts['api_key'] ? '' : '<div id="awesome-shortcode-google-map" style="width:' . $atts['width'] . ';height:' . $atts['height'] . ';"' .
@@ -307,6 +316,7 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 				'zoom'             => $atts['zoom'],
 				'center_latitude'  => $atts['center_latitude'],
 				'center_longitude' => $atts['center_longitude'],
+				'map_type_id'      => $atts['map_type_id'],
 			) ) . '>' .
 		'</div>' );
 	}
