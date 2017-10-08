@@ -298,15 +298,16 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	 *
 	 * @version 1.3.2
 	 * @since   1.3.2
-	 * @todo    `width`, `height`
 	 * @see     https://www.w3schools.com/howto/howto_google_maps.asp
 	 */
 	function google_map( $atts, $content, $tag ) {
-		return ( '' === $atts['api_key'] ? '' : '<div id="awesome-shortcode-google-map" style="width:' . $atts['width'] . ';height:' . $atts['height'] . ';" ' .
-			'api-key="' . $atts['api_key'] . '" ' .
-			'zoom="' . $atts['zoom'] . '" ' .
-			'center-latitude="' . $atts['center_latitude'] . '" ' .
-			'center-longitude="' . $atts['center_longitude'] . '">' .
+		return ( '' === $atts['api_key'] ? '' : '<div id="awesome-shortcode-google-map" style="width:' . $atts['width'] . ';height:' . $atts['height'] . ';"' .
+			alg_awesome_shortcodes_get_atts_html( array(
+				'api_key'          => $atts['api_key'],
+				'zoom'             => $atts['zoom'],
+				'center_latitude'  => $atts['center_latitude'],
+				'center_longitude' => $atts['center_longitude'],
+			) ) . '>' .
 		'</div>' );
 	}
 

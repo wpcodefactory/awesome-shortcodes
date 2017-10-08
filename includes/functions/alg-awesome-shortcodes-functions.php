@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Functions
  *
- * @version 1.1.0
+ * @version 1.3.2
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -11,13 +11,28 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
+if ( ! function_exists( 'alg_awesome_shortcodes_get_atts_html' ) ) {
+	/**
+	 * alg_awesome_shortcodes_get_atts_html.
+	 *
+	 * @version 1.3.2
+	 * @since   1.3.2
+	 */
+	function alg_awesome_shortcodes_get_atts_html( $atts ) {
+		$html = '';
+		foreach ( $atts as $att_key => $att_value ) {
+			$html .= ' ' . str_replace( '_', '-', $att_key ) . '="' . $att_value . '"';
+		}
+		return $html;
+	}
+}
+
 if ( ! function_exists( 'alg_awesome_shortcodes_get_table_html' ) ) {
 	/**
 	 * alg_awesome_shortcodes_get_table_html.
 	 *
 	 * @version 1.0.0
 	 * @since   1.0.0
-	 * @todo    (maybe) move to `general` shortcodes
 	 */
 	function alg_awesome_shortcodes_get_table_html( $data, $args = array() ) {
 		$defaults = array(
