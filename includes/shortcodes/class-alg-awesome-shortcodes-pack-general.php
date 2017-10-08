@@ -41,6 +41,16 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 								'https://developers.google.com/maps/documentation/javascript/get-api-key</a>' ),
 						'required' => true,
 					),
+					'width' => array(
+						'default'  => '400px',
+						'desc'     => __( 'Specifies the width the map.', 'awesome-shortcodes' ),
+						'required' => true,
+					),
+					'height' => array(
+						'default'  => '400px',
+						'desc'     => __( 'Specifies the height the map.', 'awesome-shortcodes' ),
+						'required' => true,
+					),
 					'zoom' => array(
 						'default'  => 10,
 						'desc'     => __( 'Specifies the zoom level for the map.', 'awesome-shortcodes' ),
@@ -61,6 +71,8 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 					array(
 						'atts'    => array(
 							'api_key'          => 'AIzaSyAoyv_BzdQq24MS_4rxIr8USnSlMtg-j14',
+							'width'            => '100%',
+							'height'           => '500px',
 							'zoom'             => 20,
 							'center_latitude'  => 48.8584,
 							'center_longitude' => 2.2945,
@@ -290,7 +302,7 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	 * @see     https://www.w3schools.com/howto/howto_google_maps.asp
 	 */
 	function google_map( $atts, $content, $tag ) {
-		return ( '' === $atts['api_key'] ? '' : '<div id="awesome-shortcode-google-map" style="width:400px;height:400px;" ' .
+		return ( '' === $atts['api_key'] ? '' : '<div id="awesome-shortcode-google-map" style="width:' . $atts['width'] . ';height:' . $atts['height'] . ';" ' .
 			'api-key="' . $atts['api_key'] . '" ' .
 			'zoom="' . $atts['zoom'] . '" ' .
 			'center-latitude="' . $atts['center_latitude'] . '" ' .
