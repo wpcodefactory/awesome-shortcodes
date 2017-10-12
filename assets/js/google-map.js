@@ -1,8 +1,8 @@
 /**
  * [google_map].
  *
- * @version 1.3.2
- * @since   1.3.2
+ * @version 1.4.0
+ * @since   1.4.0
  * @todo    multiple maps (i.e. use `class` instead of `id`)
  */
 

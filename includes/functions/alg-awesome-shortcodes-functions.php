@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Functions
  *
- * @version 1.3.2
+ * @version 1.4.0
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -15,8 +15,8 @@ if ( ! function_exists( 'alg_awesome_shortcodes_get_atts_html' ) ) {
 	/**
 	 * alg_awesome_shortcodes_get_atts_html.
 	 *
-	 * @version 1.3.2
-	 * @since   1.3.2
+	 * @version 1.4.0
+	 * @since   1.4.0
 	 */
 	function alg_awesome_shortcodes_get_atts_html( $atts ) {
 		$html = '';

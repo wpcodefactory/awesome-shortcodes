@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Shortcodes - Core
  *
- * @version 1.3.2
+ * @version 1.4.0
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -80,7 +80,7 @@ class Alg_Awesome_Shortcodes_Core {
 	/**
 	 * enqueue_scripts_and_styles.
 	 *
-	 * @version 1.3.2
+	 * @version 1.4.0
 	 * @since   1.0.0
 	 */
 	function enqueue_scripts_and_styles() {

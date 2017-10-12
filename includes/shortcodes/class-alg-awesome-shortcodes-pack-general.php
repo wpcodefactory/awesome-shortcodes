@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Shortcode Packs - General
  *
- * @version 1.3.2
+ * @version 1.4.0
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -18,7 +18,7 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.3.2
+	 * @version 1.4.0
 	 * @since   1.0.0
 	 * @todo    add shortcodes: `total_categories`, `total_tags`, `total_taxonomy` (maybe in "Taxonomies" pack)
 	 * @todo    add shortcodes: `progress_bar`
@@ -332,8 +332,8 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	/**
 	 * dashicon.
 	 *
-	 * @version 1.3.2
-	 * @since   1.3.2
+	 * @version 1.4.0
+	 * @since   1.4.0
 	 */
 	function dashicon( $atts, $content, $tag ) {
 		if ( '' === $atts['icon'] ) {
@@ -349,8 +349,8 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	/**
 	 * google_map.
 	 *
-	 * @version 1.3.2
-	 * @since   1.3.2
+	 * @version 1.4.0
+	 * @since   1.4.0
 	 * @todo    (maybe) add more atts
 	 * @see     https://developers.google.com/maps/documentation/javascript/
 	 */
@@ -369,8 +369,8 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	/**
 	 * meter.
 	 *
-	 * @version 1.3.2
-	 * @since   1.3.2
+	 * @version 1.4.0
+	 * @since   1.4.0
 	 * @todo    add more atts, e.g.: `high`, `low`, `optimum` etc.
 	 */
 	function meter( $atts, $content, $tag ) {
@@ -380,8 +380,8 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	/**
 	 * progress.
 	 *
-	 * @version 1.3.2
-	 * @since   1.3.2
+	 * @version 1.4.0
+	 * @since   1.4.0
 	 */
 	function progress( $atts, $content, $tag ) {
 		return '<progress value="' . $atts['value'] . '" max="' . $atts['max'] . '"></progress>';
