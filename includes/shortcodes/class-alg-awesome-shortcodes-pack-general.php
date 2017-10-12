@@ -77,7 +77,7 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 					array(
 						'desc'    => sprintf( __( 'Satellite map centered on Eiffel Tower:%s', 'awesome-shortcodes' ), '' ),
 						'atts'    => array(
-							'api_key'          => 'AIzaSyAoyv_BzdQq24MS_4rxIr8USnSlMtg-j14',
+							'api_key'          => 'AIzaSyB0W2k9RoJ2xZeknr3lOnpYrFhlEJhdXFo',
 							'width'            => '100%',
 							'height'           => '500px',
 							'zoom'             => 15,
