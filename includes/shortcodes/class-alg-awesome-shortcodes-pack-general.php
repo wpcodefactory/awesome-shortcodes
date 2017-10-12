@@ -29,6 +29,34 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 		$this->title      = __( 'General', 'awesome-shortcodes' );
 		$this->desc       = __( 'General shortcodes.', 'awesome-shortcodes' );
 		$this->shortcodes = array(
+			'dashicon' => array(
+				'desc'             => __( 'Shortcode displays WordPress dash icon.', 'awesome-shortcodes' ),
+				'type'             => 'self-closing',
+				'enqueue_styles'   => array( array( 'handle' => 'dashicons', 'version' => false ) ),
+				'atts'             => array(
+					'icon' => array(
+						'default'  => '',
+						'desc'     => sprintf( __( 'Enter the required icon slug here. You can check the icon slugs at %s.', 'awesome-shortcodes' ),
+							'<a target="_blank" href="https://developer.wordpress.org/resource/dashicons/">' .
+								'https://developer.wordpress.org/resource/dashicons/</a>' ),
+						'required' => true,
+					),
+				),
+				'examples'         => array(
+					array(
+						'desc'    => sprintf( __( 'Tickets icon:%s', 'awesome-shortcodes' ), '' ),
+						'atts'    => array(
+							'icon'          => 'tickets',
+						)
+					),
+					array(
+						'desc'    => sprintf( __( 'Admin home icon:%s', 'awesome-shortcodes' ), '' ),
+						'atts'    => array(
+							'icon'          => 'admin-home',
+						)
+					),
+				),
+			),
 			'google_map' => array(
 				'desc'             => __( 'Shortcode displays Google Map for selected coordinates.', 'awesome-shortcodes' ),
 				'type'             => 'self-closing',
@@ -299,6 +327,23 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 			),
 		);
 		parent::__construct();
+	}
+
+	/**
+	 * dashicon.
+	 *
+	 * @version 1.3.2
+	 * @since   1.3.2
+	 */
+	function dashicon( $atts, $content, $tag ) {
+		if ( '' === $atts['icon'] ) {
+			return '';
+		}
+		$prefix = 'dashicons-';
+		if ( $prefix === substr( $atts['icon'], 0, strlen( $prefix ) ) ) {
+			$atts['icon'] = substr( $atts['icon'], strlen( $prefix ) );
+		}
+		return '<span class="dashicons dashicons-' . $atts['icon'] . '"></span>';
 	}
 
 	/**

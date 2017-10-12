@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Shortcodes - Core
  *
- * @version 1.3.0
+ * @version 1.3.2
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -80,7 +80,7 @@ class Alg_Awesome_Shortcodes_Core {
 	/**
 	 * enqueue_scripts_and_styles.
 	 *
-	 * @version 1.0.0
+	 * @version 1.3.2
 	 * @since   1.0.0
 	 */
 	function enqueue_scripts_and_styles() {
@@ -92,21 +92,21 @@ class Alg_Awesome_Shortcodes_Core {
 				if ( isset( $shortcode['enqueue_styles'] ) ) {
 					foreach ( $shortcode['enqueue_styles'] as $enqueue_style ) {
 						wp_enqueue_style(
-							'alg-awesome-shortcodes-' . $shortcode_tag,
-							alg_awesome_shortcodes()->plugin_url() . '/assets/' . $enqueue_style['src'],
-							( isset( $enqueue_style['deps'] ) ? $enqueue_style['deps'] : array() ),
-							alg_awesome_shortcodes()->version,
-							( isset( $enqueue_style['media'] ) ? $enqueue_style['media'] : 'all' )
+							( isset( $enqueue_style['handle'] )  ? $enqueue_style['handle']  : 'alg-awesome-shortcodes-' . $shortcode_tag ),
+							( isset( $enqueue_style['src'] )     ? alg_awesome_shortcodes()->plugin_url() . '/assets/' . $enqueue_style['src'] : '' ),
+							( isset( $enqueue_style['deps'] )    ? $enqueue_style['deps']    : array() ),
+							( isset( $enqueue_style['version'] ) ? $enqueue_style['version'] : alg_awesome_shortcodes()->version ),
+							( isset( $enqueue_style['media'] )   ? $enqueue_style['media']   : 'all' )
 						);
 					}
 				}
 				if ( isset( $shortcode['enqueue_scripts'] ) ) {
 					foreach ( $shortcode['enqueue_scripts'] as $enqueue_script ) {
 						wp_enqueue_script(
-							'alg-awesome-shortcodes-' . $shortcode_tag . '-script',
-							alg_awesome_shortcodes()->plugin_url() . '/assets/' . $enqueue_script['src'],
-							( isset( $enqueue_script['deps'] ) ? $enqueue_script['deps'] : array() ),
-							alg_awesome_shortcodes()->version,
+							( isset( $enqueue_script['handle'] )    ? $enqueue_script['handle']    : 'alg-awesome-shortcodes-' . $shortcode_tag . '-script' ),
+							( isset( $enqueue_script['src'] )       ? alg_awesome_shortcodes()->plugin_url() . '/assets/' . $enqueue_script['src'] : '' ),
+							( isset( $enqueue_script['deps'] )      ? $enqueue_script['deps']      : array() ),
+							( isset( $enqueue_script['version'] )   ? $enqueue_script['version']   : alg_awesome_shortcodes()->version ),
 							( isset( $enqueue_script['in_footer'] ) ? $enqueue_script['in_footer'] : true )
 						);
 					}

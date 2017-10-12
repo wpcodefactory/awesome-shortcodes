@@ -35,6 +35,7 @@ If you wish to contribute, join in on our [GitHub repository](https://github.com
 == Changelog ==
 
 = 1.3.2 - 12/10/2017 =
+* Dev - `[dashicon]` shortcode added.
 * Dev - `[google_map]` shortcode added.
 * Dev - `[meter]` shortcode added.
 * Dev - `[progress]` shortcode added.
