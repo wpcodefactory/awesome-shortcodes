@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Shortcode Packs - General
  *
- * @version 1.4.0
+ * @version 1.4.1
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -18,7 +18,7 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.4.0
+	 * @version 1.4.1
 	 * @since   1.0.0
 	 * @todo    add shortcodes: `total_categories`, `total_tags`, `total_taxonomy` (maybe in "Taxonomies" pack)
 	 * @todo    add shortcodes: `progress_bar`
@@ -72,33 +72,33 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 					'width' => array(
 						'default'  => '400px',
 						'desc'     => __( 'Specifies the width the map.', 'awesome-shortcodes' ),
-						'required' => true,
+						'required' => false,
 					),
 					'height' => array(
 						'default'  => '400px',
 						'desc'     => __( 'Specifies the height the map.', 'awesome-shortcodes' ),
-						'required' => true,
+						'required' => false,
 					),
 					'zoom' => array(
 						'default'  => 10,
 						'desc'     => __( 'Specifies the zoom level for the map.', 'awesome-shortcodes' ),
-						'required' => true,
+						'required' => false,
 					),
 					'center_latitude' => array(
 						'default'  => 51.5,
 						'desc'     => __( 'Specifies where to center the map (latitude).', 'awesome-shortcodes' ),
-						'required' => true,
+						'required' => false,
 					),
 					'center_longitude' => array(
 						'default'  => -0.2,
 						'desc'     => __( 'Specifies where to center the map (longitude).', 'awesome-shortcodes' ),
-						'required' => true,
+						'required' => false,
 					),
 					'map_type_id' => array(
 						'default'  => 'roadmap',
 						'desc'     => sprintf( __( 'Specifies the type of the map. Possible options are: %s.', 'awesome-shortcodes' ),
 							'<code>' . implode( '</code>, <code>', array( 'roadmap', 'satellite', 'hybrid', 'terrain' ) ) . '</code>' ),
-						'required' => true,
+						'required' => false,
 					),
 				),
 				'examples'         => array(

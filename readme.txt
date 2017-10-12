@@ -34,6 +34,9 @@ If you wish to contribute, join in on our [GitHub repository](https://github.com
 
 == Changelog ==
 
+= 1.4.1 - 12/10/2017 =
+* Fix - `[google_map]` - Attributes was wrongly marked as required.
+
 = 1.4.0 - 12/10/2017 =
 * Dev - `[dashicon]` shortcode added.
 * Dev - `[google_map]` shortcode added.
