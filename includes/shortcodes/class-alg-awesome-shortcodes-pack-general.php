@@ -351,6 +351,7 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	 *
 	 * @version 1.4.0
 	 * @since   1.4.0
+	 * @todo    (maybe) add `address` att (so center could be set without latitude and longitude)
 	 * @todo    (maybe) add more atts
 	 * @see     https://developers.google.com/maps/documentation/javascript/
 	 */

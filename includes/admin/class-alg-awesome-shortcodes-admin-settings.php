@@ -136,7 +136,8 @@ class Alg_Awesome_Shortcodes_Admin_Settings {
 				),
 				array(
 					'title'    => __( 'Awesome shortcodes prefix', 'awesome-shortcodes' ),
-					'desc'     => __( 'Prefix all awesome shortcodes. Setting this is useful if you have compatibility issues with other shortcodes with matching names.', 'awesome-shortcodes' ),
+					'desc'     => __( 'Prefix all awesome shortcodes. Setting this is useful if you have compatibility issues with other shortcodes with matching names.',
+						'awesome-shortcodes' ),
 					'id'       => 'alg_awesome_shortcodes_prefix',
 					'default'  => '',
 					'type'     => 'text',
@@ -391,7 +392,8 @@ class Alg_Awesome_Shortcodes_Admin_Settings {
 			foreach ( alg_awesome_shortcodes()->core->shortcode_packs as $shortcode_pack ) {
 				$packs[] = '<li class="' . $shortcode_pack->id . '">' .
 					'<a href="' . add_query_arg( 'pack', $shortcode_pack->id ) . '" class="' . ( $shortcode_pack->id === $pack ? 'current' : '' ) . '">' .
-						$shortcode_pack->title . ' <span class="count">(' . $this->count_enabled_shortcodes_in_pack( $shortcode_pack ) . '/' . count( $shortcode_pack->shortcodes ) . ')</span>' .
+						$shortcode_pack->title . ' <span class="count">(' . $this->count_enabled_shortcodes_in_pack( $shortcode_pack ) . '/' .
+							count( $shortcode_pack->shortcodes ) . ')</span>' .
 					'</a>' .
 				'</li>';
 			}
