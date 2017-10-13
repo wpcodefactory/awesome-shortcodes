@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Admin Settings Class
  *
- * @version 1.4.0
+ * @version 1.4.1
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -353,9 +353,26 @@ class Alg_Awesome_Shortcodes_Admin_Settings {
 	}
 
 	/**
+	 * count_enabled_shortcodes_in_pack.
+	 *
+	 * @version 1.4.1
+	 * @since   1.4.1
+	 */
+	function count_enabled_shortcodes_in_pack( $shortcode_pack ) {
+		$enabled_shortcodes_count = 0;
+		$shortcodes_options       = get_option( 'alg_awesome_shortcodes_options', array() );
+		foreach ( $shortcode_pack->shortcodes as $shortcode_tag => $shortcode ) {
+			if ( isset( $shortcodes_options[ $shortcode_tag ] ) && true === $shortcodes_options[ $shortcode_tag ] ) {
+				$enabled_shortcodes_count++;
+			}
+		}
+		return $enabled_shortcodes_count;
+	}
+
+	/**
 	 * get_menu.
 	 *
-	 * @version 1.4.0
+	 * @version 1.4.1
 	 * @since   1.0.0
 	 */
 	function get_menu() {
@@ -374,7 +391,7 @@ class Alg_Awesome_Shortcodes_Admin_Settings {
 			foreach ( alg_awesome_shortcodes()->core->shortcode_packs as $shortcode_pack ) {
 				$packs[] = '<li class="' . $shortcode_pack->id . '">' .
 					'<a href="' . add_query_arg( 'pack', $shortcode_pack->id ) . '" class="' . ( $shortcode_pack->id === $pack ? 'current' : '' ) . '">' .
-						$shortcode_pack->title . ' <span class="count">(' . count( $shortcode_pack->shortcodes ) . ')</span>' .
+						$shortcode_pack->title . ' <span class="count">(' . $this->count_enabled_shortcodes_in_pack( $shortcode_pack ) . '/' . count( $shortcode_pack->shortcodes ) . ')</span>' .
 					'</a>' .
 				'</li>';
 			}
