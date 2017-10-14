@@ -21,13 +21,23 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	 * @version 1.4.2
 	 * @since   1.0.0
 	 * @todo    add shortcodes: `progress_bar`
-	 * @todo    add shortcodes: `login_url` (`wp_login_url()`)
 	 */
 	function __construct() {
 		$this->id         = 'general';
 		$this->title      = __( 'General', 'awesome-shortcodes' );
 		$this->desc       = __( 'General shortcodes.', 'awesome-shortcodes' );
 		$this->shortcodes = array(
+			'login_url' => array(
+				'desc'             => __( 'Shortcode displays your WordPress site login URL.', 'awesome-shortcodes' ),
+				'type'             => 'self-closing',
+				'examples'         => array(
+					array(
+						'atts'    => array(
+							'before'   => sprintf( __( 'Login at: %s', 'awesome-shortcodes' ), '' ),
+						)
+					),
+				),
+			),
 			'total_taxonomy' => array(
 				'desc'             => __( 'Shortcode displays total taxonomy count on your site.', 'awesome-shortcodes' ),
 				'type'             => 'self-closing',
@@ -420,6 +430,17 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 			),
 		);
 		parent::__construct();
+	}
+
+	/**
+	 * login_url.
+	 *
+	 * @version 1.4.2
+	 * @since   1.4.2
+	 * @todo    add `redirect` attribute
+	 */
+	function login_url( $atts, $content, $tag ) {
+		return wp_login_url();
 	}
 
 	/**
