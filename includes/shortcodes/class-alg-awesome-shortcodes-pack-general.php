@@ -402,7 +402,7 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	private function count_terms( $taxonomy, $atts ) {
 		$args = array(
 			'taxonomy'   => $taxonomy,
-			'parent'     => $atts['parent'],
+			'parent'     => ( isset( $atts['parent'] ) ? $atts['parent'] : '' ),
 			'hide_empty' => ( 'yes' === $atts['hide_empty'] ? 1 : 0 ),
 		);
 		$terms = get_terms( $args );
@@ -416,7 +416,6 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	 * @since   1.4.2
 	 */
 	function total_tags( $atts, $content, $tag ) {
-		$atts['parent'] = '';
 		return $this->count_terms( 'post_tag', $atts );
 	}
 
