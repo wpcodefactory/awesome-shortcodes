@@ -32,6 +32,13 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 			'total_tags' => array(
 				'desc'             => __( 'Shortcode displays total tags count on your site.', 'awesome-shortcodes' ),
 				'type'             => 'self-closing',
+				'atts'             => array(
+					'hide_empty' => array(
+						'default'  => 'no',
+						'desc'     => sprintf( __( 'Set to %s if you want to skip empty tags.', 'awesome-shortcodes' ), '<code>yes</code>' ),
+						'required' => false,
+					),
+				),
 				'examples'         => array(
 					array(
 						'atts'    => array(
@@ -47,6 +54,11 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 					'parent' => array(
 						'default'  => '',
 						'desc'     => __( 'Parent category ID. Enter zero to count top level categories. Leave empty to count all categories.', 'awesome-shortcodes' ),
+						'required' => false,
+					),
+					'hide_empty' => array(
+						'default'  => 'no',
+						'desc'     => sprintf( __( 'Set to %s if you want to skip empty categories.', 'awesome-shortcodes' ), '<code>yes</code>' ),
 						'required' => false,
 					),
 				),
@@ -391,7 +403,7 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 		$args = array(
 			'taxonomy'   => $taxonomy,
 			'parent'     => $atts['parent'],
-			'hide_empty' => 0,
+			'hide_empty' => ( 'yes' === $atts['hide_empty'] ? 1 : 0 ),
 		);
 		$terms = get_terms( $args );
 		return count( $terms );
@@ -414,7 +426,7 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	 * @version 1.4.2
 	 * @since   1.4.2
 	 * @todo    (maybe) move to "Taxonomies" pack
-	 * @todo    more atts (e.g.: `hide_empty`), check https://developer.wordpress.org/reference/classes/wp_term_query/__construct/
+	 * @todo    more atts - check https://developer.wordpress.org/reference/classes/wp_term_query/__construct/
 	 */
 	function total_categories( $atts, $content, $tag ) {
 		return $this->count_terms( 'category', $atts );
