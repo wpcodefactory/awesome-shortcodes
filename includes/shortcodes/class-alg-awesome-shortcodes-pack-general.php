@@ -20,7 +20,7 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	 *
 	 * @version 1.4.2
 	 * @since   1.0.0
-	 * @todo    add shortcodes: `total_categories`, `total_tags`, `total_taxonomy` (maybe in "Taxonomies" pack)
+	 * @todo    add shortcodes: `total_tags`, `total_taxonomy` (maybe in "Taxonomies" pack)
 	 * @todo    add shortcodes: `progress_bar`
 	 * @todo    add shortcodes: `login_url` (`wp_login_url()`)
 	 */
@@ -29,6 +29,24 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 		$this->title      = __( 'General', 'awesome-shortcodes' );
 		$this->desc       = __( 'General shortcodes.', 'awesome-shortcodes' );
 		$this->shortcodes = array(
+			'total_categories' => array(
+				'desc'             => __( 'Shortcode displays total categories count on your site.', 'awesome-shortcodes' ),
+				'type'             => 'self-closing',
+				'atts'             => array(
+					'parent' => array(
+						'default'  => '',
+						'desc'     => __( 'Parent category ID. Enter zero to count top level categories. Leave empty to count all categories.', 'awesome-shortcodes' ),
+						'required' => false,
+					),
+				),
+				'examples'         => array(
+					array(
+						'atts'    => array(
+							'parent' => 0,
+						)
+					),
+				),
+			),
 			'youtube' => array(
 				'desc'             => __( 'Shortcode displays embedded YouTube video.', 'awesome-shortcodes' ),
 				'type'             => 'self-closing',
@@ -47,7 +65,7 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 				'examples'         => array(
 					array(
 						'atts'    => array(
-							'video'          => 'Q0CbN8sfihY',
+							'video' => 'Q0CbN8sfihY',
 						)
 					),
 				),
@@ -69,13 +87,13 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 					array(
 						'desc'    => sprintf( __( 'Tickets icon:%s', 'awesome-shortcodes' ), '' ),
 						'atts'    => array(
-							'icon'          => 'tickets',
+							'icon' => 'tickets',
 						)
 					),
 					array(
 						'desc'    => sprintf( __( 'Admin home icon:%s', 'awesome-shortcodes' ), '' ),
 						'atts'    => array(
-							'icon'          => 'admin-home',
+							'icon' => 'admin-home',
 						)
 					),
 				),
@@ -350,6 +368,34 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 			),
 		);
 		parent::__construct();
+	}
+
+	/**
+	 * count_terms.
+	 *
+	 * @version 1.4.2
+	 * @since   1.4.2
+	 */
+	private function count_terms( $taxonomy, $atts ) {
+		$args = array(
+			'taxonomy'   => $taxonomy,
+			'parent'     => $atts['parent'],
+			'hide_empty' => 0,
+		);
+		$terms = get_terms( $args );
+		return count( $terms );
+	}
+
+	/**
+	 * total_categories.
+	 *
+	 * @version 1.4.2
+	 * @since   1.4.2
+	 * @todo    (maybe) move to "Taxonomies" pack
+	 * @todo    more atts (e.g.: `hide_empty`), check https://developer.wordpress.org/reference/classes/wp_term_query/__construct/
+	 */
+	function total_categories( $atts, $content, $tag ) {
+		return $this->count_terms( 'category', $atts );
 	}
 
 	/**
