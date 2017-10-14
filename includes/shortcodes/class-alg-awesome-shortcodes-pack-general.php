@@ -20,7 +20,7 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	 *
 	 * @version 1.4.2
 	 * @since   1.0.0
-	 * @todo    add shortcodes: `total_tags`, `total_taxonomy` (maybe in "Taxonomies" pack)
+	 * @todo    add shortcodes: `total_taxonomy` (maybe in "Taxonomies" pack)
 	 * @todo    add shortcodes: `progress_bar`
 	 * @todo    add shortcodes: `login_url` (`wp_login_url()`)
 	 */
@@ -29,6 +29,17 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 		$this->title      = __( 'General', 'awesome-shortcodes' );
 		$this->desc       = __( 'General shortcodes.', 'awesome-shortcodes' );
 		$this->shortcodes = array(
+			'total_tags' => array(
+				'desc'             => __( 'Shortcode displays total tags count on your site.', 'awesome-shortcodes' ),
+				'type'             => 'self-closing',
+				'examples'         => array(
+					array(
+						'atts'    => array(
+							'before' => sprintf( __( 'Total tags: %s', 'awesome-shortcodes' ), '' ),
+						)
+					),
+				),
+			),
 			'total_categories' => array(
 				'desc'             => __( 'Shortcode displays total categories count on your site.', 'awesome-shortcodes' ),
 				'type'             => 'self-closing',
@@ -384,6 +395,17 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 		);
 		$terms = get_terms( $args );
 		return count( $terms );
+	}
+
+	/**
+	 * total_tags.
+	 *
+	 * @version 1.4.2
+	 * @since   1.4.2
+	 */
+	function total_tags( $atts, $content, $tag ) {
+		$atts['parent'] = '';
+		return $this->count_terms( 'post_tag', $atts );
 	}
 
 	/**
