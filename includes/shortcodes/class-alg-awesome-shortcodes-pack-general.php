@@ -20,7 +20,6 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	 *
 	 * @version 1.4.2
 	 * @since   1.0.0
-	 * @todo    add shortcodes: `total_taxonomy` (maybe in "Taxonomies" pack)
 	 * @todo    add shortcodes: `progress_bar`
 	 * @todo    add shortcodes: `login_url` (`wp_login_url()`)
 	 */
@@ -29,6 +28,35 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 		$this->title      = __( 'General', 'awesome-shortcodes' );
 		$this->desc       = __( 'General shortcodes.', 'awesome-shortcodes' );
 		$this->shortcodes = array(
+			'total_taxonomy' => array(
+				'desc'             => __( 'Shortcode displays total taxonomy count on your site.', 'awesome-shortcodes' ),
+				'type'             => 'self-closing',
+				'atts'             => array(
+					'taxonomy' => array(
+						'default'  => '',
+						'desc'     => sprintf( __( 'Taxonomy. E.g.: %s.', 'awesome-shortcodes' ), '<code>product_tag</code>' ),
+						'required' => true,
+					),
+					'parent' => array(
+						'default'  => '',
+						'desc'     => __( 'Parent taxonomy ID. Enter zero to count top level taxonomy. Leave empty to count all taxonomy.', 'awesome-shortcodes' ),
+						'required' => false,
+					),
+					'hide_empty' => array(
+						'default'  => 'no',
+						'desc'     => sprintf( __( 'Set to %s if you want to skip empty taxonomy.', 'awesome-shortcodes' ), '<code>yes</code>' ),
+						'required' => false,
+					),
+				),
+				'examples'         => array(
+					array(
+						'atts'    => array(
+							'before'   => sprintf( __( 'Total product categories: %s', 'awesome-shortcodes' ), '' ),
+							'taxonomy' => 'product_cat',
+						)
+					),
+				),
+			),
 			'total_tags' => array(
 				'desc'             => __( 'Shortcode displays total tags count on your site.', 'awesome-shortcodes' ),
 				'type'             => 'self-closing',
@@ -65,6 +93,7 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 				'examples'         => array(
 					array(
 						'atts'    => array(
+							'before' => sprintf( __( 'Total top level categories: %s', 'awesome-shortcodes' ), '' ),
 							'parent' => 0,
 						)
 					),
@@ -407,6 +436,16 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 		);
 		$terms = get_terms( $args );
 		return count( $terms );
+	}
+
+	/**
+	 * total_taxonomy.
+	 *
+	 * @version 1.4.2
+	 * @since   1.4.2
+	 */
+	function total_taxonomy( $atts, $content, $tag ) {
+		return ( '' != $atts['taxonomy'] ? $this->count_terms( $atts['taxonomy'], $atts ) : '' );
 	}
 
 	/**
