@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Shortcode Packs - General
  *
- * @version 1.4.1
+ * @version 1.4.2
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -18,7 +18,7 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.4.1
+	 * @version 1.4.2
 	 * @since   1.0.0
 	 * @todo    add shortcodes: `total_categories`, `total_tags`, `total_taxonomy` (maybe in "Taxonomies" pack)
 	 * @todo    add shortcodes: `progress_bar`
@@ -29,6 +29,29 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 		$this->title      = __( 'General', 'awesome-shortcodes' );
 		$this->desc       = __( 'General shortcodes.', 'awesome-shortcodes' );
 		$this->shortcodes = array(
+			'youtube' => array(
+				'desc'             => __( 'Shortcode displays embedded YouTube video.', 'awesome-shortcodes' ),
+				'type'             => 'self-closing',
+				'atts'             => array(
+					'video' => array(
+						'default'  => '',
+						'desc'     => sprintf( __( 'Enter the YouTube video code here. E.g.: %s.', 'awesome-shortcodes' ), '<code>Q0CbN8sfihY</code>' ),
+						'required' => true,
+					),
+					'start' => array(
+						'default'  => '',
+						'desc'     => __( 'If you want to start video from some time code, enter it here.', 'awesome-shortcodes' ),
+						'required' => false,
+					),
+				),
+				'examples'         => array(
+					array(
+						'atts'    => array(
+							'video'          => 'Q0CbN8sfihY',
+						)
+					),
+				),
+			),
 			'dashicon' => array(
 				'desc'             => __( 'Shortcode displays WordPress dash icon.', 'awesome-shortcodes' ),
 				'type'             => 'self-closing',
@@ -327,6 +350,26 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 			),
 		);
 		parent::__construct();
+	}
+
+	/**
+	 * youtube.
+	 *
+	 * @version 1.4.2
+	 * @since   1.4.2
+	 * @todo    `width` and `height`
+	 * @todo    `start` - parse minutes; and add `start` to the example
+	 * @todo    (maybe) more atts (e.g. `frameborder`, `allowfullscreen`, autostart etc.)
+	 */
+	function youtube( $atts, $content, $tag ) {
+		if ( '' === $atts['video'] ) {
+			return '';
+		}
+		$start = '';
+		if ( '' != $atts['start'] ) {
+			$start = '?start=' . $atts['start'];
+		}
+		return '<iframe width="560" height="315" src="https://www.youtube.com/embed/' . $atts['video'] . $start . '" frameborder="0" allowfullscreen></iframe>';
 	}
 
 	/**
