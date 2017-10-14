@@ -32,9 +32,8 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 				'type'             => 'self-closing',
 				'examples'         => array(
 					array(
-						'atts'    => array(
-							'before'   => sprintf( __( 'Login at: %s', 'awesome-shortcodes' ), '' ),
-						)
+						'before'  => '<a href="',
+						'after'   => '">' . __( 'Login', 'awesome-shortcodes' ) . '</a>',
 					),
 				),
 			),
@@ -437,7 +436,6 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	 *
 	 * @version 1.4.2
 	 * @since   1.4.2
-	 * @todo    add `before_shortcode` and `after_shortcode` to examples
 	 * @todo    add `redirect` attribute (including "redirect to current page")
 	 */
 	function login_url( $atts, $content, $tag ) {

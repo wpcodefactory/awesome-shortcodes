@@ -40,6 +40,7 @@ If you wish to contribute, join in on our [GitHub repository](https://github.com
 * Dev - `[total_tags]` shortcode added.
 * Dev - `[total_categories]` shortcode added.
 * Dev - `[youtube]` shortcode added.
+* Dev - Admin - More options (`before` and `after`) added to examples.
 
 = 1.4.1 - 13/10/2017 =
 * Fix - `[google_map]` - Attributes was wrongly marked as required.
