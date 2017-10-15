@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Shortcode Packs - General
  *
- * @version 1.4.2
+ * @version 1.5.0
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -18,7 +18,7 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.4.2
+	 * @version 1.5.0
 	 * @since   1.0.0
 	 * @todo    add shortcodes: `progress_bar`
 	 */
@@ -434,8 +434,8 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	/**
 	 * login_url.
 	 *
-	 * @version 1.4.2
-	 * @since   1.4.2
+	 * @version 1.5.0
+	 * @since   1.5.0
 	 * @todo    add `redirect` attribute (including "redirect to current page")
 	 */
 	function login_url( $atts, $content, $tag ) {
@@ -445,8 +445,8 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	/**
 	 * count_terms.
 	 *
-	 * @version 1.4.2
-	 * @since   1.4.2
+	 * @version 1.5.0
+	 * @since   1.5.0
 	 */
 	private function count_terms( $taxonomy, $atts ) {
 		$args = array(
@@ -461,8 +461,8 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	/**
 	 * total_taxonomy.
 	 *
-	 * @version 1.4.2
-	 * @since   1.4.2
+	 * @version 1.5.0
+	 * @since   1.5.0
 	 */
 	function total_taxonomy( $atts, $content, $tag ) {
 		return ( '' != $atts['taxonomy'] ? $this->count_terms( $atts['taxonomy'], $atts ) : '' );
@@ -471,8 +471,8 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	/**
 	 * total_tags.
 	 *
-	 * @version 1.4.2
-	 * @since   1.4.2
+	 * @version 1.5.0
+	 * @since   1.5.0
 	 */
 	function total_tags( $atts, $content, $tag ) {
 		return $this->count_terms( 'post_tag', $atts );
@@ -481,8 +481,8 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	/**
 	 * total_categories.
 	 *
-	 * @version 1.4.2
-	 * @since   1.4.2
+	 * @version 1.5.0
+	 * @since   1.5.0
 	 * @todo    (maybe) move to "Taxonomies" pack
 	 * @todo    more atts - check https://developer.wordpress.org/reference/classes/wp_term_query/__construct/
 	 */
@@ -493,8 +493,8 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	/**
 	 * youtube.
 	 *
-	 * @version 1.4.2
-	 * @since   1.4.2
+	 * @version 1.5.0
+	 * @since   1.5.0
 	 * @todo    `width` and `height`
 	 * @todo    `start` - parse minutes; and add `start` to the example
 	 * @todo    (maybe) more atts (e.g. `frameborder`, `allowfullscreen`, autostart etc.)

@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Admin Settings Class
  *
- * @version 1.4.2
+ * @version 1.5.0
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -104,7 +104,7 @@ class Alg_Awesome_Shortcodes_Admin_Settings {
 	/**
 	 * get_options.
 	 *
-	 * @version 1.4.2
+	 * @version 1.5.0
 	 * @since   1.0.0
 	 * @todo    (maybe) example output: `shortcode_pack->awesome_shortcode( ( ! empty( $example['atts'] ) ? $example['atts'] : array() ), ( ! empty( $example['content'] ) ? $example['content'] : '' ), $prefix . $shortcode_tag, ( isset( $shortcode['func'] ) ? $shortcode['func'] : $shortcode_tag ) )`
 	 * @todo    (maybe) remove `alg_awesome_shortcodes_enabled` completely
