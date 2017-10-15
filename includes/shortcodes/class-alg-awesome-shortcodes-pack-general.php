@@ -18,7 +18,7 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.5.0
+	 * @version 1.5.1
 	 * @since   1.0.0
 	 * @todo    add shortcodes: `progress_bar`
 	 */
@@ -62,6 +62,7 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 						'atts'    => array(
 							'before'   => sprintf( __( 'Total product categories: %s', 'awesome-shortcodes' ), '' ),
 							'taxonomy' => 'product_cat',
+							'on_zero'  => __( 'No product categories.', 'awesome-shortcodes' ),
 						)
 					),
 				),
@@ -79,7 +80,8 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 				'examples'         => array(
 					array(
 						'atts'    => array(
-							'before' => sprintf( __( 'Total tags: %s', 'awesome-shortcodes' ), '' ),
+							'before'  => sprintf( __( 'Total tags: %s', 'awesome-shortcodes' ), '' ),
+							'on_zero' => __( 'No tags.', 'awesome-shortcodes' ),
 						)
 					),
 				),
@@ -102,8 +104,9 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 				'examples'         => array(
 					array(
 						'atts'    => array(
-							'before' => sprintf( __( 'Total top level categories: %s', 'awesome-shortcodes' ), '' ),
-							'parent' => 0,
+							'before'  => sprintf( __( 'Total top level categories: %s', 'awesome-shortcodes' ), '' ),
+							'parent'  => 0,
+							'on_zero' => __( 'No categories.', 'awesome-shortcodes' ),
 						)
 					),
 				),

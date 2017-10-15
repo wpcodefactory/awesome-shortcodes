@@ -36,6 +36,7 @@ If you wish to contribute, join in on our [GitHub repository](https://github.com
 
 = 1.5.1 - 15/10/2017 =
 * Fix - `count_terms()` - Checking for `is_wp_error()` (returned for non existing taxonomies).
+* Dev - Examples - `on_zero` attribute added to `[total_taxonomy]`, `[total_tags]` and `[total_categories]` examples.
 
 = 1.5.0 - 15/10/2017 =
 * Dev - `[login_url]` shortcode added.
