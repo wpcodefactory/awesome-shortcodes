@@ -38,22 +38,22 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 				),
 			),
 			'total_taxonomy' => array(
-				'desc'             => __( 'Shortcode displays total taxonomy count on your site.', 'awesome-shortcodes' ),
+				'desc'             => __( 'Shortcode displays total taxonomy terms count on your site.', 'awesome-shortcodes' ),
 				'type'             => 'self-closing',
 				'atts'             => array(
 					'taxonomy' => array(
 						'default'  => '',
-						'desc'     => sprintf( __( 'Taxonomy. E.g.: %s.', 'awesome-shortcodes' ), '<code>product_tag</code>' ),
+						'desc'     => sprintf( __( 'Taxonomy name. E.g.: %s.', 'awesome-shortcodes' ), '<code>product_tag</code>' ),
 						'required' => true,
 					),
 					'parent' => array(
 						'default'  => '',
-						'desc'     => __( 'Parent taxonomy ID. Enter zero to count top level taxonomy. Leave empty to count all taxonomy.', 'awesome-shortcodes' ),
+						'desc'     => __( 'Parent taxonomy term ID. Enter zero to count top level terms. Leave empty to count all terms.', 'awesome-shortcodes' ),
 						'required' => false,
 					),
 					'hide_empty' => array(
 						'default'  => 'no',
-						'desc'     => sprintf( __( 'Set to %s if you want to skip empty taxonomy.', 'awesome-shortcodes' ), '<code>yes</code>' ),
+						'desc'     => sprintf( __( 'Set to %s if you want to skip empty terms.', 'awesome-shortcodes' ), '<code>yes</code>' ),
 						'required' => false,
 					),
 				),

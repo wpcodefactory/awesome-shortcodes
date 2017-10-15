@@ -227,7 +227,7 @@ class Alg_Awesome_Shortcodes_Admin_Settings {
 	 *
 	 * @version 1.4.0
 	 * @since   1.0.0
-	 * @todo    (maybe) add "Activate" / "Disable" links for each shortcode (like in Plugins)
+	 * @todo    (maybe) add "Activate" / "Deactivate" links for each shortcode (like in Plugins)
 	 * @todo    (maybe) add "Example > Output". Issue is: Scripts and styles are not loaded for a) admin(`admin_enqueue_scripts`); b) disabled shortcodes (this may be solved by "Enable the shortcode to see the example output")
 	 * @todo    (maybe) `screen-reader-text`
 	 * @todo    (maybe) remove `plugins` class in table; `plugin-title` and `plugin-description` in td
