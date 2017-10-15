@@ -122,6 +122,16 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 						'desc'     => __( 'If you want to start video from some time code, enter it here.', 'awesome-shortcodes' ),
 						'required' => false,
 					),
+					'width' => array(
+						'default'  => '560',
+						'desc'     => __( 'Embedded video width.', 'awesome-shortcodes' ),
+						'required' => false,
+					),
+					'height' => array(
+						'default'  => '315',
+						'desc'     => __( 'Embedded video height.', 'awesome-shortcodes' ),
+						'required' => false,
+					),
 				),
 				'examples'         => array(
 					array(
@@ -496,7 +506,6 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	 *
 	 * @version 1.5.0
 	 * @since   1.5.0
-	 * @todo    `width` and `height`
 	 * @todo    (maybe) more atts (e.g. `frameborder`, `allowfullscreen`, autostart etc.)
 	 */
 	function youtube( $atts, $content, $tag ) {
@@ -511,7 +520,7 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 			}
 			$start = '?start=' . $sec;
 		}
-		return '<iframe width="560" height="315" src="https://www.youtube.com/embed/' . $atts['video'] . $start . '" frameborder="0" allowfullscreen></iframe>';
+		return '<iframe width="' . $atts['width'] . '" height="' . $atts['height'] . '" src="https://www.youtube.com/embed/' . $atts['video'] . $start . '" frameborder="0" allowfullscreen></iframe>';
 	}
 
 	/**
