@@ -127,6 +127,7 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 					array(
 						'atts'    => array(
 							'video' => 'Q0CbN8sfihY',
+							'start' => '1:26',
 						)
 					),
 				),
@@ -496,7 +497,6 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	 * @version 1.5.0
 	 * @since   1.5.0
 	 * @todo    `width` and `height`
-	 * @todo    `start` - parse minutes; and add `start` to the example
 	 * @todo    (maybe) more atts (e.g. `frameborder`, `allowfullscreen`, autostart etc.)
 	 */
 	function youtube( $atts, $content, $tag ) {
@@ -505,7 +505,11 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 		}
 		$start = '';
 		if ( '' != $atts['start'] ) {
-			$start = '?start=' . $atts['start'];
+			$sec = 0;
+			foreach ( array_reverse( explode( ':', $atts['start'] ) ) as $k => $v ) {
+				$sec += pow( 60, $k ) * $v;
+			}
+			$start = '?start=' . $sec;
 		}
 		return '<iframe width="560" height="315" src="https://www.youtube.com/embed/' . $atts['video'] . $start . '" frameborder="0" allowfullscreen></iframe>';
 	}
