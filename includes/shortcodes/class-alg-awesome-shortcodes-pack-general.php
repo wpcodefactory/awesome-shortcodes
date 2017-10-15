@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Shortcode Packs - General
  *
- * @version 1.5.0
+ * @version 1.5.1
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -456,7 +456,7 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	/**
 	 * count_terms.
 	 *
-	 * @version 1.5.0
+	 * @version 1.5.1
 	 * @since   1.5.0
 	 */
 	private function count_terms( $taxonomy, $atts ) {
@@ -466,7 +466,7 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 			'hide_empty' => ( 'yes' === $atts['hide_empty'] ? 1 : 0 ),
 		);
 		$terms = get_terms( $args );
-		return count( $terms );
+		return ( is_wp_error( $terms ) ? 0 : count( $terms ) );
 	}
 
 	/**

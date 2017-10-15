@@ -34,6 +34,9 @@ If you wish to contribute, join in on our [GitHub repository](https://github.com
 
 == Changelog ==
 
+= 1.5.1 - 15/10/2017 =
+* Fix - `count_terms()` - Checking for `is_wp_error()` (returned for non existing taxonomies).
+
 = 1.5.0 - 15/10/2017 =
 * Dev - `[login_url]` shortcode added.
 * Dev - `[total_taxonomy]` shortcode added.
