@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Shortcode Packs - WooCommerce
  *
- * @version 1.4.0
+ * @version 1.5.1
  * @since   1.3.0
  * @author  Algoritmika Ltd.
  */
@@ -26,7 +26,7 @@ class Alg_Awesome_Shortcodes_Pack_WooCommerce extends Alg_Abstract_Awesome_Short
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.4.0
+	 * @version 1.5.1
 	 * @since   1.3.0
 	 */
 	function __construct() {
@@ -41,6 +41,28 @@ class Alg_Awesome_Shortcodes_Pack_WooCommerce extends Alg_Abstract_Awesome_Short
 			),
 		);
 		$this->shortcodes = array(
+			'wc_current_currency_symbol' => array(
+				'desc'             => __( 'Shortcode displays current WooCommerce currency symbol. Useful for multi-currency sites.', 'awesome-shortcodes' ),
+				'type'             => 'self-closing',
+				'examples'         => array(
+					array(
+						'atts' => array(
+							'before' => sprintf( __( 'Currency: %s', 'awesome-shortcodes' ), '' ),
+						),
+					),
+				),
+			),
+			'wc_current_currency_code' => array(
+				'desc'             => __( 'Shortcode displays current WooCommerce currency code. Useful for multi-currency sites.', 'awesome-shortcodes' ),
+				'type'             => 'self-closing',
+				'examples'         => array(
+					array(
+						'atts' => array(
+							'before' => sprintf( __( 'Currency: %s', 'awesome-shortcodes' ), '' ),
+						),
+					),
+				),
+			),
 			'wc_product_price_html' => array(
 				'desc'             => __( 'Shortcode displays WooCommerce product full price with currency symbol.', 'awesome-shortcodes' ),
 				'type'             => 'self-closing',
@@ -89,6 +111,26 @@ class Alg_Awesome_Shortcodes_Pack_WooCommerce extends Alg_Abstract_Awesome_Short
 			),
 		);
 		parent::__construct();
+	}
+
+	/**
+	 * wc_current_currency_symbol.
+	 *
+	 * @version 1.5.1
+	 * @since   1.5.1
+	 */
+	function wc_current_currency_symbol( $atts, $content, $tag ) {
+		return ( function_exists( 'get_woocommerce_currency_symbol' ) ? get_woocommerce_currency_symbol() : '' );
+	}
+
+	/**
+	 * wc_current_currency_code.
+	 *
+	 * @version 1.5.1
+	 * @since   1.5.1
+	 */
+	function wc_current_currency_code( $atts, $content, $tag ) {
+		return ( function_exists( 'get_woocommerce_currency' ) ? get_woocommerce_currency() : '' );
 	}
 
 	/**
