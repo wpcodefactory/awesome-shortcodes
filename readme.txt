@@ -3,7 +3,7 @@ Contributors: algoritmika, anbinder
 Donate link: https://www.paypal.me/anbinder
 Tags: shortcode, shortcodes, awesome, wpcodefactory, algoritmika
 Tested up to: 4.8
-Stable tag: 1.5.0
+Stable tag: 1.5.1
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -34,7 +34,7 @@ If you wish to contribute, join in on our [GitHub repository](https://github.com
 
 == Changelog ==
 
-= 1.5.1 - 16/10/2017 =
+= 1.5.1 - 18/10/2017 =
 * Dev - `[wc_current_currency_symbol]` shortcode added.
 * Dev - `[wc_current_currency_code]` shortcode added.
 * Fix - `count_terms()` - Checking for `is_wp_error()` (returned for non existing taxonomies).
