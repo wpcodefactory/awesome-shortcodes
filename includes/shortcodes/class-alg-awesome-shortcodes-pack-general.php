@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Shortcode Packs - General
  *
- * @version 1.5.1
+ * @version 1.5.2
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -18,7 +18,7 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.5.1
+	 * @version 1.5.2
 	 * @since   1.0.0
 	 * @todo    add shortcodes: `progress_bar`
 	 */
@@ -27,6 +27,33 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 		$this->title      = __( 'General', 'awesome-shortcodes' );
 		$this->desc       = __( 'General shortcodes.', 'awesome-shortcodes' );
 		$this->shortcodes = array(
+			'font_awesome' => array(
+				'desc'             => __( 'Shortcode displays Font Awesome icons.', 'awesome-shortcodes' ),
+				'type'             => 'self-closing',
+				'enqueue_styles'   => array( array( 'src' => 'css/font-awesome/css/font-awesome.min.css' ) ),
+				'atts'             => array(
+					'icon' => array(
+						'default'  => '',
+						'desc'     => sprintf( __( 'Enter the required icon slug here. You can check the icon slugs at %s.', 'awesome-shortcodes' ),
+							'<a target="_blank" href="http://fontawesome.io/icons/">http://fontawesome.io/icons/</a>' ),
+						'required' => true,
+					),
+				),
+				'examples'         => array(
+					array(
+						'desc'    => sprintf( __( 'Camera icon:%s', 'awesome-shortcodes' ), '' ),
+						'atts'    => array(
+							'icon' => 'fa-camera-retro',
+						)
+					),
+					array(
+						'desc'    => sprintf( __( 'Spinner icon:%s', 'awesome-shortcodes' ), '' ),
+						'atts'    => array(
+							'icon' => 'fa-spinner fa-spin',
+						)
+					),
+				),
+			),
 			'login_url' => array(
 				'desc'             => __( 'Shortcode displays your WordPress site login URL.', 'awesome-shortcodes' ),
 				'type'             => 'self-closing',
@@ -443,6 +470,25 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 			),
 		);
 		parent::__construct();
+	}
+
+	/**
+	 * font_awesome.
+	 *
+	 * @version 1.5.2
+	 * @since   1.5.2
+	 * @todo    do not cut `fa-` (same to [dashicon])
+	 * @todo    http://fontawesome.io/examples/
+	 */
+	function font_awesome( $atts, $content, $tag ) {
+		if ( '' === $atts['icon'] ) {
+			return '';
+		}
+		$prefix = 'fa-';
+		if ( $prefix === substr( $atts['icon'], 0, strlen( $prefix ) ) ) {
+			$atts['icon'] = substr( $atts['icon'], strlen( $prefix ) );
+		}
+		return '<i class="fa fa-' . $atts['icon'] . '"></i>';
 	}
 
 	/**

@@ -34,6 +34,9 @@ If you wish to contribute, join in on our [GitHub repository](https://github.com
 
 == Changelog ==
 
+= 1.5.2 - 29/10/2017 =
+* Dev - `[font_awesome]` shortcode added.
+
 = 1.5.1 - 18/10/2017 =
 * Dev - `[wc_current_currency_symbol]` shortcode added.
 * Dev - `[wc_current_currency_code]` shortcode added.

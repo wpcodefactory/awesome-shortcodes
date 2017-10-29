@@ -3,7 +3,7 @@
 Plugin Name: Awesome Shortcodes
 Plugin URI: https://awesomeshortcodes.com/
 Description: Awesome shortcodes.
-Version: 1.5.1
+Version: 1.5.2-dev
 Author: Algoritmika Ltd
 Author URI: http://algoritmika.com
 Text Domain: awesome-shortcodes
@@ -32,7 +32,7 @@ final class Alg_Awesome_Shortcodes {
 	 * @var   string
 	 * @since 1.0.0
 	 */
-	public $version = '1.5.1';
+	public $version = '1.5.2-dev-201710291707';
 
 	/**
 	 * @var   Alg_Awesome_Shortcodes The single instance of the class
