@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Shortcode Packs - Abstract
  *
- * @version 1.3.1
+ * @version 1.5.2
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -48,7 +48,7 @@ class Alg_Abstract_Awesome_Shortcodes_Pack {
 	/**
 	 * awesome_shortcode.
 	 *
-	 * @version 1.3.1
+	 * @version 1.5.2
 	 * @since   1.0.0
 	 * @todo    (maybe) location, site_visibility, user_visibility etc.
 	 */
@@ -94,7 +94,7 @@ class Alg_Abstract_Awesome_Shortcodes_Pack {
 		}
 		$atts   = shortcode_atts( $default_atts, $atts, $original_tag );
 		$func   = ( '' == $func ? $this->func[ $original_tag ] : $func );
-		$output = ( is_array( $func ) ? $func[0]->$func[1]( $atts, $content, $original_tag ) : $func( $atts, $content, $original_tag ) );
+		$output = ( is_array( $func ) ? $func[0]->{$func[1]}( $atts, $content, $original_tag ) : $func( $atts, $content, $original_tag ) );
 		if ( 'yes' === $atts['strip_tags'] ) {
 			$output = strip_tags( $output );
 		}

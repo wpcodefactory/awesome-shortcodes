@@ -30,13 +30,18 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 			'font_awesome' => array(
 				'desc'             => __( 'Shortcode displays Font Awesome icons.', 'awesome-shortcodes' ),
 				'type'             => 'self-closing',
-				'enqueue_styles'   => array( array( 'src' => 'css/font-awesome/css/font-awesome.min.css' ) ),
+				'enqueue_styles'   => array( array( 'src' => 'font-awesome/css/font-awesome.min.css' ) ),
 				'atts'             => array(
 					'icon' => array(
 						'default'  => '',
 						'desc'     => sprintf( __( 'Enter the required icon slug here. You can check the icon slugs at %s.', 'awesome-shortcodes' ),
 							'<a target="_blank" href="http://fontawesome.io/icons/">http://fontawesome.io/icons/</a>' ),
 						'required' => true,
+					),
+					'style' => array(
+						'default'  => '',
+						'desc'     => __( 'Additional styling.', 'awesome-shortcodes' ),
+						'required' => false,
 					),
 				),
 				'examples'         => array(
@@ -488,7 +493,8 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 		if ( $prefix === substr( $atts['icon'], 0, strlen( $prefix ) ) ) {
 			$atts['icon'] = substr( $atts['icon'], strlen( $prefix ) );
 		}
-		return '<i class="fa fa-' . $atts['icon'] . '"></i>';
+		$style = ( '' != $atts['style'] ? ' style="' . $atts['style'] . '"' : '' );
+		return '<i class="fa fa-' . $atts['icon'] . '"' . $style . '></i>';
 	}
 
 	/**
