@@ -194,13 +194,13 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 					array(
 						'desc'    => sprintf( __( 'Tickets icon:%s', 'awesome-shortcodes' ), '' ),
 						'atts'    => array(
-							'icon' => 'tickets',
+							'icon' => 'dashicons-tickets',
 						)
 					),
 					array(
 						'desc'    => sprintf( __( 'Admin home icon:%s', 'awesome-shortcodes' ), '' ),
 						'atts'    => array(
-							'icon' => 'admin-home',
+							'icon' => 'dashicons-admin-home',
 						)
 					),
 				),
@@ -482,19 +482,14 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	 *
 	 * @version 1.5.2
 	 * @since   1.5.2
-	 * @todo    do not cut `fa-` (same to [dashicon])
 	 * @todo    http://fontawesome.io/examples/
 	 */
 	function font_awesome( $atts, $content, $tag ) {
 		if ( '' === $atts['icon'] ) {
 			return '';
 		}
-		$prefix = 'fa-';
-		if ( $prefix === substr( $atts['icon'], 0, strlen( $prefix ) ) ) {
-			$atts['icon'] = substr( $atts['icon'], strlen( $prefix ) );
-		}
 		$style = ( '' != $atts['style'] ? ' style="' . $atts['style'] . '"' : '' );
-		return '<i class="fa fa-' . $atts['icon'] . '"' . $style . '></i>';
+		return '<i class="fa ' . $atts['icon'] . '"' . $style . '></i>';
 	}
 
 	/**
@@ -581,18 +576,14 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	/**
 	 * dashicon.
 	 *
-	 * @version 1.4.0
+	 * @version 1.5.2
 	 * @since   1.4.0
 	 */
 	function dashicon( $atts, $content, $tag ) {
 		if ( '' === $atts['icon'] ) {
 			return '';
 		}
-		$prefix = 'dashicons-';
-		if ( $prefix === substr( $atts['icon'], 0, strlen( $prefix ) ) ) {
-			$atts['icon'] = substr( $atts['icon'], strlen( $prefix ) );
-		}
-		return '<span class="dashicons dashicons-' . $atts['icon'] . '"></span>';
+		return '<span class="dashicons ' . $atts['icon'] . '"></span>';
 	}
 
 	/**

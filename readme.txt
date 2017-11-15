@@ -34,9 +34,10 @@ If you wish to contribute, join in on our [GitHub repository](https://github.com
 
 == Changelog ==
 
-= 1.5.2 - 05/11/2017 =
+= 1.5.2 - 15/11/2017 =
 * Dev - `[font_awesome]` shortcode added.
-* Dev - PHP 7 compatibility - "Fatal error: Uncaught Error: Function name must be a string in abstract-alg-awesome-shortcodes-pack.php:97" message fixed.
+* Dev - `[dashicon]` - Removed cutting `dashicons-` in `icon` attribute.
+* Dev - `Alg_Abstract_Awesome_Shortcodes_Pack` - PHP 7 compatibility - "Function name must be a string..." message fixed.
 
 = 1.5.1 - 18/10/2017 =
 * Dev - `[wc_current_currency_symbol]` shortcode added.
