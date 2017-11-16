@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Shortcode Packs - General
  *
- * @version 1.5.2
+ * @version 1.5.4
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -18,7 +18,7 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.5.2
+	 * @version 1.5.4
 	 * @since   1.0.0
 	 * @todo    add shortcodes: `progress_bar`
 	 */
@@ -27,6 +27,18 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 		$this->title      = __( 'General', 'awesome-shortcodes' );
 		$this->desc       = __( 'General shortcodes.', 'awesome-shortcodes' );
 		$this->shortcodes = array(
+			'copyright' => array(
+				'desc'             => __( 'Shortcode displays copyright symbol.', 'awesome-shortcodes' ),
+				'type'             => 'self-closing',
+				'atts'             => array(
+					'add_current_year' => array(
+						'default'  => 'yes',
+						'desc'     => __( 'Adds current year.', 'awesome-shortcodes' ),
+						'required' => false,
+					),
+				),
+				'examples'         => array( array() ),
+			),
 			'font_awesome' => array(
 				'desc'             => __( 'Shortcode displays Font Awesome icons.', 'awesome-shortcodes' ),
 				'type'             => 'self-closing',
@@ -475,6 +487,20 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 			),
 		);
 		parent::__construct();
+	}
+
+	/**
+	 * copyright.
+	 *
+	 * @version 1.5.4
+	 * @since   1.5.4
+	 */
+	function copyright( $atts, $content, $tag ) {
+		$return = '&copy;';
+		if ( 'yes' === $atts['add_current_year'] ) {
+			$return .= ' ' . date( 'Y' );
+		}
+		return $return;
 	}
 
 	/**
