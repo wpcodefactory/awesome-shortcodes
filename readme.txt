@@ -3,7 +3,7 @@ Contributors: algoritmika, anbinder
 Donate link: https://www.paypal.me/anbinder
 Tags: shortcode, shortcodes, awesome, wpcodefactory, algoritmika
 Tested up to: 4.8
-Stable tag: 1.5.4
+Stable tag: 1.5.5
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -35,6 +35,9 @@ If you wish to contribute, join in on our [GitHub repository](https://github.com
 3. Start by visiting plugin settings at 'Settings > Awesome Shortcodes'.
 
 == Changelog ==
+
+= 1.5.5 - 26/11/2017 =
+* Dev - POT file updated.
 
 = 1.5.4 - 16/11/2017 =
 * Dev - `[copyright]` shortcode added.
