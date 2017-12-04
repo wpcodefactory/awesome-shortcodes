@@ -2,8 +2,8 @@
 Contributors: algoritmika, anbinder
 Donate link: https://www.paypal.me/anbinder
 Tags: shortcode, shortcodes, awesome, wpcodefactory, algoritmika
-Tested up to: 4.8
-Stable tag: 1.5.5
+Tested up to: 4.9
+Stable tag: 1.5.6
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -21,7 +21,7 @@ Currently included shortcode packs:
 * Users shortcodes.
 * WooCommerce shortcodes.
 
-For more info please visit [awesomeshortcodes.com](https://awesomeshortcodes.com/).
+For more info please visit [Awesome Shortcodes site](https://awesomeshortcodes.com/).
 
 If you wish to contribute, join in on our [GitHub repository](https://github.com/algoritmika/awesome-shortcodes).
 
@@ -35,6 +35,9 @@ If you wish to contribute, join in on our [GitHub repository](https://github.com
 3. Start by visiting plugin settings at 'Settings > Awesome Shortcodes'.
 
 == Changelog ==
+
+= 1.5.6 - 04/12/2017 =
+* Dev - readme.txt updated.
 
 = 1.5.5 - 26/11/2017 =
 * Dev - POT file updated.
