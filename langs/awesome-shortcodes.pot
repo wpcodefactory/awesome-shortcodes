@@ -1,106 +1,106 @@
-#: awesome-shortcodes.php:97
-#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:389
+#: awesome-shortcodes.php:96
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:390
 msgid "Settings"
 msgstr ""
 
 #: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:40
 #: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:41
-#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:422
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:423
 msgid "Awesome Shortcodes"
 msgstr ""
 
-#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:101
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:102
 msgid "Your settings have been saved."
 msgstr ""
 
-#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:120
-#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:130
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:121
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:131
 msgid "Enable"
 msgstr ""
 
-#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:121
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:122
 msgid "Enable plugin"
 msgstr ""
 
-#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:129
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:130
 msgid "Enable shortcodes in text widgets"
 msgstr ""
 
-#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:131
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:132
 msgid "Enable all shortcodes (including awesome) in text widgets."
 msgstr ""
 
-#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:138
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:139
 msgid "Awesome shortcodes prefix"
 msgstr ""
 
-#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:139
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:140
 msgid ""
 "Prefix all awesome shortcodes. Setting this is useful if you have "
 "compatibility issues with other shortcodes with matching names."
 msgstr ""
 
-#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:196
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:197
 msgid "required"
 msgstr ""
 
-#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:196
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:197
 msgid "optional"
 msgstr ""
 
-#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:199
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:200
 #, php-format
 msgid "Default: %s"
 msgstr ""
 
-#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:200
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:201
 msgid "None"
 msgstr ""
 
-#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:252
-#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:284
-msgid "Select All"
-msgstr ""
-
 #: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:253
-#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:286
-msgid "Shortcode"
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:285
+msgid "Select All"
 msgstr ""
 
 #: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:254
 #: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:287
-msgid "Description"
+msgid "Shortcode"
 msgstr ""
 
 #: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:255
 #: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:288
-msgid "Attributes"
+msgid "Description"
 msgstr ""
 
 #: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:256
 #: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:289
-msgid "Examples"
+msgid "Attributes"
 msgstr ""
 
 #: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:257
 #: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:290
+msgid "Examples"
+msgstr ""
+
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:258
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:291
 msgid "Aliases"
 msgstr ""
 
-#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:267
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:268
 msgid "Documentation"
 msgstr ""
 
-#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:358
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:359
 msgid "Save changes"
 msgstr ""
 
-#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:391
-#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:424
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:392
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:425
 msgid "Shortcodes"
 msgstr ""
 
-#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:424
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:425
 msgid "Options"
 msgstr ""
 
@@ -599,55 +599,91 @@ msgid "Text shortcodes."
 msgstr ""
 
 #: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:30
+msgid "Shows text by user role."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:35
+msgid "User roles (comma separated)."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:40
+msgid "Text visible to other user roles."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:46
+msgid "This text is visible to other users."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:47
+msgid "This text is visible to customers."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:52
+msgid "Hides text from users who are not logged in."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:57
+msgid "Text visible to guest (i.e. not logged in) users."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:63
+msgid "This text is visible to guests."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:64
+msgid "This text is visible to logged in users."
+msgstr ""
+
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:69
 #, php-format
 msgid ""
 "Creates an interactive widget that user can open and close. Uses HTML %s tag "
 "(%s)."
 msgstr ""
 
-#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:36
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:75
 msgid "Visible heading. The heading can be clicked to view/hide the details."
 msgstr ""
 
-#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:42
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:81
 msgid "Show Text"
 msgstr ""
 
-#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:43
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:82
 msgid "This text will be hidden, until the user clicks on summary."
 msgstr ""
 
-#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:48
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:87
 msgid "Strikeouts content."
 msgstr ""
 
-#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:53
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:92
 msgid "This text will be striked out."
 msgstr ""
 
-#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:58
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:97
 #, php-format
 msgid ""
 "Wrap contents in %s tag. Useful for displaying a piece of computer code."
 msgstr ""
 
-#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:67
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:106
 msgid "Creates 3D text with CSS."
 msgstr ""
 
-#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:73
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:112
 msgid "Font size."
 msgstr ""
 
-#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:81
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:120
 msgid "Text in 3D"
 msgstr ""
 
-#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:86
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:125
 msgid "Creates flashing text effect with CSS."
 msgstr ""
 
-#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:91
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:130
 msgid "Attention"
 msgstr ""
 
