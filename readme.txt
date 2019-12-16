@@ -34,7 +34,7 @@ We are open to your suggestions and feedback. Thank you for using or trying out 
 
 == Changelog ==
 
-= 1.5.9 - 16/12/2019 =
+= 1.6.0 - 16/12/2019 =
 * Dev - `[is_user_role]` shortcode added.
 * Dev - `[is_user_logged_in]` shortcode added.
 * Dev - Code refactoring.

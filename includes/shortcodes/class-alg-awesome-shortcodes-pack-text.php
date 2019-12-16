@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Shortcode Packs - Text
  *
- * @version 1.5.9
+ * @version 1.6.0
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -18,7 +18,7 @@ class Alg_Awesome_Shortcodes_Pack_Text extends Alg_Abstract_Awesome_Shortcodes_P
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.5.9
+	 * @version 1.6.0
 	 * @since   1.0.0
 	 */
 	function __construct() {
@@ -138,8 +138,8 @@ class Alg_Awesome_Shortcodes_Pack_Text extends Alg_Abstract_Awesome_Shortcodes_P
 	/**
 	 * is_user_role.
 	 *
-	 * @version 1.5.9
-	 * @since   1.5.9
+	 * @version 1.6.0
+	 * @since   1.6.0
 	 * @todo    [dev] (maybe) replace `super_admin` with `administrator`
 	 * @todo    [dev] (maybe) empty value with `guest`
 	 */
@@ -159,8 +159,8 @@ class Alg_Awesome_Shortcodes_Pack_Text extends Alg_Abstract_Awesome_Shortcodes_P
 	/**
 	 * is_user_logged_in.
 	 *
-	 * @version 1.5.9
-	 * @since   1.5.9
+	 * @version 1.6.0
+	 * @since   1.6.0
 	 */
 	function is_user_logged_in( $atts, $content, $tag ) {
 		return ( ! function_exists( 'is_user_logged_in' ) || ! function_exists( 'wp_get_current_user' ) || ! is_user_logged_in() ? $atts['guest'] : $content );
