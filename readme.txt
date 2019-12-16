@@ -1,8 +1,7 @@
 === Awesome Shortcodes ===
 Contributors: algoritmika, anbinder
-Donate link: https://www.paypal.me/anbinder
-Tags: shortcode, shortcodes, awesome, wpcodefactory, algoritmika
-Tested up to: 4.9
+Tags: shortcode, shortcodes, awesome
+Tested up to: 5.3
 Stable tag: 1.5.8
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -29,11 +28,14 @@ We are open to your suggestions and feedback. Thank you for using or trying out 
 
 == Installation ==
 
-1. Upload the entire 'awesome-shortcodes' folder to the '/wp-content/plugins/' directory.
-2. Activate the plugin through the 'Plugins' menu in WordPress.
-3. Start by visiting plugin settings at 'Settings > Awesome Shortcodes'.
+1. Upload the entire plugin folder to the `/wp-content/plugins/` directory.
+2. Activate the plugin through the "Plugins" menu in WordPress.
+3. Start by visiting plugin settings at "Settings > Awesome Shortcodes".
 
 == Changelog ==
+
+= 1.5.9 - 16/12/2019 =
+* Tested up to: 5.3.
 
 = 1.5.8 - 05/12/2017 =
 * Dev - readme.txt updated.

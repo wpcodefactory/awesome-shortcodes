@@ -3,12 +3,12 @@
 Plugin Name: Awesome Shortcodes
 Plugin URI: https://awesomeshortcodes.com/
 Description: Awesome shortcodes.
-Version: 1.5.8
+Version: 1.5.9-dev
 Author: Algoritmika Ltd
-Author URI: http://algoritmika.com
+Author URI: https://algoritmika.com
 Text Domain: awesome-shortcodes
 Domain Path: /langs
-Copyright: © 2017 Algoritmika Ltd.
+Copyright: © 2019 Algoritmika Ltd.
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 */
@@ -32,7 +32,7 @@ final class Alg_Awesome_Shortcodes {
 	 * @var   string
 	 * @since 1.0.0
 	 */
-	public $version = '1.5.8';
+	public $version = '1.5.9-dev-20191216-2239';
 
 	/**
 	 * @var   Alg_Awesome_Shortcodes The single instance of the class
@@ -93,8 +93,7 @@ final class Alg_Awesome_Shortcodes {
 	 * @return  array
 	 */
 	function action_links( $links ) {
-		$custom_links = array( '<a href="' . admin_url( 'options-general.php?page=awesome-shortcodes' ) . '">' .
-			__( 'Settings', 'awesome-shortcodes' ) . '</a>' );
+		$custom_links = array( '<a href="' . admin_url( 'options-general.php?page=awesome-shortcodes' ) . '">' . __( 'Settings', 'awesome-shortcodes' ) . '</a>' );
 		return array_merge( $custom_links, $links );
 	}
 
