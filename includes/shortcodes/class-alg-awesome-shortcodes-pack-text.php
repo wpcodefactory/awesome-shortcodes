@@ -52,7 +52,7 @@ class Alg_Awesome_Shortcodes_Pack_Text extends Alg_Abstract_Awesome_Shortcodes_P
 				'desc'             => __( 'Hides text from users who are not logged in.', 'awesome-shortcodes' ),
 				'type'             => 'enclosing',
 				'atts'             => array(
-					'guest_content' => array(
+					'guest' => array(
 						'default'  => '',
 						'desc'     => __( 'Text visible to guest (i.e. not logged in) users.', 'awesome-shortcodes' ),
 						'required' => false,
@@ -60,7 +60,7 @@ class Alg_Awesome_Shortcodes_Pack_Text extends Alg_Abstract_Awesome_Shortcodes_P
 				),
 				'examples'         => array(
 					array(
-						'atts'    => array( 'guest_content' => __( 'This text is visible to guests.', 'awesome-shortcodes' ) ),
+						'atts'    => array( 'guest' => __( 'This text is visible to guests.', 'awesome-shortcodes' ) ),
 						'content' => __( 'This text is visible to logged in users.', 'awesome-shortcodes' ),
 					),
 				),
@@ -140,6 +140,8 @@ class Alg_Awesome_Shortcodes_Pack_Text extends Alg_Abstract_Awesome_Shortcodes_P
 	 *
 	 * @version 1.5.9
 	 * @since   1.5.9
+	 * @todo    [dev] (maybe) replace `super_admin` with `administrator`
+	 * @todo    [dev] (maybe) empty value with `guest`
 	 */
 	function is_user_role( $atts, $content, $tag ) {
 		if ( '' === $atts['roles'] ) {
@@ -161,7 +163,7 @@ class Alg_Awesome_Shortcodes_Pack_Text extends Alg_Abstract_Awesome_Shortcodes_P
 	 * @since   1.5.9
 	 */
 	function is_user_logged_in( $atts, $content, $tag ) {
-		return ( ! function_exists( 'is_user_logged_in' ) || ! function_exists( 'wp_get_current_user' ) || ! is_user_logged_in() ? $atts['guest_content'] : $content );
+		return ( ! function_exists( 'is_user_logged_in' ) || ! function_exists( 'wp_get_current_user' ) || ! is_user_logged_in() ? $atts['guest'] : $content );
 	}
 
 	/**
@@ -169,7 +171,7 @@ class Alg_Awesome_Shortcodes_Pack_Text extends Alg_Abstract_Awesome_Shortcodes_P
 	 *
 	 * @version 1.3.0
 	 * @since   1.3.0
-	 * @todo    [dev] (now) move to "Text Formatting" pack
+	 * @todo    [dev] (maybe) move to "Text Formatting" pack
 	 */
 	function details( $atts, $content, $tag ) {
 		return ( '' === $atts['summary'] ? '' : '<details>' . '<summary>' . $atts['summary'] . '</summary>' . $content . '</details>' );
@@ -180,7 +182,7 @@ class Alg_Awesome_Shortcodes_Pack_Text extends Alg_Abstract_Awesome_Shortcodes_P
 	 *
 	 * @version 1.0.0
 	 * @since   1.0.0
-	 * @todo    (maybe) more atts
+	 * @todo    [dev] (maybe) more atts
 	 */
 	function flash( $atts, $content, $tag ) {
 		return '<div class="awesome-shortcode-flash">' . $content . '</div>';
@@ -211,8 +213,8 @@ class Alg_Awesome_Shortcodes_Pack_Text extends Alg_Abstract_Awesome_Shortcodes_P
 	 *
 	 * @version 1.0.0
 	 * @since   1.0.0
-	 * @todo    (maybe) more atts
-	 * @todo    (maybe) `style` instead of `font_size`
+	 * @todo    [dev] (maybe) more atts
+	 * @todo    [dev] (maybe) `style` instead of `font_size`
 	 */
 	function text3d( $atts, $content, $tag ) {
 		$style = ( '' != $atts['font_size'] ? ' style="font-size:' . $atts['font_size'] . ';"' : '' );

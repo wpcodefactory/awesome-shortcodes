@@ -37,6 +37,7 @@ We are open to your suggestions and feedback. Thank you for using or trying out 
 = 1.5.9 - 16/12/2019 =
 * Dev - `[is_user_role]` shortcode added.
 * Dev - `[is_user_logged_in]` shortcode added.
+* Dev - Code refactoring.
 * Tested up to: 5.3.
 
 = 1.5.8 - 05/12/2017 =
