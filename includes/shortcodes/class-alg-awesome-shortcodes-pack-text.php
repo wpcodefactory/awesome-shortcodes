@@ -142,6 +142,7 @@ class Alg_Awesome_Shortcodes_Pack_Text extends Alg_Abstract_Awesome_Shortcodes_P
 	 * @since   1.6.0
 	 * @todo    [dev] (maybe) replace `super_admin` with `administrator`
 	 * @todo    [dev] (maybe) empty value with `guest`
+	 * @todo    [dev] (maybe) alias: `[user_role]`, `[role]`
 	 */
 	function is_user_role( $atts, $content, $tag ) {
 		if ( '' === $atts['roles'] ) {
@@ -161,6 +162,7 @@ class Alg_Awesome_Shortcodes_Pack_Text extends Alg_Abstract_Awesome_Shortcodes_P
 	 *
 	 * @version 1.6.0
 	 * @since   1.6.0
+	 * @todo    [dev] (maybe) alias: `[registered]`, `[user_logged_in]`, `[logged]`
 	 */
 	function is_user_logged_in( $atts, $content, $tag ) {
 		return ( ! function_exists( 'is_user_logged_in' ) || ! function_exists( 'wp_get_current_user' ) || ! is_user_logged_in() ? $atts['guest'] : $content );
