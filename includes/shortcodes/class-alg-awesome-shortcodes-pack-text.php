@@ -32,7 +32,7 @@ class Alg_Awesome_Shortcodes_Pack_Text extends Alg_Abstract_Awesome_Shortcodes_P
 				'atts'             => array(
 					'roles' => array(
 						'default'  => '',
-						'desc'     => __( 'User roles.', 'awesome-shortcodes' ),
+						'desc'     => __( 'User roles (comma separated).', 'awesome-shortcodes' ),
 						'required' => true,
 					),
 					'fallback' => array(

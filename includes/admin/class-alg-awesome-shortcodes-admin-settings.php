@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Admin Settings Class
  *
- * @version 1.5.0
+ * @version 1.6.0
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -68,9 +68,8 @@ class Alg_Awesome_Shortcodes_Admin_Settings {
 	/**
 	 * handle_actions.
 	 *
-	 * @version 1.0.0
+	 * @version 1.6.0
 	 * @since   1.0.0
-	 * @todo    [dev] (now) sanitize
 	 */
 	function handle_actions() {
 		if ( isset( $_POST['alg_awesome_shortcodes_save_options'] ) ) {
@@ -81,8 +80,9 @@ class Alg_Awesome_Shortcodes_Admin_Settings {
 					}
 				}
 			} elseif ( 'shortcodes' === $this->get_current_section() ) {
-				$shortcode_options = get_option( 'alg_awesome_shortcodes_options', array() );
-				foreach ( $_POST['alg_awesome_shortcodes_options'] as $shortcode => $option_value ) {
+				$shortcode_options  = get_option( 'alg_awesome_shortcodes_options', array() );
+				$_shortcode_options = array_map( 'sanitize_key', $_POST['alg_awesome_shortcodes_options'] );
+				foreach ( $_shortcode_options as $shortcode => $option_value ) {
 					$shortcode_options[ $shortcode ] = ( 'yes' === $option_value );
 				}
 				update_option( 'alg_awesome_shortcodes_options', $shortcode_options );

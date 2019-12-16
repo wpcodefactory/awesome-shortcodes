@@ -37,6 +37,7 @@ We are open to your suggestions and feedback. Thank you for using or trying out 
 = 1.6.0 - 16/12/2019 =
 * Dev - `[is_user_role]` shortcode added.
 * Dev - `[is_user_logged_in]` shortcode added.
+* Dev - Admin settings - All user input is sanitized now.
 * Dev - Code refactoring.
 * Tested up to: 5.3.
 
