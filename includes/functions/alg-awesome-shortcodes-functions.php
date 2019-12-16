@@ -33,6 +33,7 @@ if ( ! function_exists( 'alg_awesome_shortcodes_get_table_html' ) ) {
 	 *
 	 * @version 1.0.0
 	 * @since   1.0.0
+	 * @todo    [dev] (now) `extract`
 	 */
 	function alg_awesome_shortcodes_get_table_html( $data, $args = array() ) {
 		$defaults = array(

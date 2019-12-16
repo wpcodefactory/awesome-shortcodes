@@ -70,6 +70,7 @@ class Alg_Awesome_Shortcodes_Admin_Settings {
 	 *
 	 * @version 1.0.0
 	 * @since   1.0.0
+	 * @todo    [dev] (now) sanitize
 	 */
 	function handle_actions() {
 		if ( isset( $_POST['alg_awesome_shortcodes_save_options'] ) ) {

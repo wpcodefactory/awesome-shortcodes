@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Shortcode Packs - Text
  *
- * @version 1.3.0
+ * @version 1.5.9
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
@@ -18,7 +18,7 @@ class Alg_Awesome_Shortcodes_Pack_Text extends Alg_Abstract_Awesome_Shortcodes_P
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.3.0
+	 * @version 1.5.9
 	 * @since   1.0.0
 	 */
 	function __construct() {
@@ -26,6 +26,23 @@ class Alg_Awesome_Shortcodes_Pack_Text extends Alg_Abstract_Awesome_Shortcodes_P
 		$this->title      = __( 'Text', 'awesome-shortcodes' );
 		$this->desc       = __( 'Text shortcodes.', 'awesome-shortcodes' );
 		$this->shortcodes = array(
+			'is_user_logged_in' => array(
+				'desc'             => __( 'Hides text from users who are not logged in.', 'awesome-shortcodes' ),
+				'type'             => 'enclosing',
+				'atts'             => array(
+					'guest_content' => array(
+						'default'  => '',
+						'desc'     => __( 'Text visible to guest (i.e. not logged in) users.', 'awesome-shortcodes' ),
+						'required' => false,
+					),
+				),
+				'examples'         => array(
+					array(
+						'atts'    => array( 'guest_content' => __( 'This text is visible to guests.', 'awesome-shortcodes' ) ),
+						'content' => __( 'This text is visible to logged in users.', 'awesome-shortcodes' ),
+					),
+				),
+			),
 			'details' => array(
 				'desc'             => sprintf( __( 'Creates an interactive widget that user can open and close. Uses HTML %s tag (%s).', 'awesome-shortcodes' ),
 					'<code>&lt;details&gt;</code>', '<a target="_blank" href="https://www.w3schools.com/tags/tag_details.asp">https://www.w3schools.com/tags/tag_details.asp</a>' ),
@@ -97,11 +114,21 @@ class Alg_Awesome_Shortcodes_Pack_Text extends Alg_Abstract_Awesome_Shortcodes_P
 	}
 
 	/**
+	 * is_user_logged_in.
+	 *
+	 * @version 1.5.9
+	 * @since   1.5.9
+	 */
+	function is_user_logged_in( $atts, $content, $tag ) {
+		return ( ! is_user_logged_in() ? $atts['guest_content'] : $content );
+	}
+
+	/**
 	 * details.
 	 *
 	 * @version 1.3.0
 	 * @since   1.3.0
-	 * @todo    move to "Text Formatting" pack
+	 * @todo    [dev] (now) move to "Text Formatting" pack
 	 */
 	function details( $atts, $content, $tag ) {
 		return ( '' === $atts['summary'] ? '' : '<details>' . '<summary>' . $atts['summary'] . '</summary>' . $content . '</details>' );
