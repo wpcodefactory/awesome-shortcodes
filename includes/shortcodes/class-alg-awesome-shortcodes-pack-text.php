@@ -94,7 +94,7 @@ class Alg_Awesome_Shortcodes_Pack_Text extends Alg_Abstract_Awesome_Shortcodes_P
 				),
 			),
 			'code' => array(
-				'desc'             => sprintf( __( 'Wrap contents in %s tag. Useful for displaying a piece of computer code.', 'awesome-shortcodes' ), '&lt;code&gt;' ),
+				'desc'             => sprintf( __( 'Wrap contents in %s tag. Useful for displaying a piece of computer code.', 'awesome-shortcodes' ), '<code>&lt;code&gt;</code>' ),
 				'type'             => 'enclosing',
 				'examples'         => array(
 					array(

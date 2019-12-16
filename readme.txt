@@ -20,11 +20,27 @@ Currently included shortcode packs:
 * Users shortcodes.
 * WooCommerce shortcodes.
 
-If you wish to contribute, join in on our [GitHub repository](https://github.com/algoritmika/awesome-shortcodes).
+= Text Shortcodes =
 
-= Feedback =
+* `[code]` - Wrap contents in `<code>` tag. Useful for displaying a piece of computer code.
+* `[details]` - Creates an interactive widget that user can open and close. Uses HTML `<details>` [tag](https://www.w3schools.com/tags/tag_details.asp).
+* `[flash]` - Creates flashing text effect with CSS.
+* `[is_user_logged_in]` - Hides text from users who are not logged in.
+* `[is_user_role]` - Shows text by user role.
+* `[strikeout]` - Strikeouts content.
+* `[text3d]` - Creates 3D text with CSS.
 
-We are open to your suggestions and feedback. Thank you for using or trying out one of our plugins!
+= Posts Shortcodes =
+
+* `[post_id]` - Displays current post ID.
+* `[post_meta]` - Displays post meta field value.
+* `[posts]` - Displays posts. Check [WP_Query page](https://developer.wordpress.org/reference/classes/wp_query/) for more info on params.
+* `[total_posts]` - Displays total number of posts in your site.
+
+= More =
+
+* We are open to your suggestions and feedback. Thank you for using or trying out one of our plugins!
+* If you wish to contribute, join in on our [GitHub repository](https://github.com/algoritmika/awesome-shortcodes).
 
 == Installation ==
 
