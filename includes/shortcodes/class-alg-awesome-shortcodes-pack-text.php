@@ -26,6 +26,28 @@ class Alg_Awesome_Shortcodes_Pack_Text extends Alg_Abstract_Awesome_Shortcodes_P
 		$this->title      = __( 'Text', 'awesome-shortcodes' );
 		$this->desc       = __( 'Text shortcodes.', 'awesome-shortcodes' );
 		$this->shortcodes = array(
+			'is_user_role' => array(
+				'desc'             => __( 'Shows text by user role.', 'awesome-shortcodes' ),
+				'type'             => 'enclosing',
+				'atts'             => array(
+					'roles' => array(
+						'default'  => '',
+						'desc'     => __( 'User roles.', 'awesome-shortcodes' ),
+						'required' => true,
+					),
+					'fallback' => array(
+						'default'  => '',
+						'desc'     => __( 'Text visible to other user roles.', 'awesome-shortcodes' ),
+						'required' => false,
+					),
+				),
+				'examples'         => array(
+					array(
+						'atts'    => array( 'roles' => 'customer', 'fallback' => __( 'This text is visible to other users.', 'awesome-shortcodes' ) ),
+						'content' => __( 'This text is visible to customers.', 'awesome-shortcodes' ),
+					),
+				),
+			),
 			'is_user_logged_in' => array(
 				'desc'             => __( 'Hides text from users who are not logged in.', 'awesome-shortcodes' ),
 				'type'             => 'enclosing',
@@ -114,13 +136,32 @@ class Alg_Awesome_Shortcodes_Pack_Text extends Alg_Abstract_Awesome_Shortcodes_P
 	}
 
 	/**
+	 * is_user_role.
+	 *
+	 * @version 1.5.9
+	 * @since   1.5.9
+	 */
+	function is_user_role( $atts, $content, $tag ) {
+		if ( '' === $atts['roles'] ) {
+			return '';
+		}
+		if ( ! function_exists( 'is_user_logged_in' ) || ! function_exists( 'wp_get_current_user' ) ) {
+			return $atts['fallback'];
+		}
+		$roles     = array_map( 'trim', explode( ',', $atts['roles'] ) );
+		$user      = wp_get_current_user();
+		$intersect = array_intersect( $roles, $user->roles );
+		return ( empty( $intersect ) ? $atts['fallback'] : $content );
+	}
+
+	/**
 	 * is_user_logged_in.
 	 *
 	 * @version 1.5.9
 	 * @since   1.5.9
 	 */
 	function is_user_logged_in( $atts, $content, $tag ) {
-		return ( ! is_user_logged_in() ? $atts['guest_content'] : $content );
+		return ( ! function_exists( 'is_user_logged_in' ) || ! function_exists( 'wp_get_current_user' ) || ! is_user_logged_in() ? $atts['guest_content'] : $content );
 	}
 
 	/**
