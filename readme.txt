@@ -20,6 +20,27 @@ Currently included shortcode packs:
 * Users shortcodes.
 * WooCommerce shortcodes.
 
+= General Shortcodes =
+
+* `[copyright]` - Shortcode displays copyright symbol.
+* `[countdown]` - Creates a countdown timer. Updated every second.
+* `[dashicon]` - Shortcode displays WordPress dash icon.
+* `[date]` - Displays current date.
+* `[font_awesome]` - Shortcode displays Font Awesome icons.
+* `[google_map]` - Shortcode displays Google Map for selected coordinates.
+* `[hide]` - Hides content. Useful for commenting.
+* `[login_url]` - Shortcode displays your WordPress site login URL.
+* `[meter]` - Shortcode is used to measure data within a given range (a gauge). Uses HTML `<meter>` [tag](https://www.w3schools.com/TAGs/tag_meter.asp).
+* `[number_counter]` - Creates an animated number counter.
+* `[option]` - Shortcode displays WordPress option value. Uses WordPress `get_option()` [function](https://developer.wordpress.org/reference/functions/get_option/).
+* `[progress]` - Shortcode displays the progress of a task. Uses HTML `<progress>` [tag](https://www.w3schools.com/TAGs/tag_progress.asp).
+* `[table]` - Displays HTML table.
+* `[timenow]` - Shows current time in `HH:MM:SS` format. Updated every second.
+* `[total_categories]` - Shortcode displays total categories count on your site.
+* `[total_tags]` - Shortcode displays total tags count on your site.
+* `[total_taxonomy]` - Shortcode displays total taxonomy terms count on your site.
+* `[youtube]` - Shortcode displays embedded YouTube video.
+
 = Text Shortcodes =
 
 * `[code]` - Wrap contents in `<code>` tag. Useful for displaying a piece of computer code.
@@ -36,6 +57,28 @@ Currently included shortcode packs:
 * `[post_meta]` - Displays post meta field value.
 * `[posts]` - Displays posts. Check [WP_Query page](https://developer.wordpress.org/reference/classes/wp_query/) for more info on params.
 * `[total_posts]` - Displays total number of posts in your site.
+
+= Users Shortcodes =
+
+* `[total_users]` - Shortcode displays the count of users having each role, or the count of all users.
+* `[user_display_name]` - Displays current user display name. If user is not logged, nothing is displayed.
+* `[user_email]` - Displays current user email. If user is not logged, nothing is displayed.
+* `[user_first_name]` - Displays current user first name. If user is not logged, nothing is displayed.
+* `[user_id]` - Displays current user ID. If user is not logged, nothing is displayed.
+* `[user_ip]` - Displays current user IP.
+* `[user_last_name]` - Displays current user last name. If user is not logged, nothing is displayed.
+* `[user_location]` - Displays current user location (i.e. country).
+* `[user_login]` - Displays current user login (i.e. username). If user is not logged, nothing is displayed.
+* `[user_property]` - Displays current user selected property. If user is not logged, nothing is displayed.
+
+= WooCommerce Shortcodes =
+
+* `[wc_current_currency_code]` - Shortcode displays current WooCommerce currency code. Useful for multi-currency sites.
+* `[wc_current_currency_symbol]` - Shortcode displays current WooCommerce currency symbol. Useful for multi-currency sites.
+* `[wc_login_form]` - Displays WooCommerce login form for not logged in users. If user is already logged in, nothing is displayed.
+* `[wc_product_dimensions]` - Displays WooCommerce product dimensions.
+* `[wc_product_id]` - Shortcode displays current WooCommerce product ID.
+* `[wc_product_price_html]` - Shortcode displays WooCommerce product full price with currency symbol.
 
 = More =
 
