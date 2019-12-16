@@ -2,7 +2,7 @@
 Contributors: algoritmika, anbinder
 Tags: shortcode, shortcodes, awesome
 Tested up to: 5.3
-Stable tag: 1.5.8
+Stable tag: 1.6.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
