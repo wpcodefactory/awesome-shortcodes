@@ -3,14 +3,11 @@
 Plugin Name: Awesome Shortcodes
 Plugin URI: https://awesomeshortcodes.com/
 Description: Awesome shortcodes.
-Version: 1.6.0
-Author: Algoritmika Ltd
-Author URI: https://algoritmika.com
+Version: 1.6.1-dev
+Author: WPFactory
+Author URI: https://wpfactory.com
 Text Domain: awesome-shortcodes
 Domain Path: /langs
-Copyright: © 2019 Algoritmika Ltd.
-License: GNU General Public License v3.0
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
 */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -32,7 +29,7 @@ final class Alg_Awesome_Shortcodes {
 	 * @var   string
 	 * @since 1.0.0
 	 */
-	public $version = '1.6.0';
+	public $version = '1.6.1-dev-20221111-2208';
 
 	/**
 	 * @var   Alg_Awesome_Shortcodes The single instance of the class

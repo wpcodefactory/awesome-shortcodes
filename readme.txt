@@ -1,7 +1,7 @@
 === Awesome Shortcodes ===
-Contributors: algoritmika, anbinder
+Contributors: wpcodefactory, algoritmika, anbinder
 Tags: shortcode, shortcodes, awesome
-Tested up to: 5.3
+Tested up to: 6.1
 Stable tag: 1.6.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -83,7 +83,7 @@ Currently included shortcode packs:
 = More =
 
 * We are open to your suggestions and feedback. Thank you for using or trying out one of our plugins!
-* If you wish to contribute, join in on our [GitHub repository](https://github.com/algoritmika/awesome-shortcodes).
+* If you wish to contribute, join in on our [GitHub repository](https://github.com/wpcodefactory/awesome-shortcodes).
 
 == Installation ==
 
@@ -92,6 +92,11 @@ Currently included shortcode packs:
 3. Start by visiting plugin settings at "Settings > Awesome Shortcodes".
 
 == Changelog ==
+
+= 1.6.1 - 11/11/2022 =
+* Tested up to: 6.1.
+* Readme.txt updated.
+* Deploy script added.
 
 = 1.6.0 - 16/12/2019 =
 * Dev - `[is_user_role]` shortcode added.
