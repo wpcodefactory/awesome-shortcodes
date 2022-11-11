@@ -3,7 +3,7 @@
 Plugin Name: Awesome Shortcodes
 Plugin URI: https://awesomeshortcodes.com/
 Description: Awesome shortcodes.
-Version: 1.6.1-dev
+Version: 1.7.0-dev
 Author: WPFactory
 Author URI: https://wpfactory.com
 Text Domain: awesome-shortcodes
@@ -29,7 +29,7 @@ final class Alg_Awesome_Shortcodes {
 	 * @var   string
 	 * @since 1.0.0
 	 */
-	public $version = '1.6.1-dev-20221111-2208';
+	public $version = '1.7.0-dev-20221111-2208';
 
 	/**
 	 * @var   Alg_Awesome_Shortcodes The single instance of the class

@@ -93,7 +93,7 @@ Currently included shortcode packs:
 
 == Changelog ==
 
-= 1.6.1 - 11/11/2022 =
+= 1.7.0 - 11/11/2022 =
 * Tested up to: 6.1.
 * Readme.txt updated.
 * Deploy script added.
