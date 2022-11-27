@@ -10,7 +10,9 @@ Text Domain: awesome-shortcodes
 Domain Path: /langs
 */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+defined( 'ABSPATH' ) || exit;
+
+require_once( 'includes/class-alg-awesome-shortcodes.php' );
 
 if ( ! class_exists( 'Alg_Awesome_Shortcodes' ) ) :
 

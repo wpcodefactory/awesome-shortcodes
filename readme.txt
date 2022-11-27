@@ -20,7 +20,7 @@ Currently included shortcode packs:
 * Users shortcodes.
 * WooCommerce shortcodes.
 
-= General Shortcodes =
+### &#9989; General Shortcodes ###
 
 * `[copyright]` - Shortcode displays copyright symbol.
 * `[countdown]` - Creates a countdown timer. Updated every second.
@@ -41,7 +41,7 @@ Currently included shortcode packs:
 * `[total_taxonomy]` - Shortcode displays total taxonomy terms count on your site.
 * `[youtube]` - Shortcode displays embedded YouTube video.
 
-= Text Shortcodes =
+### &#9989; Text Shortcodes ###
 
 * `[code]` - Wrap contents in `<code>` tag. Useful for displaying a piece of computer code.
 * `[details]` - Creates an interactive widget that user can open and close. Uses HTML `<details>` [tag](https://www.w3schools.com/tags/tag_details.asp).
@@ -51,14 +51,14 @@ Currently included shortcode packs:
 * `[strikeout]` - Strikeouts content.
 * `[text3d]` - Creates 3D text with CSS.
 
-= Posts Shortcodes =
+### &#9989; Posts Shortcodes ###
 
 * `[post_id]` - Displays current post ID.
 * `[post_meta]` - Displays post meta field value.
 * `[posts]` - Displays posts. Check [WP_Query page](https://developer.wordpress.org/reference/classes/wp_query/) for more info on params.
 * `[total_posts]` - Displays total number of posts in your site.
 
-= Users Shortcodes =
+### &#9989; Users Shortcodes ###
 
 * `[total_users]` - Shortcode displays the count of users having each role, or the count of all users.
 * `[user_display_name]` - Displays current user display name. If user is not logged, nothing is displayed.
@@ -71,7 +71,7 @@ Currently included shortcode packs:
 * `[user_login]` - Displays current user login (i.e. username). If user is not logged, nothing is displayed.
 * `[user_property]` - Displays current user selected property. If user is not logged, nothing is displayed.
 
-= WooCommerce Shortcodes =
+### &#9989; WooCommerce Shortcodes ###
 
 * `[wc_current_currency_code]` - Shortcode displays current WooCommerce currency code. Useful for multi-currency sites.
 * `[wc_current_currency_symbol]` - Shortcode displays current WooCommerce currency symbol. Useful for multi-currency sites.
@@ -80,10 +80,11 @@ Currently included shortcode packs:
 * `[wc_product_id]` - Shortcode displays current WooCommerce product ID.
 * `[wc_product_price_html]` - Shortcode displays WooCommerce product full price with currency symbol.
 
-= More =
+### &#9989; More ###
 
 * We are open to your suggestions and feedback. Thank you for using or trying out one of our plugins!
 * If you wish to contribute, join in on our [GitHub repository](https://github.com/wpcodefactory/awesome-shortcodes).
+* [Visit plugin site](https://awesomeshortcodes.com/).
 
 == Installation ==
 
@@ -93,7 +94,8 @@ Currently included shortcode packs:
 
 == Changelog ==
 
-= 1.7.0 - 11/11/2022 =
+= 1.7.0 - 27/11/2022 =
+* Dev - Code refactoring.
 * Tested up to: 6.1.
 * Readme.txt updated.
 * Deploy script added.
