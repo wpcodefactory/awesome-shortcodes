@@ -12,13 +12,6 @@ defined( 'ABSPATH' ) || exit;
 
 if ( ! class_exists( 'Alg_Awesome_Shortcodes' ) ) :
 
-/**
- * Main Alg_Awesome_Shortcodes Class
- *
- * @class   Alg_Awesome_Shortcodes
- * @version 1.0.0
- * @since   1.0.0
- */
 final class Alg_Awesome_Shortcodes {
 
 	/**
@@ -27,7 +20,7 @@ final class Alg_Awesome_Shortcodes {
 	 * @var   string
 	 * @since 1.0.0
 	 */
-	public $version = '1.7.0-dev-20221111-2208';
+	public $version = ALG_AWESOME_SHORTCODES_VERSION;
 
 	/**
 	 * @var   Alg_Awesome_Shortcodes The single instance of the class
@@ -42,6 +35,7 @@ final class Alg_Awesome_Shortcodes {
 	 *
 	 * @version 1.0.0
 	 * @since   1.0.0
+	 *
 	 * @static
 	 * @return  Alg_Awesome_Shortcodes - Main instance
 	 */
@@ -57,6 +51,7 @@ final class Alg_Awesome_Shortcodes {
 	 *
 	 * @version 1.7.0
 	 * @since   1.0.0
+	 *
 	 * @access  public
 	 */
 	function __construct() {
@@ -67,16 +62,26 @@ final class Alg_Awesome_Shortcodes {
 		}
 
 		// Set up localisation
-		load_plugin_textdomain( 'awesome-shortcodes', false, dirname( plugin_basename( __FILE__ ) ) . '/langs/' );
+		add_action( 'init', array( $this, 'localize' ) );
 
 		// Core
 		$this->core = require_once( 'class-alg-awesome-shortcodes-core.php' );
 
 		// Action Links
 		if ( is_admin() ) {
-			add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), array( $this, 'action_links' ) );
+			add_filter( 'plugin_action_links_' . plugin_basename( ALG_AWESOME_SHORTCODES_FILE ), array( $this, 'action_links' ) );
 		}
 
+	}
+
+	/**
+	 * localize.
+	 *
+	 * @version 1.7.0
+	 * @since   1.7.0
+	 */
+	function localize() {
+		load_plugin_textdomain( 'awesome-shortcodes', false, dirname( plugin_basename( ALG_AWESOME_SHORTCODES_FILE ) ) . '/langs/' );
 	}
 
 	/**
@@ -84,6 +89,7 @@ final class Alg_Awesome_Shortcodes {
 	 *
 	 * @version 1.0.0
 	 * @since   1.0.0
+	 *
 	 * @param   mixed $links
 	 * @return  array
 	 */
@@ -95,33 +101,35 @@ final class Alg_Awesome_Shortcodes {
 	/**
 	 * Get the plugin url.
 	 *
-	 * @version 1.0.0
+	 * @version 1.7.0
 	 * @since   1.0.0
+	 *
 	 * @return  string
 	 */
 	function plugin_url() {
-		return untrailingslashit( plugin_dir_url( __FILE__ ) );
+		return untrailingslashit( plugin_dir_url( ALG_AWESOME_SHORTCODES_FILE ) );
 	}
 
 	/**
 	 * Get the plugin path.
 	 *
-	 * @version 1.0.0
+	 * @version 1.7.0
 	 * @since   1.0.0
+	 *
 	 * @return  string
 	 */
 	function plugin_path() {
-		return untrailingslashit( plugin_dir_path( __FILE__ ) );
+		return untrailingslashit( plugin_dir_path( ALG_AWESOME_SHORTCODES_FILE ) );
 	}
 
 	/**
 	 * Get the plugin file.
 	 *
-	 * @version 1.0.0
+	 * @version 1.7.0
 	 * @since   1.0.0
 	 */
 	function plugin_file() {
-		return __FILE__;
+		return ALG_AWESOME_SHORTCODES_FILE;
 	}
 
 }

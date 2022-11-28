@@ -12,6 +12,10 @@ Domain Path: /langs
 
 defined( 'ABSPATH' ) || exit;
 
+defined( 'ALG_AWESOME_SHORTCODES_VERSION' ) || define( 'ALG_AWESOME_SHORTCODES_VERSION', '1.7.0-dev-20221111-2208' );
+
+defined( 'ALG_AWESOME_SHORTCODES_FILE' ) || define( 'ALG_AWESOME_SHORTCODES_FILE', __FILE__ );
+
 require_once( 'includes/class-alg-awesome-shortcodes.php' );
 
 if ( ! function_exists( 'alg_awesome_shortcodes' ) ) {
@@ -20,11 +24,10 @@ if ( ! function_exists( 'alg_awesome_shortcodes' ) ) {
 	 *
 	 * @version 1.0.0
 	 * @since   1.0.0
-	 * @return  Alg_Awesome_Shortcodes
 	 */
 	function alg_awesome_shortcodes() {
 		return Alg_Awesome_Shortcodes::instance();
 	}
 }
 
-alg_awesome_shortcodes();
+add_action( 'plugins_loaded', 'alg_awesome_shortcodes' );

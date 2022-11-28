@@ -94,7 +94,9 @@ Currently included shortcode packs:
 
 == Changelog ==
 
-= 1.7.0 - 27/11/2022 =
+= 1.7.0 - 28/11/2022 =
+* Dev - Localisation - The `load_plugin_textdomain()` function moved to the `init` action.
+* Dev - The plugin is initialized on the `plugins_loaded` action now.
 * Dev - Code refactoring.
 * Tested up to: 6.1.
 * Readme.txt updated.
