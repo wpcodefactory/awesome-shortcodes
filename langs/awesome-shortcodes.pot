@@ -1,8 +1,3 @@
-#: awesome-shortcodes.php:96
-#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:390
-msgid "Settings"
-msgstr ""
-
 #: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:40
 #: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:41
 #: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:423
@@ -93,6 +88,11 @@ msgstr ""
 
 #: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:359
 msgid "Save changes"
+msgstr ""
+
+#: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:390
+#: includes/class-alg-awesome-shortcodes.php:118
+msgid "Settings"
 msgstr ""
 
 #: includes/admin/class-alg-awesome-shortcodes-admin-settings.php:392

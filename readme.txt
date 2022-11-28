@@ -2,7 +2,7 @@
 Contributors: wpcodefactory, algoritmika, anbinder
 Tags: shortcode, shortcodes, awesome
 Tested up to: 6.1
-Stable tag: 1.6.0
+Stable tag: 1.7.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
