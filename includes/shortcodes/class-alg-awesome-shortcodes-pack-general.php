@@ -92,7 +92,7 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 					),
 					'parent' => array(
 						'default'  => '',
-						'desc'     => sprintf( __( 'Parent taxonomy term ID. Enter zero to count top level terms. Enter %s to set to the current term. Leave empty to count all terms.', 'awesome-shortcodes' ), '<code>current</code>' ),
+						'desc'     => sprintf( __( 'Parent taxonomy term ID. Enter zero to count top level terms. Enter %s to set to the current term ID. Leave empty to count all terms.', 'awesome-shortcodes' ), '<code>current</code>' ),
 						'required' => false,
 					),
 					'hide_empty' => array(
@@ -136,7 +136,7 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 				'atts'             => array(
 					'parent' => array(
 						'default'  => '',
-						'desc'     => sprintf( __( 'Parent category ID. Enter zero to count top level categories. Enter %s to set to the current category. Leave empty to count all categories.', 'awesome-shortcodes' ), '<code>current</code>' ),
+						'desc'     => sprintf( __( 'Parent category ID. Enter zero to count top level categories. Enter %s to set to the current category ID. Leave empty to count all categories.', 'awesome-shortcodes' ), '<code>current</code>' ),
 						'required' => false,
 					),
 					'hide_empty' => array(
