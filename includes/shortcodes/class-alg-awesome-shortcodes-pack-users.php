@@ -2,14 +2,13 @@
 /**
  * Awesome Shortcodes - Shortcode Packs - Users
  *
- * @version 1.3.1
+ * @version 1.7.1
  * @since   1.2.0
+ *
  * @author  Algoritmika Ltd.
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
+defined( 'ABSPATH' ) || exit;
 
 if ( ! class_exists( 'Alg_Awesome_Shortcodes_Pack_Users' ) ) :
 
@@ -20,14 +19,15 @@ class Alg_Awesome_Shortcodes_Pack_Users extends Alg_Abstract_Awesome_Shortcodes_
 	 *
 	 * @version 1.2.0
 	 * @since   1.2.0
-	 * @todo    (maybe) add `is_user_logged_in` property (`is_user_logged_in()`)
+	 *
+	 * @todo    add `is_user_logged_in` property (`is_user_logged_in()`)?
 	 */
 	private $current_user;
 
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.3.1
+	 * @version 1.7.1
 	 * @since   1.2.0
 	 */
 	function __construct() {
@@ -71,7 +71,7 @@ class Alg_Awesome_Shortcodes_Pack_Users extends Alg_Abstract_Awesome_Shortcodes_
 				),
 			),
 			'user_location' => array(
-				'desc'             => __( 'Displays current user location (i.e. country).', 'awesome-shortcodes' ),
+				'desc'             => __( 'Displays current user location (i.e., country).', 'awesome-shortcodes' ),
 				'type'             => 'self-closing',
 				'examples'         => array(
 					array(
@@ -82,7 +82,7 @@ class Alg_Awesome_Shortcodes_Pack_Users extends Alg_Abstract_Awesome_Shortcodes_
 				),
 			),
 			'user_login' => array(
-				'desc'             => __( 'Displays current user login (i.e. username). If user is not logged, nothing is displayed.', 'awesome-shortcodes' ),
+				'desc'             => __( 'Displays current user login (i.e., username). If user is not logged, nothing is displayed.', 'awesome-shortcodes' ),
 				'type'             => 'self-closing',
 				'examples'         => array(
 					array(

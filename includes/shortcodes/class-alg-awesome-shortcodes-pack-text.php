@@ -2,14 +2,13 @@
 /**
  * Awesome Shortcodes - Shortcode Packs - Text
  *
- * @version 1.6.0
+ * @version 1.7.1
  * @since   1.0.0
+ *
  * @author  Algoritmika Ltd.
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
+defined( 'ABSPATH' ) || exit;
 
 if ( ! class_exists( 'Alg_Awesome_Shortcodes_Pack_Text' ) ) :
 
@@ -18,7 +17,7 @@ class Alg_Awesome_Shortcodes_Pack_Text extends Alg_Abstract_Awesome_Shortcodes_P
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.6.0
+	 * @version 1.7.1
 	 * @since   1.0.0
 	 */
 	function __construct() {
@@ -54,7 +53,7 @@ class Alg_Awesome_Shortcodes_Pack_Text extends Alg_Abstract_Awesome_Shortcodes_P
 				'atts'             => array(
 					'guest' => array(
 						'default'  => '',
-						'desc'     => __( 'Text visible to guest (i.e. not logged in) users.', 'awesome-shortcodes' ),
+						'desc'     => __( 'Text visible to guest (i.e., not logged in) users.', 'awesome-shortcodes' ),
 						'required' => false,
 					),
 				),

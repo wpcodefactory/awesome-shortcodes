@@ -1,7 +1,7 @@
 === Awesome Shortcodes ===
 Contributors: wpcodefactory, algoritmika, anbinder
 Tags: shortcode, shortcodes, awesome
-Tested up to: 6.1
+Tested up to: 6.4
 Stable tag: 1.7.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -67,8 +67,8 @@ Currently included shortcode packs:
 * `[user_id]` - Displays current user ID. If user is not logged, nothing is displayed.
 * `[user_ip]` - Displays current user IP.
 * `[user_last_name]` - Displays current user last name. If user is not logged, nothing is displayed.
-* `[user_location]` - Displays current user location (i.e. country).
-* `[user_login]` - Displays current user login (i.e. username). If user is not logged, nothing is displayed.
+* `[user_location]` - Displays current user location (i.e., country).
+* `[user_login]` - Displays current user login (i.e., username). If user is not logged, nothing is displayed.
 * `[user_property]` - Displays current user selected property. If user is not logged, nothing is displayed.
 
 ### &#9989; WooCommerce Shortcodes ###
@@ -93,6 +93,10 @@ Currently included shortcode packs:
 3. Start by visiting plugin settings at "Settings > Awesome Shortcodes".
 
 == Changelog ==
+
+= 1.7.1 - 07/03/2024 =
+* Dev - Admin - Shortcode descriptions updated.
+* Tested up to: 6.4.
 
 = 1.7.0 - 28/11/2022 =
 * Dev - Localisation - The `load_plugin_textdomain()` function moved to the `init` action.
