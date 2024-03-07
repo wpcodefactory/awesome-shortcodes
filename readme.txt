@@ -95,6 +95,7 @@ Currently included shortcode packs:
 == Changelog ==
 
 = 1.7.1 - 07/03/2024 =
+* Dev - `[total_taxonomy]`, `[total_categories]` - `parent` attribute can now be set to `current`.
 * Dev - Admin - Shortcode descriptions updated.
 * Tested up to: 6.4.
 

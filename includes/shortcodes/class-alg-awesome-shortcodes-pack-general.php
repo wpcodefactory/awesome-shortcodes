@@ -2,14 +2,13 @@
 /**
  * Awesome Shortcodes - Shortcode Packs - General
  *
- * @version 1.5.4
+ * @version 1.7.1
  * @since   1.0.0
+ *
  * @author  Algoritmika Ltd.
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
+defined( 'ABSPATH' ) || exit;
 
 if ( ! class_exists( 'Alg_Awesome_Shortcodes_Pack_General' ) ) :
 
@@ -18,8 +17,9 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.5.4
+	 * @version 1.7.1
 	 * @since   1.0.0
+	 *
 	 * @todo    add shortcodes: `progress_bar`
 	 */
 	function __construct() {
@@ -92,7 +92,7 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 					),
 					'parent' => array(
 						'default'  => '',
-						'desc'     => __( 'Parent taxonomy term ID. Enter zero to count top level terms. Leave empty to count all terms.', 'awesome-shortcodes' ),
+						'desc'     => sprintf( __( 'Parent taxonomy term ID. Enter zero to count top level terms. Enter %s to set to the current term. Leave empty to count all terms.', 'awesome-shortcodes' ), '<code>current</code>' ),
 						'required' => false,
 					),
 					'hide_empty' => array(
@@ -136,7 +136,7 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 				'atts'             => array(
 					'parent' => array(
 						'default'  => '',
-						'desc'     => __( 'Parent category ID. Enter zero to count top level categories. Leave empty to count all categories.', 'awesome-shortcodes' ),
+						'desc'     => sprintf( __( 'Parent category ID. Enter zero to count top level categories. Enter %s to set to the current category. Leave empty to count all categories.', 'awesome-shortcodes' ), '<code>current</code>' ),
 						'required' => false,
 					),
 					'hide_empty' => array(
@@ -508,6 +508,7 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	 *
 	 * @version 1.5.2
 	 * @since   1.5.2
+	 *
 	 * @todo    http://fontawesome.io/examples/
 	 */
 	function font_awesome( $atts, $content, $tag ) {
@@ -523,6 +524,7 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	 *
 	 * @version 1.5.0
 	 * @since   1.5.0
+	 *
 	 * @todo    add `redirect` attribute (including "redirect to current page")
 	 */
 	function login_url( $atts, $content, $tag ) {
@@ -532,13 +534,13 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	/**
 	 * count_terms.
 	 *
-	 * @version 1.5.1
+	 * @version 1.7.1
 	 * @since   1.5.0
 	 */
 	private function count_terms( $taxonomy, $atts ) {
 		$args = array(
 			'taxonomy'   => $taxonomy,
-			'parent'     => ( isset( $atts['parent'] ) ? $atts['parent'] : '' ),
+			'parent'     => ( isset( $atts['parent'] ) ? ( 'current' === $atts['parent'] ? get_queried_object_id() : $atts['parent'] ) : '' ),
 			'hide_empty' => ( 'yes' === $atts['hide_empty'] ? 1 : 0 ),
 		);
 		$terms = get_terms( $args );
@@ -570,7 +572,8 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	 *
 	 * @version 1.5.0
 	 * @since   1.5.0
-	 * @todo    (maybe) move to "Taxonomies" pack
+	 *
+	 * @todo    move to "Taxonomies" pack?
 	 * @todo    more atts - check https://developer.wordpress.org/reference/classes/wp_term_query/__construct/
 	 */
 	function total_categories( $atts, $content, $tag ) {
@@ -582,7 +585,8 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	 *
 	 * @version 1.5.0
 	 * @since   1.5.0
-	 * @todo    (maybe) more atts (e.g. `frameborder`, `allowfullscreen`, autostart etc.)
+	 *
+	 * @todo    more atts (e.g., `frameborder`, `allowfullscreen`, autostart etc.)?
 	 */
 	function youtube( $atts, $content, $tag ) {
 		if ( '' === $atts['video'] ) {
@@ -617,9 +621,11 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	 *
 	 * @version 1.4.0
 	 * @since   1.4.0
-	 * @todo    (maybe) add `address` att (so center could be set without latitude and longitude)
-	 * @todo    (maybe) add more atts
+	 *
 	 * @see     https://developers.google.com/maps/documentation/javascript/
+	 *
+	 * @todo    add `address` att (so center could be set without latitude and longitude)?
+	 * @todo    add more atts?
 	 */
 	function google_map( $atts, $content, $tag ) {
 		return ( '' === $atts['api_key'] ? '' : '<div id="awesome-shortcode-google-map" style="width:' . $atts['width'] . ';height:' . $atts['height'] . ';"' .
@@ -638,6 +644,7 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	 *
 	 * @version 1.4.0
 	 * @since   1.4.0
+	 *
 	 * @todo    add more atts, e.g.: `high`, `low`, `optimum` etc.
 	 */
 	function meter( $atts, $content, $tag ) {
@@ -659,7 +666,8 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	 *
 	 * @version 1.3.1
 	 * @since   1.3.1
-	 * @todo    if resulting value is neither array or simple type (e.g. object) - maybe just `print_r()`?
+	 *
+	 * @todo    if resulting value is neither array or simple type (e.g., object) - maybe just `print_r()`?
 	 */
 	function option( $atts, $content, $tag ) {
 		if ( '' === $atts['name'] ) {
@@ -690,7 +698,8 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	 *
 	 * @version 1.0.0
 	 * @since   1.0.0
-	 * @todo    (maybe) more atts. E.g.: `time_format`, `update_period`, styling options etc.
+	 *
+	 * @todo    more atts. E.g.: `time_format`, `update_period`, styling options etc.?
 	 */
 	function timenow( $atts, $content, $tag ) {
 		return '<p class="awesome-shortcode-timenow"></p>';
@@ -701,7 +710,8 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	 *
 	 * @version 1.0.0
 	 * @since   1.0.0
-	 * @todo    (maybe) more atts. E.g.: `countdown_format`, `update_period`, `on_expired`, styling options etc.
+	 *
+	 * @todo    more atts. E.g.: `countdown_format`, `update_period`, `on_expired`, styling options etc.?
 	 */
 	function countdown( $atts, $content, $tag ) {
 		return ( ! empty( $atts['date_to'] ) ? '<p class="awesome-shortcode-countdown" date-to="' . $atts['date_to'] . '"></p>' : '' );
@@ -732,7 +742,8 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 	 *
 	 * @version 1.0.0
 	 * @since   1.0.0
-	 * @todo    (maybe) more atts. E.g.: `row_sep`, `cell_sep` etc.
+	 *
+	 * @todo    more atts. E.g.: `row_sep`, `cell_sep` etc.?
 	 */
 	function table( $atts, $content, $tag ) {
 		$table_data = array();
@@ -740,7 +751,13 @@ class Alg_Awesome_Shortcodes_Pack_General extends Alg_Abstract_Awesome_Shortcode
 		foreach ( $rows as $row ) {
 			$table_data[] = explode( ',', $row );
 		}
-		return alg_awesome_shortcodes_get_table_html( $table_data, array( 'table_class' => $atts['table_class'], 'table_heading_type' => $atts['table_heading_type'] ) );
+		return alg_awesome_shortcodes_get_table_html(
+			$table_data,
+			array(
+				'table_class'        => $atts['table_class'],
+				'table_heading_type' => $atts['table_heading_type'],
+			)
+		);
 	}
 
 }
