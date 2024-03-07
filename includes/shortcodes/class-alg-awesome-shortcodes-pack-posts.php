@@ -192,7 +192,8 @@ class Alg_Awesome_Shortcodes_Pack_Posts extends Alg_Abstract_Awesome_Shortcodes_
 	 *
 	 * @version 1.2.0
 	 * @since   1.2.0
-	 * @todo    more params (check WP_Query page), e.g. `meta_key`
+	 *
+	 * @todo    more params (check WP_Query page), e.g., `meta_key`
 	 */
 	function total_posts( $atts, $content, $tag ) {
 		$args = array(
@@ -210,7 +211,8 @@ class Alg_Awesome_Shortcodes_Pack_Posts extends Alg_Abstract_Awesome_Shortcodes_
 	 *
 	 * @version 1.1.0
 	 * @since   1.0.0
-	 * @todo    more params (check WP_Query page), e.g. `meta_key`
+	 *
+	 * @todo    more params (check WP_Query page), e.g., `meta_key`
 	 * @todo    more `output_format` replace values
 	 */
 	function posts( $atts, $content, $tag ) {

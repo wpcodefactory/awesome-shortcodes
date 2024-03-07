@@ -3,7 +3,8 @@
  *
  * @version 1.4.0
  * @since   1.4.0
- * @todo    multiple maps (i.e. use `class` instead of `id`)
+ *
+ * @todo    multiple maps (i.e., use `class` instead of `id`)
  */
 
 if ( 0 != jQuery( "#awesome-shortcode-google-map" ).length ) {

@@ -109,7 +109,7 @@ class Alg_Awesome_Shortcodes_Admin_Settings {
 	 * @since   1.0.0
 	 * @todo    (maybe) example output: `shortcode_pack->awesome_shortcode( ( ! empty( $example['atts'] ) ? $example['atts'] : array() ), ( ! empty( $example['content'] ) ? $example['content'] : '' ), $prefix . $shortcode_tag, ( isset( $shortcode['func'] ) ? $shortcode['func'] : $shortcode_tag ) )`
 	 * @todo    (maybe) remove `alg_awesome_shortcodes_enabled` completely
-	 * @todo    (maybe) shortcode factory (i.e. custom shortcodes)
+	 * @todo    (maybe) shortcode factory (i.e., custom shortcodes)
 	 * @todo    (maybe) add "enable/disable all shortcodes" option
 	 * @todo    (maybe) add "reset settings" option
 	 * @todo    (maybe) use `<details><summary>...` or JS in `atts` and `examples`
@@ -329,7 +329,7 @@ class Alg_Awesome_Shortcodes_Admin_Settings {
 					$html .= '</label>';
 					$html .= '<p class="description">' . $option['desc_tip'] . '</p>';
 					break;
-				default: // e.g. 'text'
+				default: // e.g., 'text'
 					$html .= '<input type="' . $option['type'] . '" value="' . $value . '" name="' . $option['id'] . '" class="' . $option['class'] . '">';
 					$html .= '<p class="description">' . $option['desc'] . '</p>';
 					break;
