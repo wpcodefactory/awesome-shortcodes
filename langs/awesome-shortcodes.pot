@@ -162,9 +162,10 @@ msgid "Taxonomy name. E.g.: %s."
 msgstr ""
 
 #: includes/shortcodes/class-alg-awesome-shortcodes-pack-general.php:95
+#, php-format
 msgid ""
-"Parent taxonomy term ID. Enter zero to count top level terms. Leave empty to "
-"count all terms."
+"Parent taxonomy term ID. Enter zero to count top level terms. Enter %s to "
+"set to the current term ID. Leave empty to count all terms."
 msgstr ""
 
 #: includes/shortcodes/class-alg-awesome-shortcodes-pack-general.php:100
@@ -204,9 +205,10 @@ msgid "Shortcode displays total categories count on your site."
 msgstr ""
 
 #: includes/shortcodes/class-alg-awesome-shortcodes-pack-general.php:139
+#, php-format
 msgid ""
-"Parent category ID. Enter zero to count top level categories. Leave empty to "
-"count all categories."
+"Parent category ID. Enter zero to count top level categories. Enter %s to "
+"set to the current category ID. Leave empty to count all categories."
 msgstr ""
 
 #: includes/shortcodes/class-alg-awesome-shortcodes-pack-general.php:144
@@ -590,100 +592,100 @@ msgstr ""
 msgid "Recent Posts"
 msgstr ""
 
-#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:26
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:25
 msgid "Text"
 msgstr ""
 
-#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:27
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:26
 msgid "Text shortcodes."
 msgstr ""
 
-#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:30
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:29
 msgid "Shows text by user role."
 msgstr ""
 
-#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:35
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:34
 msgid "User roles (comma separated)."
 msgstr ""
 
-#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:40
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:39
 msgid "Text visible to other user roles."
 msgstr ""
 
-#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:46
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:45
 msgid "This text is visible to other users."
 msgstr ""
 
-#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:47
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:46
 msgid "This text is visible to customers."
 msgstr ""
 
-#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:52
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:51
 msgid "Hides text from users who are not logged in."
 msgstr ""
 
-#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:57
-msgid "Text visible to guest (i.e. not logged in) users."
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:56
+msgid "Text visible to guest (i.e., not logged in) users."
 msgstr ""
 
-#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:63
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:62
 msgid "This text is visible to guests."
 msgstr ""
 
-#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:64
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:63
 msgid "This text is visible to logged in users."
 msgstr ""
 
-#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:69
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:68
 #, php-format
 msgid ""
 "Creates an interactive widget that user can open and close. Uses HTML %s tag "
 "(%s)."
 msgstr ""
 
-#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:75
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:74
 msgid "Visible heading. The heading can be clicked to view/hide the details."
 msgstr ""
 
-#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:81
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:80
 msgid "Show Text"
 msgstr ""
 
-#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:82
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:81
 msgid "This text will be hidden, until the user clicks on summary."
 msgstr ""
 
-#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:87
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:86
 msgid "Strikeouts content."
 msgstr ""
 
-#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:92
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:91
 msgid "This text will be striked out."
 msgstr ""
 
-#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:97
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:96
 #, php-format
 msgid ""
 "Wrap contents in %s tag. Useful for displaying a piece of computer code."
 msgstr ""
 
-#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:106
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:105
 msgid "Creates 3D text with CSS."
 msgstr ""
 
-#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:112
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:111
 msgid "Font size."
 msgstr ""
 
-#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:120
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:119
 msgid "Text in 3D"
 msgstr ""
 
-#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:125
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:124
 msgid "Creates flashing text effect with CSS."
 msgstr ""
 
-#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:130
+#: includes/shortcodes/class-alg-awesome-shortcodes-pack-text.php:129
 msgid "Attention"
 msgstr ""
 
@@ -727,7 +729,7 @@ msgid "Your IP: %s"
 msgstr ""
 
 #: includes/shortcodes/class-alg-awesome-shortcodes-pack-users.php:74
-msgid "Displays current user location (i.e. country)."
+msgid "Displays current user location (i.e., country)."
 msgstr ""
 
 #: includes/shortcodes/class-alg-awesome-shortcodes-pack-users.php:79
@@ -737,7 +739,7 @@ msgstr ""
 
 #: includes/shortcodes/class-alg-awesome-shortcodes-pack-users.php:85
 msgid ""
-"Displays current user login (i.e. username). If user is not logged, nothing "
+"Displays current user login (i.e., username). If user is not logged, nothing "
 "is displayed."
 msgstr ""
 
