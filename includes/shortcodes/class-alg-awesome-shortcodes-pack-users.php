@@ -2,7 +2,7 @@
 /**
  * Awesome Shortcodes - Shortcode Packs - Users
  *
- * @version 1.7.1
+ * @version 1.7.2
  * @since   1.2.0
  *
  * @author  Algoritmika Ltd.
@@ -27,7 +27,7 @@ class Alg_Awesome_Shortcodes_Pack_Users extends Alg_Abstract_Awesome_Shortcodes_
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.7.1
+	 * @version 1.7.2
 	 * @since   1.2.0
 	 */
 	function __construct() {
@@ -55,6 +55,7 @@ class Alg_Awesome_Shortcodes_Pack_Users extends Alg_Abstract_Awesome_Shortcodes_
 						'atts'    => array(
 							'role'     => 'customer',
 							'before'   => sprintf( __( 'Total customers: %s', 'awesome-shortcodes' ), '' ),
+							'on_zero'  => __( 'No customers.', 'awesome-shortcodes' ),
 						),
 					),
 				),
@@ -194,13 +195,14 @@ class Alg_Awesome_Shortcodes_Pack_Users extends Alg_Abstract_Awesome_Shortcodes_
 	/**
 	 * total_users.
 	 *
-	 * @version 1.3.1
+	 * @version 1.7.2
 	 * @since   1.3.1
+	 *
 	 * @todo    (maybe) check `get_user_count()` (https://codex.wordpress.org/Function_Reference/get_user_count)
 	 */
 	function total_users( $atts, $content, $tag ) {
 		$result = count_users();
-		return ( '' === $atts['role'] ? $result['total_users'] : $result['avail_roles'][ $atts['role'] ] );
+		return ( '' === $atts['role'] ? $result['total_users'] : ( $result['avail_roles'][ $atts['role'] ] ?? 0 ) );
 	}
 
 	/**
@@ -208,6 +210,7 @@ class Alg_Awesome_Shortcodes_Pack_Users extends Alg_Abstract_Awesome_Shortcodes_
 	 *
 	 * @version 1.3.0
 	 * @since   1.3.0
+	 *
 	 * @todo    add external method alternatives to `geoplugin.net` (e.g.: `hostip.info`)
 	 * @todo    add internal method, e.g.: MaxMind
 	 * @todo    add "return selection" attribute, e.g.: country name, country flag etc.

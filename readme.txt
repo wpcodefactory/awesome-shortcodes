@@ -94,6 +94,10 @@ Currently included shortcode packs:
 
 == Changelog ==
 
+= 1.7.2 - 08/03/2024 =
+* Dev - `[total_users]` - Code refactoring.
+* Dev - `[total_users]` - `customer` example updated.
+
 = 1.7.1 - 07/03/2024 =
 * Dev - `[total_taxonomy]`, `[total_categories]` - `parent` attribute can now be set to `current`.
 * Dev - Admin - Shortcode descriptions updated.
