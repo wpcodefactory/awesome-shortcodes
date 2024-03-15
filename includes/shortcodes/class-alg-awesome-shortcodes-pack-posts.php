@@ -2,14 +2,13 @@
 /**
  * Awesome Shortcodes - Shortcode Packs - Posts
  *
- * @version 1.3.0
+ * @version 1.7.2
  * @since   1.1.0
+ *
  * @author  Algoritmika Ltd.
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
+defined( 'ABSPATH' ) || exit;
 
 if ( ! class_exists( 'Alg_Awesome_Shortcodes_Pack_Posts' ) ) :
 
@@ -18,7 +17,7 @@ class Alg_Awesome_Shortcodes_Pack_Posts extends Alg_Abstract_Awesome_Shortcodes_
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.3.0
+	 * @version 1.7.2
 	 * @since   1.1.0
 	 */
 	function __construct() {
@@ -38,6 +37,11 @@ class Alg_Awesome_Shortcodes_Pack_Posts extends Alg_Abstract_Awesome_Shortcodes_
 					'post_status' => array(
 						'default'  => 'any',
 						'desc'     => sprintf( __( 'Post status, e.g.: %s.', 'awesome-shortcodes' ), '<code>publish</code>' ),
+						'required' => false,
+					),
+					'categories' => array(
+						'default'  => '',
+						'desc'     => sprintf( __( 'Comma-separated list of category IDs. Use %s for the current category ID. Leave empty to count all posts.', 'awesome-shortcodes' ), '<code>current</code>' ),
 						'required' => false,
 					),
 				),
@@ -190,20 +194,29 @@ class Alg_Awesome_Shortcodes_Pack_Posts extends Alg_Abstract_Awesome_Shortcodes_
 	/**
 	 * total_posts.
 	 *
-	 * @version 1.2.0
+	 * @version 1.7.2
 	 * @since   1.2.0
 	 *
 	 * @todo    more params (check WP_Query page), e.g., `meta_key`
 	 */
 	function total_posts( $atts, $content, $tag ) {
+
 		$args = array(
 			'post_type'      => $atts['post_type'],
 			'post_status'    => $atts['post_status'],
 			'posts_per_page' => -1,
 			'fields'         => 'ids',
 		);
+
+		if ( '' !== $atts['categories'] ) {
+			$categories = array_map( 'trim', explode( ',', $atts['categories'] ) );
+			$categories = str_replace( 'current', get_queried_object_id(), $categories );
+			$args['category__in'] = $categories;
+		}
+
 		$loop = new WP_Query( $args );
 		return $loop->post_count;
+
 	}
 
 	/**

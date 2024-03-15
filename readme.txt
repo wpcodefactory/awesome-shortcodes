@@ -94,7 +94,8 @@ Currently included shortcode packs:
 
 == Changelog ==
 
-= 1.7.2 - 08/03/2024 =
+= 1.7.2 - 15/03/2024 =
+* Dev - `[total_posts]` - `categories` attribute added.
 * Dev - `[total_users]` - Code refactoring.
 * Dev - `[total_users]` - `customer` example updated.
 
