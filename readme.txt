@@ -2,7 +2,7 @@
 Contributors: wpcodefactory, algoritmika, anbinder
 Tags: shortcode, shortcodes, awesome
 Tested up to: 6.4
-Stable tag: 1.7.1
+Stable tag: 1.7.2
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -94,7 +94,7 @@ Currently included shortcode packs:
 
 == Changelog ==
 
-= 1.7.2 - 15/03/2024 =
+= 1.7.2 - 27/03/2024 =
 * Dev - `[total_posts]` - `categories` attribute added.
 * Dev - `[total_users]` - Code refactoring.
 * Dev - `[total_users]` - `customer` example updated.

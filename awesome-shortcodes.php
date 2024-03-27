@@ -3,7 +3,7 @@
 Plugin Name: Awesome Shortcodes
 Plugin URI: https://awesomeshortcodes.com/
 Description: Awesome shortcodes.
-Version: 1.7.2-dev
+Version: 1.7.2
 Author: WPFactory
 Author URI: https://wpfactory.com
 Text Domain: awesome-shortcodes
@@ -12,7 +12,7 @@ Domain Path: /langs
 
 defined( 'ABSPATH' ) || exit;
 
-defined( 'ALG_AWESOME_SHORTCODES_VERSION' ) || define( 'ALG_AWESOME_SHORTCODES_VERSION', '1.7.2-dev-20240308-20240315-1902' );
+defined( 'ALG_AWESOME_SHORTCODES_VERSION' ) || define( 'ALG_AWESOME_SHORTCODES_VERSION', '1.7.2' );
 
 defined( 'ALG_AWESOME_SHORTCODES_FILE' ) || define( 'ALG_AWESOME_SHORTCODES_FILE', __FILE__ );
 
