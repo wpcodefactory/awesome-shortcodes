@@ -34,7 +34,7 @@ Currently included shortcode packs:
 * `[number_counter]` - Creates an animated number counter.
 * `[option]` - Shortcode displays WordPress option value. Uses WordPress `get_option()` [function](https://developer.wordpress.org/reference/functions/get_option/).
 * `[progress]` - Shortcode displays the progress of a task. Uses HTML `<progress>` [tag](https://www.w3schools.com/TAGs/tag_progress.asp).
-* `[table]` - Displays HTML table.
+* `[table]` - Displays HTML table. [table](https://www.scaler.com/topics/html/tables-in-html/).
 * `[timenow]` - Shows current time in `HH:MM:SS` format. Updated every second.
 * `[total_categories]` - Shortcode displays total categories count on your site.
 * `[total_tags]` - Shortcode displays total tags count on your site.
