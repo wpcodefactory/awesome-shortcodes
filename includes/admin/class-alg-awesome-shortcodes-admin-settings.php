@@ -2,14 +2,12 @@
 /**
  * Awesome Shortcodes - Admin Settings Class
  *
- * @version 1.6.0
+ * @version 1.7.3
  * @since   1.0.0
  * @author  Algoritmika Ltd.
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
+defined( 'ABSPATH' ) || exit;
 
 if ( ! class_exists( 'Alg_Awesome_Shortcodes_Admin_Settings' ) ) :
 
@@ -380,34 +378,51 @@ class Alg_Awesome_Shortcodes_Admin_Settings {
 	/**
 	 * get_menu.
 	 *
-	 * @version 1.4.1
+	 * @version 1.7.3
 	 * @since   1.0.0
 	 */
 	function get_menu() {
-		$html = '';
-		$html .= '<ul class="subsubsub">';
-		$html .= '<li class="settings"><a href="' . add_query_arg( 'section', 'settings', remove_query_arg( 'pack' ) ) . '" class="' .
-			( 'settings' === $this->get_current_section() ? 'current' : '' ) . '">' . __( 'Settings', 'awesome-shortcodes' ) . '</a> |</li>';
-		$html .= '<li class="shortcodes"><a href="' . add_query_arg( 'section', 'shortcodes', remove_query_arg( 'pack' ) ) . '" class="' .
-			( 'shortcodes' === $this->get_current_section() ? 'current' : '' ) . '">' . __( 'Shortcodes', 'awesome-shortcodes' ) . '</a></li>';
+
+		$html = '<ul class="subsubsub">';
+		$html .= sprintf(
+			'<li class="settings"><a href="%s" class="%s">%s</a> |</li>',
+			esc_url( add_query_arg( 'section', 'settings', remove_query_arg( 'pack' ) ) ),
+			( 'settings' === $this->get_current_section() ? 'current' : '' ),
+			esc_html__( 'Settings', 'awesome-shortcodes' )
+		);
+
+		$html .= sprintf(
+			'<li class="shortcodes"><a href="%s" class="%s">%s</a></li>',
+			esc_url( add_query_arg( 'section', 'shortcodes', remove_query_arg( 'pack' ) ) ),
+			( 'shortcodes' === $this->get_current_section() ? 'current' : '' ),
+			esc_html__( 'Shortcodes', 'awesome-shortcodes' )
+		);
 		$html .= '</ul>';
+
 		$html .= '<div class="clear"></div>';
+
 		if ( 'shortcodes' === $this->get_current_section() ) {
-			$pack = $this->get_current_pack();
-			$html .= '<ul class="subsubsub">';
+			$pack  = $this->get_current_pack();
+			$html  .= '<ul class="subsubsub">';
 			$packs = array();
+
 			foreach ( alg_awesome_shortcodes()->core->shortcode_packs as $shortcode_pack ) {
-				$packs[] = '<li class="' . $shortcode_pack->id . '">' .
-					'<a href="' . add_query_arg( 'pack', $shortcode_pack->id ) . '" class="' . ( $shortcode_pack->id === $pack ? 'current' : '' ) . '">' .
-						$shortcode_pack->title . ' <span class="count">(' . $this->count_enabled_shortcodes_in_pack( $shortcode_pack ) . '/' .
-							count( $shortcode_pack->shortcodes ) . ')</span>' .
-					'</a>' .
-				'</li>';
+				$packs[] = sprintf(
+					'<li class="%s"><a href="%s" class="%s">%s <span class="count">(%d/%d)</span></a></li>',
+					esc_attr( $shortcode_pack->id ),
+					esc_url( add_query_arg( 'pack', $shortcode_pack->id ) ),
+					( $shortcode_pack->id === $pack ? 'current' : '' ),
+					esc_html( $shortcode_pack->title ),
+					absint( $this->count_enabled_shortcodes_in_pack( $shortcode_pack ) ),
+					absint( count( $shortcode_pack->shortcodes ) )
+				);
 			}
+
 			$html .= implode( ' | ', $packs );
 			$html .= '</ul>';
 			$html .= '<div class="clear"></div>';
 		}
+
 		return $html;
 	}
 
