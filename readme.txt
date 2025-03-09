@@ -2,7 +2,7 @@
 Contributors: wpcodefactory, algoritmika, anbinder
 Tags: shortcode, shortcodes, awesome
 Tested up to: 6.7
-Stable tag: 1.7.2
+Stable tag: 1.7.3
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -94,7 +94,7 @@ Currently included shortcode packs:
 
 == Changelog ==
 
-= 1.7.3 - 28/02/2025 =
+= 1.7.3 - 09/03/2025 =
 * Fix - Cross-Site Scripting (XSS) vulnerability.
 * Tested up to: 6.7.
 
